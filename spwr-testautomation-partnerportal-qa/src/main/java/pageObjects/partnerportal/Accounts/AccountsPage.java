@@ -372,7 +372,7 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickQualificationTab() throws Exception {
-		Boolean wait = new WebDriverWait(driver, 20).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//html/body/app-root/sp-loading/div/div/span")));
+		Boolean wait = new WebDriverWait(driver, 120).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//html/body/app-root/sp-loading/div/div/span")));
 		jse.executeScript("arguments[0].click()", QUALIFICATIONTAB);
 	}
 	

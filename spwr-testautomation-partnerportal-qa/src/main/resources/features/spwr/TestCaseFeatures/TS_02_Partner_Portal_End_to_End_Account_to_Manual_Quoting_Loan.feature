@@ -17,8 +17,8 @@ And User creates a Residential Customer account
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SPWRTest" and Last Name as "AutoLnvc1211PPortal06"
-And User enters his/her Residential Email as "AutoLnvc1211PPortal06@gmail.com"
+Then User enters his/her Residential First Name as "SPWRTest" and Last Name as "AutoLnvc1214LoanPPortal01"
+And User enters his/her Residential Email as "AutoLnvc1201LoanPPortal06@gmail.com"
 And User enters his/her Residential Phone Number as "5555555555"
 Then User enters Residential address as "3841 Marron St, San Diego, CA 92115"
 When User saves the new entry
@@ -37,7 +37,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "12/11/2020"
+Then User enters the Shading Measurement Date as "12/14/2020"
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
