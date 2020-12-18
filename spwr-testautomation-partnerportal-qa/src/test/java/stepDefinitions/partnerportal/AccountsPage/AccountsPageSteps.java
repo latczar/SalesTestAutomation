@@ -126,6 +126,26 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickNewManualQuoteBtn();
 	}
 	
+	@And("User will switch back to the original window")
+	public void user_will_switch_back_to_the_original_window() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.navigateBackToQuotingPage();
+	}
+	
+	@Then("User will click the Cash Contract button and generate agreement")
+	public void user_will_click_the_cash_contract_button_and_generate_agreement() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickCashContractBtn();
+		accountsPage.clickComplianceCheckBoxes();
+	}
+	
+	@Then("User will click Send Contract")
+	public void user_will_click_send_contract() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickSendFirstContractBtn();
+	}
+	
+	//Start of EDDiE portal Design page steps
 	@When("^the EDDiE portal Design page is displayed$")
 	public void the_EDDiE_portal_Design_page_is_displayed() throws Throwable {
 		AccountsPage accountsPage = new AccountsPage();

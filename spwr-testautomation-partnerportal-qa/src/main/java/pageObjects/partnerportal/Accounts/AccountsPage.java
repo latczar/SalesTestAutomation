@@ -1,5 +1,7 @@
 package pageObjects.partnerportal.Accounts;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -103,11 +105,6 @@ public class AccountsPage extends BasePage {
 	WebElement CURRENTELECTRICRATEINPUTBOX;
 	
 	@FindBy(how = How.XPATH, using = "//html/body/app-root/ng-component/residential-main-tabs/edit-usage-input-modal/section/div/div/section[1]/div[1]/div[1]/sp-dropdown-filterlist/div/div/div/ul/li[1]")
-	//@FindBy(how = How.XPATH, using = "//html/body/app-root/ng-component/residential-main-tabs/edit-usage-input-modal/section/div/div/section[1]/div[1]/div[1]/sp-dropdown-filterlist/div/div/div/ul/li")
-	//html/body/app-root/ng-component/residential-main-tabs/edit-usage-input-modal/section/div/div/section[1]/div[1]/div[1]/sp-dropdown-filterlist/div/div/div/ul/li[1]
-	//html/body/app-root/ng-component/residential-main-tabs/edit-usage-input-modal/section/div/div/section[1]/div[1]/div[1]/sp-dropdown-filterlist/div/div/div/ul/li[1]
-	//html/body/app-root/ng-component/residential-main-tabs/edit-usage-input-modal/section/div/div/section[1]/div[1]/div[1]/sp-dropdown-filterlist/div/div/div/ul/li[1]
-	//html/body/app-root/ng-component/residential-main-tabs/edit-usage-input-modal/section/div/div/section[1]/div[1]/div[1]/sp-dropdown-filterlist/div/div/div/ul/li[1]
 	WebElement CURRENTELECTRICRATEFIRSTDROPDOWNITEM;
 	
 	@FindBy(how = How.XPATH, using = "//body/app-root[1]/ng-component[1]/residential-main-tabs[1]/edit-usage-input-modal[1]/section[1]/div[1]/div[1]/section[1]/div[1]/div[3]/sp-dropdown-filterlist[1]/div[1]/div[1]/span[1]")
@@ -142,6 +139,45 @@ public class AccountsPage extends BasePage {
 	
 	@FindBy(how = How.XPATH, using = "//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[1]/residential-quotes/div/div/div[2]/div/span[2]/a")
 	WebElement NEWMANUALQUOTEBTN;
+	
+	@FindBy(how = How.XPATH, using = "//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[1]/residential-quotes/table/tbody/tr/td[1]/label")
+	WebElement CONTRACTONECHECKBOX;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='sndOpt']")
+	WebElement SENDOPTIONSBTN;
+	
+	@FindBy(how = How.XPATH, using = "//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[1]/residential-quotes/table/thead/td[9]/div/div/ul/li[1]/div/button")
+	WebElement SENDTOMYSUNPOWERVIATEXTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[1]/residential-quotes/table/thead/td[9]/div/div/ul/li[2]/div/button")
+	WebElement SENDTOMYSUNPOWERVIAEMAILBTN;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='checkEmailisNull']")
+	WebElement SENDCPUCFIRSTCONTRACTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'CASH CONTRACT')]")
+	WebElement CASHCONTRACTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/app-root[1]/ng-component[1]/residential-main-tabs[1]/initial-consumer-lending-compliance-modal[1]/section[1]/div[1]/div[1]/section[1]/form[1]/div[1]/div[1]/div[1]/div[1]/label[1]")
+	WebElement VERIFIEDCUSTOMERIDCHECKBOX;
+	
+	@FindBy(how = How.XPATH, using = "//body/app-root[1]/ng-component[1]/residential-main-tabs[1]/initial-consumer-lending-compliance-modal[1]/section[1]/div[1]/div[1]/section[1]/form[2]/div[1]/div[1]/div[1]/div[1]/label[1]")
+	WebElement VERBALLYNOTIFIEDCHECKBOX;
+	
+	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/app-root[1]/ng-component[1]/residential-main-tabs[1]/initial-consumer-lending-compliance-modal[1]/section[1]/div[1]/div[1]/section[2]/button[1]")
+	WebElement GENERATEAGREEMENTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'CANCEL')]")
+	WebElement CANCELCOMPLIANCECHECKBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/app-root[1]/ng-component[1]/residential-main-tabs[1]/main[1]/alerts-messages[1]/div[1]/span[1]")
+	WebElement CASHCONTRACTGENERATESUCCESS;
+		
+	@FindBy(how = How.CSS, using = "#checkEmailisNull")
+	WebElement SENDCONTRACTFIRSTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//tbody/tr[1]/td[5]/div[1]")
+	WebElement OUTFORSIGNATURETXT;
 	
 	//Start of EDDiE Portal Web Elements ------------------------------------------------------------------------>
 	
@@ -406,7 +442,7 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickEnergyUsageModalSaveBtn() throws Exception {
-		scrollPageDownBy();
+		scrollPageDownBy500();
 		click(ENERGYUSAGEMODALSAVEBTN, "ENERGYUSAGEMODALSAVEBTN");
 	}
 	
@@ -420,6 +456,48 @@ public class AccountsPage extends BasePage {
 		Boolean wait = new WebDriverWait(driver, 60).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//html/body/app-root/sp-loading/div/div/span")));
 		WebElement wait2 = new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(NEWMANUALQUOTEBTN));
 		click(NEWMANUALQUOTEBTN, "NEWMANUALQUOTEBTN");
+	}
+	
+	public void navigateBackToQuotingPage() throws Exception {
+		switchToOriginalWindow();
+		WebElement wait1 = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(NEWMANUALQUOTEBTN));
+		driver.navigate().refresh();
+        Boolean wait2 = new WebDriverWait(driver, 120)
+				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
+	}
+	
+	public void clickCashContractBtn() throws Exception {
+	    System.out.println("Cash Contract button is located and visible");
+	    click(CASHCONTRACTBTN, "CASHCONTRACTBTN");
+	    System.out.println("Clicking on Cash Contract...");
+	}
+	
+	public void clickComplianceCheckBoxes() throws Exception {
+		System.out.println("Clicking on Compliance checkboxes...");
+		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
+				.until(ExpectedConditions.visibilityOf(VERIFIEDCUSTOMERIDCHECKBOX));
+		click(VERIFIEDCUSTOMERIDCHECKBOX, "VERIFIEDCUSTOMERIDCHECKBOX");
+		click(VERBALLYNOTIFIEDCHECKBOX, "VERBALLYNOTIFIEDCHECKBOX");
+		click(GENERATEAGREEMENTBTN, "GENERATEAGREEMENTBTN");
+		Boolean wait1 = new WebDriverWait(driver, 120)
+				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
+		String contractNum = driver.findElement(By.xpath("//body[1]/app-root[1]/ng-component[1]/residential-main-tabs[1]/main[1]/div[2]/div[2]/div[1]/section[1]/residential-quotes[1]/table[1]/tbody[1]/tr[1]/td[2]"))
+				.getText();
+		System.out.println("Cash Contract Generated for Contract#: " + contractNum );
+	}
+	
+	public void clickSendFirstContractBtn() throws Exception {
+		driver.navigate().refresh();
+		scrollPageDownBy500();
+		System.out.println("Sending Contract to email...");
+		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
+				.until(ExpectedConditions.visibilityOf(SENDCONTRACTFIRSTBTN));
+		jse.executeScript("arguments[0].click()", SENDCONTRACTFIRSTBTN);
+		
+		WebElement wait1 = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
+				.until(ExpectedConditions.visibilityOf(OUTFORSIGNATURETXT));
+		String ContractNumber = driver.findElement(By.xpath("//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[2]/agreements-list/table/tbody/tr[1]/td[1]")).getText();
+		System.out.println("Contract Number: " + ContractNumber + " is Out for Signature");
 	}
 
 	//Start of EDDiE Portal quoting activities ------------------------------------------------------------------------>
@@ -570,12 +648,21 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickOnSelectCashPayment() throws Exception {
-		click(SELECTCASHBTN, "SELECTCASHBTN");
-		Boolean wait = new WebDriverWait(driver, 120)
+		String url = driver.getCurrentUrl();
+		System.out.println("Generating Proposal...");
+		System.out.println("Quote Link: " + url);
+		click(SELECTCASHBTN, "SELECTCASHBTN");		
+		Boolean wait1 = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
+		
+		WebElement wait = new WebDriverWait(driver, 120)
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/div[1]/div/div/div[1]/nav/div[2]/div[3]/div/div")));;
 	}
 	
 	public void clickOnSelectLoanPayment() throws Exception {
+		String url = driver.getCurrentUrl();
+		System.out.println("Generating Proposal...");
+		System.out.println("Quote Link: " + url);
 		click(SELECTLOANBTN, "SELECTLOANBTN");
 		Boolean wait = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
@@ -599,6 +686,9 @@ public class AccountsPage extends BasePage {
 	
 	public void clickOnSelectLeasePayment() throws Exception {
 		//click(SELECTLEASEBTN, "SELECTLEASEBTN");
+		String url = driver.getCurrentUrl();
+		System.out.println("Generating Proposal...");
+		System.out.println("Quote Link: " + url);
 		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
 				.until(ExpectedConditions.elementToBeClickable(SELECTLEASEBTN));
 		jse.executeScript("arguments[0].click()", SELECTLEASEBTN);

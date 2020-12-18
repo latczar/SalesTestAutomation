@@ -1,11 +1,11 @@
-Feature: PartnerPortal_E2E_AccountToManualQuoting_Cash_01
+Feature: PartnerPortal_E2E_AccountToManualQuotingWithSigning_Cash_04
 
 #Author: lcaesar@sunpowercorp.com
-#Date Created: 12/05/2020
+#Date Created: 12/15/2020
 #Date Modified: 
 #Last Modified by:
 
-Scenario: TS_01 Partner Portal End to End Account to Manual Quoting Cash
+Scenario: TS_04 Partner Portal End to End Account to Manual Signing Cash
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to SunPower Partner Portal using "Chrome" browser
@@ -17,10 +17,10 @@ And User creates a Residential Customer account
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SPWRTest" and Last Name as "AutoLnvc1214CashPPortal01"
-And User enters his/her Residential Email as "dumdum11990@gmail.com"
+Then User enters his/her Residential First Name as "SPWRTest" and Last Name as "AutoLnvc1219CashSigning30"
+And User enters his/her Residential Email as "dumdum11990+12345@gmail.com"
 And User enters his/her Residential Phone Number as "5555555555"
-Then User enters Residential address as "3841 Marron St, San Diego, CA 92115"
+Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -37,7 +37,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "12/14/2020"
+Then User enters the Shading Measurement Date as "12/19/2020"
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
@@ -56,4 +56,6 @@ When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
 And User will click on the EDDiE Savings button
 And User will click the arrow button to select preferred payment option as Cash
-Then User ends the test scenario
+Then User will switch back to the original window
+And User will click the Cash Contract button and generate agreement
+Then User will click Send Contract

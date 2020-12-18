@@ -3,6 +3,7 @@ package pageObjects.partnerportal.home;
 import java.io.File;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -202,7 +203,7 @@ public class BasePage {
 		js.executeScript("window.scrollBy(0,2000)");
 	}
 	
-	public static void scrollPageDownBy() {
+	public static void scrollPageDownBy500() {
 		System.out.println("Scrolling page down by 500px for viewport...");
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,500)");
@@ -220,6 +221,15 @@ public class BasePage {
 		for(String winHandle : driver.getWindowHandles()) {
 			driver.switchTo().window(winHandle);
 		}
+	}
+	
+	public static void switchToOriginalWindow() {
+		System.out.println("Switching back to original window");
+		//String winHandleBefore1 = driver.getWindowHandle();
+		//driver.switchTo().window(winHandleBefore1);
+	    ArrayList<String> tabs2 = new ArrayList<String> (driver.getWindowHandles());
+	    driver.switchTo().window(tabs2.get(1));
+	    driver.switchTo().window(tabs2.get(0));
 	}
 	
 	public static void takeScreenshot() throws Exception {
