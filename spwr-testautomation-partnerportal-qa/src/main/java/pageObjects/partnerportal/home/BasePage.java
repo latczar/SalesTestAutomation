@@ -223,6 +223,14 @@ public class BasePage {
 		}
 	}
 	
+	public static void switchToGmailWindow() {
+		System.out.println("Switching back to Gmail window");
+	    ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
+	    driver.switchTo().window(tabs3.get(0));
+	    driver.switchTo().window(tabs3.get(1));
+	    driver.switchTo().window(tabs3.get(2));
+	}	
+	
 	public static void switchToOriginalWindow() {
 		System.out.println("Switching back to original window");
 		//String winHandleBefore1 = driver.getWindowHandle();
@@ -232,6 +240,12 @@ public class BasePage {
 	    driver.switchTo().window(tabs2.get(0));
 	}
 	
+	public static void switchToAdobeSignWindow() {
+		System.out.println("Switching to Adobe Sign window");
+	    ArrayList<String> tabs4 = new ArrayList<String> (driver.getWindowHandles());
+	    driver.switchTo().window(tabs4.get(2));
+	}
+	
 	public static void takeScreenshot() throws Exception {
 		TakesScreenshot scrShot = (TakesScreenshot) driver;
 		System.out.println("Taking screenshot...");
@@ -239,5 +253,31 @@ public class BasePage {
 				File destFile = new File (Constant.filePath);
 					FileUtils.copyFile(srcFile, destFile);
 					System.out.println("Screenshot saved!");
+	}
+	
+	public void waitForVisibleElement(WebDriver driver, WebElement element) {
+		try {
+			Thread.sleep(1000);
+			System.out.println("Waiting for element visibility of" + element);
+			WebDriverWait wait = new WebDriverWait(driver, 30);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void clickEnterViaActions() {
+		Actions actions = new Actions(driver);
+		actions.sendKeys(Keys.RETURN);
+	}
+	
+	public static String getTextFromFirstContract() {
+		WebElement wait1 = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/app-root/ng-component/residential-main-tabs/main/h2/span[1]")));
+		String firstContractText = 
+				driver.findElement(By.xpath("//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[2]/agreements-list/table/tbody/tr/td[2]/a/div"))
+						.getText();
+		return firstContractText;
 	}
 }

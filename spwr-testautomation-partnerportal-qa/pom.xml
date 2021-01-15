@@ -76,11 +76,41 @@
 	</dependency>
 	
 	<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
-<dependency>
-    <groupId>ru.yandex.qatools.ashot</groupId>
-    <artifactId>ashot</artifactId>
-    <version>1.5.4</version>
-</dependency>
+	<dependency>
+    	<groupId>ru.yandex.qatools.ashot</groupId>
+    	<artifactId>ashot</artifactId>
+    	<version>1.5.4</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client -->
+	<dependency>
+    	<groupId>com.google.api-client</groupId>
+    	<artifactId>google-api-client</artifactId>
+    	<version>1.31.2</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client -->
+	<dependency>
+    	<groupId>com.google.oauth-client</groupId>
+   	 <artifactId>google-oauth-client</artifactId>
+    	<version>1.31.4</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-gmail -->
+	<dependency>
+    	<groupId>com.google.apis</groupId>
+    	<artifactId>google-api-services-gmail</artifactId>
+    	<version>v1-rev110-1.25.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+	<dependency>
+    	<groupId>javax.mail</groupId>
+    	<artifactId>javax.mail-api</artifactId>
+    	<version>1.6.2</version>
+	</dependency>
+
+
 		        
   </dependencies>  
   

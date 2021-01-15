@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import pageObjects.partnerportal.Accounts.AccountsPage;
 import pageObjects.partnerportal.home.BasePage;
+import utils.Constant;
 
 public class AccountsPageSteps extends BasePage {
 	
@@ -325,5 +326,16 @@ public class AccountsPageSteps extends BasePage {
 	public void user_will_click_the_View_Proposal_button() throws Throwable {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnViewProposalCashBtn();
+	}
+	
+	@Then("User will click on the Contract for Cash and will send it via Email")
+	public void user_will_click_on_the_contract_for_cash_and_will_send_it_via_email() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		Constant.agreementName = BasePage.getTextFromFirstContract();
+		System.out.println("Agreement Name = " + Constant.agreementName);
+		accountsPage.clickOnContractOne();
+		accountsPage.clickOnSendOptionsEmail();
+		accountsPage.clickOnSendProposalBtn();
+		
 	}
 }
