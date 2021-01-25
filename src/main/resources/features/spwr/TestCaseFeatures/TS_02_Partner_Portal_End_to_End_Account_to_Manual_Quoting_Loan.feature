@@ -17,7 +17,7 @@ And User creates a Residential Customer account
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SPWRTest" and Last Name as "tAutomation01TestAM"
+Then User enters his/her Residential First Name as "SPWRTest" and Last Name as "tAutomation01TestAm"
 And User enters his/her Residential Email as "dumdum11990+621123@gmail.com"
 And User enters his/her Residential Phone Number as "5555555555"
 Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
