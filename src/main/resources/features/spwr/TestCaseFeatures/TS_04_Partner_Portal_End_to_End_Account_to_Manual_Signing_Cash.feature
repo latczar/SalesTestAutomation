@@ -17,8 +17,8 @@ And User creates a Residential Customer account
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SPWRTest" and Last Name as "tAutoLat0123TestE2E30"
-And User enters his/her Residential Email as "dumdum11990+16534@gmail.com"
+Then User enters his/her Residential First Name as "SPWRTest" and Last Name as "tAutomation01252021TestAm02"
+And User enters his/her Residential Email as "dumdum11990+4448638@gmail.com"
 And User enters his/her Residential Phone Number as "5555555555"
 Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
 When User saves the new entry
@@ -68,9 +68,9 @@ And User will navigate back to Gmail app
 Then User will click on the SunPower Cash Agreement email to Review and Sign
 
 #QA - Start of Adobe Sign page activities
-When User will click on the start button of the document
-Then User will sign the required fields on the Cash Agreement document
-When User will switch back to the original window
+#When User will click on the start button of the document
+#Then User will sign the required fields on the Cash Agreement document
+#When User will switch back to the original window
 
 #QA - Back to SunPower Quoting page for sending of Contract via Email
 #Then User will click on the Contract for Cash and will send it via Email
@@ -81,7 +81,6 @@ When User will switch back to the original window
 #Then User will click on the SunPower Counter Sign Cash Agreement email to Review and Sign
 
 #QA - Back to SunPower Quoting page for sending of Contract via Email
-Then User will click on the Contract for Cash and will send it via Email
-And User will open the Gmail app
-Then User will click on the Next Steps in Going Solar email to View Proposal
+#Then User will click on the Contract for Cash and will send it via Email
+#And User will open the Gmail app
 Then User ends the test scenario

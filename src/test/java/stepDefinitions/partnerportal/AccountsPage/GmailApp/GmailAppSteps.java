@@ -44,16 +44,16 @@ public class GmailAppSteps extends BasePage {
 	@Then("User will click on the SunPower Cash Agreement email to Review and Sign")
 	public void user_will_click_on_the_sun_power_cash_agreement_email_to_review_and_sign() throws Exception {
 		GmailAppPage gmailAppPage = new GmailAppPage();
-		gmailAppPage.retryingFindClickEmail("");
-		gmailAppPage.retryingFindClickViewGetReviewAndSign(GmailAppPage.SPWRESIGNTESTEMAIL, GmailAppPage.REVIEWANDSIGNBTN);
+		gmailAppPage.retryingFindClickEmail("Your Paperwork is Ready to Sign in mySunPower");
+		gmailAppPage.retryingFindClickViewGetReviewAndSign(GmailAppPage.THANKSFORCHOOSINGTXT, GmailAppPage.SIGNAGREEMENTBTN);
 		
 	}
 	
 	@Then("User will click on the SunPower Counter Sign Cash Agreement email to Review and Sign")
 	public void user_will_click_on_the_sun_power_counter_sign_cash_agreement_email_to_review_and_sign() throws Exception {
 		GmailAppPage gmailAppPage = new GmailAppPage();
-		gmailAppPage.retryingFindClickEmail(Constant.agreementName);
-		gmailAppPage.retryingFindClickViewGetReviewAndSign(GmailAppPage.SPWRESIGNTESTEMAIL, GmailAppPage.REVIEWANDSIGNBTN);
+		gmailAppPage.retryingFindClickEmail("Your Paperwork is Ready to Sign in mySunPower");
+		gmailAppPage.retryingFindClickViewGetReviewAndSign(GmailAppPage.THANKSFORCHOOSINGTXT, GmailAppPage.SIGNAGREEMENTBTN);
 		
 	}
 

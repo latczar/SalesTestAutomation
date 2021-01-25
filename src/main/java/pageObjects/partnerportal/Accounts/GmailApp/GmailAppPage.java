@@ -59,15 +59,14 @@ public class GmailAppPage extends BasePage {
 	@FindBy(how=How.XPATH, xpath="//tbody/tr[4]/td[1]/div[1]/a[1]/img[1]")
 	public static WebElement GETSTARTEDBTN;
 	
-	/*@FindBy(how=How.XPATH, xpath="//body[1]/div[7]/div[3]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]"
-			+ "/div[1]/div[1]/div[2]/div[1]/table[1]/tr[1]/td[1]/div[2]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]"
-			+ "/div[2]/div[1]/div[2]/div[3]/div[3]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/table[2]/tbody[1]/tr[1]/td[1]/table[1]"
-			+ "/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/a[1]/img[1]")
-	public static WebElement VIEWPROPOSALBTN;
-	*/
-	
 	@FindBy(how=How.XPATH, xpath="//*[@id=':mi']/div/table/tbody/tr/td/table[2]/tbody/tr/td/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/div/a/img")
 	public static WebElement VIEWPROPOSALBTN;
+	
+	@FindBy(how=How.XPATH, xpath="//tbody/tr[2]/td[1]/div[1]/div[3]/span[1]")
+	public static WebElement THANKSFORCHOOSINGTXT;
+	
+	@FindBy(how=How.XPATH, xpath="//tbody/tr[3]/td[1]/div[1]/a[1]/img[1]")
+	public static WebElement SIGNAGREEMENTBTN;
 	
 	public GmailAppPage() {
 		//this.driver = driver;

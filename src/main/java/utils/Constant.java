@@ -18,8 +18,8 @@ public class Constant {
 		public static final String GmailApp = "http://mail.google.com";
 		public static final String GmailInbox = "https://mail.google.com/mail/u/0/#inbox";
 		public static final String StackOverflowApp = "https://stackoverflow.com/";
-		public static final String UsernameGmailApp = "joeydeleeon";
-		public static final String PasswordGmailApp = "magandaako123";
+		public static final String UsernameGmailApp = "dumdum11990@gmail.com";
+		public static final String PasswordGmailApp = "cizar1996";
 		public static final String PartnerUsernameGmailApp = "qatestingspwr@gmail.com";
 		public static final String PartnerPasswordGmailApp = "Solar123";
 		public static String agreementName = "";
