@@ -40,15 +40,33 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	@FindBy(how = How.XPATH, using = "//body/div[2]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[4]")
 	WebElement PHONENUMSKIPBTN;
 	
+	@FindBy(how = How.XPATH, using = "//html/body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[2]")
+	WebElement SIGNAGREEMENTTXT;
+	
+	@FindBy(how = How.XPATH, using = "//html/body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[6]/div/div[2]/button")
+	WebElement CASHAGREEMENTSIGNBTN;
+	
 	public MySunPowerLoginPage() {
 		//this.driver = driver;
 		
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void EnterAndConfirmPassword(String password) throws Exception {
-		
-		
+	public void enterAndConfirmPassword(String password) throws Exception {
+		enterText(MYSUNPOWERLOGINPASSWORDINPUT, "MYSUNPOWERLOGINPASSWORDINPUT", password);
+		enterText(CONFIRMPASSWORDINPUT, "CONFIRMPASSWORDINPUT", password);
 	}
-
+	
+	public void clickMySunPowerSubmitBtn() throws Exception {
+		click(SUBMITBTN, "SUBMITBTN");
+	}
+	
+	public void clickSkipPhoneNumBtn() throws Exception {
+		click(PHONENUMSKIPBTN, "PHONENUMSKIPBTN");
+	}
+	
+	public void signAgreementBtn() throws Exception {
+		waitForVisibleElement(driver, SIGNAGREEMENTTXT);
+		click(CASHAGREEMENTSIGNBTN, "CASHAGREEMENTSIGNBTN");
+	}
 }
