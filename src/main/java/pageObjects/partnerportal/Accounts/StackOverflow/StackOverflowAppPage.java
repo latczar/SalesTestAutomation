@@ -43,7 +43,7 @@ public class StackOverflowAppPage extends BasePage {
 	
 	public void navigateToStackOverflowApp() {
 		jse.executeScript("window.open();");
-		switchToGmailWindow();
+		switchToThirdWindow();
 		String baseUrl = Constant.StackOverflowApp;
 		driver.get(baseUrl);
 		}

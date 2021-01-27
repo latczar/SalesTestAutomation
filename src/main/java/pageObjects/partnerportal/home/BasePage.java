@@ -223,8 +223,8 @@ public class BasePage {
 		}
 	}
 	
-	public static void switchToGmailWindow() {
-		System.out.println("Switching back to Gmail window");
+	public static void switchToThirdWindow() {
+		System.out.println("Switching back to third window");
 	    ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
 	    driver.switchTo().window(tabs3.get(0));
 	    driver.switchTo().window(tabs3.get(1));
