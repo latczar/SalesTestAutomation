@@ -53,7 +53,11 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	}
 	
 	public void enterAndConfirmPassword(String password) throws Exception {
+		click(MYSUNPOWERLOGINPASSWORDINPUT,"MYSUNPOWERLOGINPASSWORDINPUT");
+		Thread.sleep(1400);
 		enterText(MYSUNPOWERLOGINPASSWORDINPUT, "MYSUNPOWERLOGINPASSWORDINPUT", password);
+		click(CONFIRMPASSWORDINPUT,"CONFIRMPASSWORDINPUT");
+		Thread.sleep(1400);
 		enterText(CONFIRMPASSWORDINPUT, "CONFIRMPASSWORDINPUT", password);
 	}
 	
