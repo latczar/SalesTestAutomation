@@ -53,6 +53,7 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	}
 	
 	public void enterAndConfirmPassword(String password) throws Exception {
+		waitForVisibleElement(driver, MYSUNPOWERLOGINPASSWORDINPUT);
 		click(MYSUNPOWERLOGINPASSWORDINPUT,"MYSUNPOWERLOGINPASSWORDINPUT");
 		Thread.sleep(1400);
 		enterText(MYSUNPOWERLOGINPASSWORDINPUT, "MYSUNPOWERLOGINPASSWORDINPUT", password);
@@ -62,10 +63,12 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	}
 	
 	public void clickMySunPowerSubmitBtn() throws Exception {
+		waitForVisibleElement(driver, SUBMITBTN);
 		click(SUBMITBTN, "SUBMITBTN");
 	}
 	
 	public void clickSkipPhoneNumBtn() throws Exception {
+		waitForVisibleElement(driver, PHONENUMSKIPBTN);
 		click(PHONENUMSKIPBTN, "PHONENUMSKIPBTN");
 	}
 	

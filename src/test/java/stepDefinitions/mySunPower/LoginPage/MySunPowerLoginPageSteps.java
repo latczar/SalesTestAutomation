@@ -12,7 +12,7 @@ public class MySunPowerLoginPageSteps extends BasePage {
 	@Then("User enters a password and confirms it")
 	public void user_enters_a_password_and_confirms_it() throws Exception {
 		MySunPowerLoginPage mysunpowerloginpage = new MySunPowerLoginPage();
-		switchToThirdWindow();
+		switchHandlesToNewWindow();
 		mysunpowerloginpage.enterAndConfirmPassword("Solar123");
 		mysunpowerloginpage.clickMySunPowerSubmitBtn();
 	}
