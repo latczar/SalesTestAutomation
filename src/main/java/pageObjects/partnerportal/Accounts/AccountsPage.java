@@ -485,15 +485,7 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickCashContractBtn() throws Exception {
-		Thread.sleep(6900);
-		driver.navigate().refresh();
-		Boolean wait = new WebDriverWait(driver, 120)
-				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
-		driver.navigate().refresh();
-		Thread.sleep(6900);
-		driver.navigate().refresh();
-		Boolean wait1 = new WebDriverWait(driver, 120)
-				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
+		sleepRefreshPage();
 		waitForVisibleElement(driver, CASHCONTRACTBTN);
 	    click(CASHCONTRACTBTN, "CASHCONTRACTBTN");
 	    System.out.println("Clicking on Cash Contract...");

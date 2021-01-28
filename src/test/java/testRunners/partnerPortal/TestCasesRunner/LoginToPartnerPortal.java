@@ -24,7 +24,7 @@ import utils.FunctionLibrary;
 				},
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
-		dryRun = false,
+		dryRun = true,
 		plugin = {"pretty", /*"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"*/},
 		monochrome = true
 		)

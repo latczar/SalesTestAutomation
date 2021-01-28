@@ -279,4 +279,16 @@ public class BasePage {
 						.getText();
 		return firstContractText;
 	}
+	
+	public void sleepRefreshPage() throws Exception {
+		Thread.sleep(7000);
+		driver.navigate().refresh();
+		Boolean wait = new WebDriverWait(driver, 120)
+				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
+		driver.navigate().refresh();
+		Thread.sleep(7000);
+		driver.navigate().refresh();
+		Boolean wait1 = new WebDriverWait(driver, 120)
+				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
+	}
 }

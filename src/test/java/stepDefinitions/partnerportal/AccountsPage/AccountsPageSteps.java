@@ -336,6 +336,18 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickOnContractOne();
 		accountsPage.clickOnSendOptionsEmail();
 		accountsPage.clickOnSendProposalBtn();
-		
+	}
+	
+	@And("User will refresh the page")
+	public void user_will_refresh_the_page() throws Exception {
+		sleepRefreshPage();
+	}
+	
+	@Then("User will click the Contract for Loan and will send it via Email")
+	public void user_will_click_on_the_contract_for_loan_and_will_send_it_via_email() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnContractOne();
+		accountsPage.clickOnSendOptionsEmail();
+		accountsPage.clickOnSendProposalBtn();
 	}
 }
