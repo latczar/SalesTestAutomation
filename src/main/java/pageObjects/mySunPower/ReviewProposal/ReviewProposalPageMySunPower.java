@@ -10,7 +10,7 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import pageObjects.partnerportal.home.BasePage;
 
-public class MySunPowerReviewProposalPage extends BasePage{
+public class ReviewProposalPageMySunPower extends BasePage{
 	
 JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
@@ -26,16 +26,27 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'NEXT: CREATE ACCOUNT')]")
 	WebElement NEXTCREATEACCTBTN;
 	
+	@FindBy(how = How.XPATH, using = "//html/body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[2]")
+	WebElement REVIEWPROPOSALSIGNEDTXT;
+	
 	@FindBy(how = How.XPATH, using = "//body/div[2]/main[1]/div[1]/div[2]/div[2]/div[2]/div[1]/button[1]")
 	public static WebElement MYSUNPOWERCREATEACCTBTN;
 	
 	
-	public MySunPowerReviewProposalPage() {
+	public ReviewProposalPageMySunPower() {
 		//this.driver = driver;
 		
 		PageFactory.initElements(driver, this);
 	}
 	
+	public void clickReviewAndSignProposalBtn() throws Exception {
+		waitForVisibleElement(driver, NEXTREVIEWANDSIGNPROPOSALBTN);
+		click(NEXTREVIEWANDSIGNPROPOSALBTN, "NEXTREVIEWANDSIGNPROPOSALBTN");
+		
+	}
 	
-
+	public void clickCreateAccountBtn() throws Exception {
+		waitForVisibleElement(driver, REVIEWPROPOSALSIGNEDTXT);
+		click(MYSUNPOWERCREATEACCTBTN, "MYSUNPOWERCREATEACCTBTN");
+	}
 }

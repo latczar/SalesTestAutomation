@@ -18,12 +18,21 @@ import pageObjects.partnerportal.home.BasePage;
 import utils.Constant;
 import utils.FunctionLibrary;
 
-public class MySunPowerLoginPage extends BasePage {
+public class LoginPageMySunPower extends BasePage {
 	
 JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
 	String pageName = this.getClass().getSimpleName();
 	// Using FindBy for locating elements
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='okta-signin-username']")
+	WebElement MYSUNPOWERUSERNAMEINPUTFIELD;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='okta-signin-password']")
+	WebElement MYSUNPOWERPASSWORDINPUTFIELD;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='okta-signin-submit']")
+	WebElement SIGNINBTN;
 	
 	@FindBy(how = How.XPATH, using = "//body/div[2]/main[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/form[1]/div[2]/div[1]/input[1]")
 	WebElement MYSUNPOWERLOGINPASSWORDINPUT;
@@ -46,7 +55,7 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	@FindBy(how = How.XPATH, using = "//html/body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[6]/div/div[2]/button")
 	WebElement CASHAGREEMENTSIGNBTN;
 	
-	public MySunPowerLoginPage() {
+	public LoginPageMySunPower() {
 		//this.driver = driver;
 		
 		PageFactory.initElements(driver, this);
@@ -75,5 +84,21 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	public void signAgreementBtn() throws Exception {
 		waitForVisibleElement(driver, SIGNAGREEMENTTXT);
 		click(CASHAGREEMENTSIGNBTN, "CASHAGREEMENTSIGNBTN");
+	}
+	
+	public void enterUsername(String email) throws Exception {
+		waitForVisibleElement(driver, MYSUNPOWERUSERNAMEINPUTFIELD);
+		click(MYSUNPOWERUSERNAMEINPUTFIELD, "MYSUNPOWERUSERNAMEINPUTFIELD");
+		Thread.sleep(1400);
+	}
+	
+	public void enterPassword(String password) throws Exception {
+		waitForVisibleElement(driver, MYSUNPOWERPASSWORDINPUTFIELD);
+		click(MYSUNPOWERPASSWORDINPUTFIELD, "MYSUNPOWERPASSWORDINPUTFIELD");
+		Thread.sleep(1400);
+	}
+	
+	public void clickSignInBtn() throws Exception {
+		click(SIGNINBTN, "SIGNINBTN");
 	}
 }

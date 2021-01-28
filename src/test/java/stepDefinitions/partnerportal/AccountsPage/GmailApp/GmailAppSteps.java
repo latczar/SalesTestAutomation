@@ -4,7 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import pageObjects.mySunPower.ReviewProposal.MySunPowerReviewProposalPage;
+import pageObjects.mySunPower.ReviewProposal.ReviewProposalPageMySunPower;
 import pageObjects.partnerportal.Accounts.GmailApp.GmailAppPage;
 import pageObjects.partnerportal.home.BasePage;
 import utils.Constant;
@@ -78,6 +78,6 @@ public class GmailAppSteps extends BasePage {
 		Thread.sleep(3000);
 		gmailAppPage.retryingFindClickViewGetReviewAndSign(GmailAppPage.VIEWPROPOSALBTN, GmailAppPage.VIEWPROPOSALBTN);
 		Thread.sleep(5000);
-		waitForVisibleElement(driver, MySunPowerReviewProposalPage.MYSUNPOWERCREATEACCTBTN);
+		waitForVisibleElement(driver, ReviewProposalPageMySunPower.MYSUNPOWERCREATEACCTBTN);
 	}
 }

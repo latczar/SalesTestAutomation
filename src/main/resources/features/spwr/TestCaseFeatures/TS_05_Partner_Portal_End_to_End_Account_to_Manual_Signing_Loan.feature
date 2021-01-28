@@ -70,8 +70,11 @@ And User will open the StackOverflow app
 And User will click the Log in button
 And User will enter username and password credentials for the User
 And User will navigate back to Gmail app
-Then User will click on the SunPower Cash Agreement email to Review and Sign
+Then User will click on the Next Steps in Going Solar email to View Proposal
 
 #QA - On the sds mySunPower page to Sign Proposal
-#When User will click the Next 
+And User will click on the Review & Sign Proposal
+Then User will click on the MySunPower Create Account button
+Then User enters a password and confirms it
+Then User clicks the phone skip button
 Then User ends the test scenario
