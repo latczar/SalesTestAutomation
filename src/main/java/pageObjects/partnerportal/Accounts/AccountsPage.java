@@ -491,7 +491,7 @@ public class AccountsPage extends BasePage {
 	    System.out.println("Clicking on Cash Contract...");
 	}
 	
-	public void clickComplianceCheckBoxes() throws Exception {
+	public void clickComplianceCheckBoxesforCash() throws Exception {
 		System.out.println("Clicking on Compliance checkboxes...");
 		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
 				.until(ExpectedConditions.visibilityOf(VERIFIEDCUSTOMERIDCHECKBOX));
@@ -504,6 +504,17 @@ public class AccountsPage extends BasePage {
 		String contractNum = driver.findElement(By.xpath("//body[1]/app-root[1]/ng-component[1]/residential-main-tabs[1]/main[1]/div[2]/div[2]/div[1]/section[1]/residential-quotes[1]/table[1]/tbody[1]/tr[1]/td[2]"))
 				.getText();
 		System.out.println("Cash Contract Generated for Contract#: " + contractNum );
+	}
+	
+	public void clickComplianceCheckBoxesforLoan() throws Exception {
+		System.out.println("Clicking on Compliance checkboxes...");
+		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
+				.until(ExpectedConditions.visibilityOf(VERIFIEDCUSTOMERIDCHECKBOX));
+		click(VERIFIEDCUSTOMERIDCHECKBOX, "VERIFIEDCUSTOMERIDCHECKBOX");
+		click(VERBALLYNOTIFIEDCHECKBOX, "VERBALLYNOTIFIEDCHECKBOX");
+		Boolean wait1 = new WebDriverWait(driver, 120)
+				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
+		Thread.sleep(1900);
 	}
 	
 	public void clickSendFirstContractBtn() throws Exception {

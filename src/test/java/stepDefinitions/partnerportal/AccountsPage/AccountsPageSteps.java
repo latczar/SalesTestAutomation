@@ -137,7 +137,7 @@ public class AccountsPageSteps extends BasePage {
 	public void user_will_click_the_cash_contract_button_and_generate_agreement() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickCashContractBtn();
-		accountsPage.clickComplianceCheckBoxes();
+		accountsPage.clickComplianceCheckBoxesforCash();
 	}
 	
 	@Then("User will click Send Contract")
@@ -348,6 +348,7 @@ public class AccountsPageSteps extends BasePage {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnContractOne();
 		accountsPage.clickOnSendOptionsEmail();
+		accountsPage.clickComplianceCheckBoxesforLoan();
 		accountsPage.clickOnSendProposalBtn();
 	}
 }
