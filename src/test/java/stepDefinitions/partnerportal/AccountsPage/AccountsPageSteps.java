@@ -349,6 +349,6 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickOnContractOne();
 		accountsPage.clickOnSendOptionsEmail();
 		accountsPage.clickComplianceCheckBoxesforLoan();
-		accountsPage.clickOnSendProposalBtn();
+		accountsPage.clickOnSendProposalsToMySunPowerBtn();
 	}
 }
