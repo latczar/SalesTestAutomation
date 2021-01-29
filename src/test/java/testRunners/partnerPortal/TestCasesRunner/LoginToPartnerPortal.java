@@ -1,15 +1,9 @@
 package testRunners.partnerPortal.TestCasesRunner;
 	
 import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
-import org.testng.annotations.Test;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
-import pageObjects.partnerportal.home.BasePage;
-import utils.Constant;
-import utils.FunctionLibrary;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -24,7 +18,7 @@ import utils.FunctionLibrary;
 				},
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
-		dryRun = false,
+		dryRun = true,
 		plugin = {"pretty", /*"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"*/},
 		monochrome = true
 		)
