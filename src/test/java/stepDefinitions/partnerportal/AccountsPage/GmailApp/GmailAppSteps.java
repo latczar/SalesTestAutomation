@@ -20,9 +20,9 @@ public class GmailAppSteps extends BasePage {
 	@Then("User will enter username and password credentials for the User")
 	public void user_will_enter_username_and_password_credentials_for_the_User() throws Exception {
 		GmailAppPage gmailAppPage = new GmailAppPage();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		gmailAppPage.gmailInputEmail();
-		Thread.sleep(6000);
+		Thread.sleep(3000);
 		gmailAppPage.gmailInputPassword();
 
 	}

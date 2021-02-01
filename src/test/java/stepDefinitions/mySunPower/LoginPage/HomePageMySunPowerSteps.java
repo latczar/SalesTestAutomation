@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.mySunPower.ReviewProposal.ReviewProposalPageMySunPower;
 import pageObjects.mySunPower.Login.HomePageMySunPower;
+import pageObjects.partnerportal.HomePage.HomePage;
 import pageObjects.partnerportal.home.BasePage;
 
 public class HomePageMySunPowerSteps extends BasePage{
@@ -81,4 +82,59 @@ public class HomePageMySunPowerSteps extends BasePage{
 		HomePageMySunPower homepage = new HomePageMySunPower();
 		homepage.clickSolarAddressNextBtn();
 	}
+	
+	@And("User will enter thw date of birth as {string}")
+	public void user_will_enter_thw_date_of_birth_as(String date) throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.enterDateOfBirth(date);
+	}
+	
+	@Then("User will enter Social Security Number as {string}")
+	public void user_will_enter_social_security_number_as(String socialNumber) throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.enterSocialSecurityNumber(socialNumber);
+	}
+	
+	@When("User adds the Individual Annual Income as {string}")
+	public void user_adds_the_individual_annual_income_as(String individualIncome) throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.enterIndividualAnnualIncome(individualIncome);
+	}
+	
+	@When("Household Annual Income as {string}")
+	public void household_annual_income_as(String houseHoldIncome) throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.enterHouseholdIncome(houseHoldIncome);
+	}
+	
+	@When("Monthly Mortgage Payment as {string}")
+	public void monthly_mortgage_payment_as(String monthlyMortgage) throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.enterMortgagePayment(monthlyMortgage);
+	}
+	
+	@When("the User is Retired")
+	public void the_user_is_retired() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.clickRetiredCheckbox();
+	}
+	
+	@Then("User will click Next on the Credit Approval page")
+	public void user_will_click_next_on_the_credit_approval_page() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.clickNextBtn();
+	}
+	
+	@Then("User agrees to the terms")
+	public void user_agrees_to_the_terms() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.clickTermsAbove();
+	}
+	
+	@Then("User clicks Submit on the Credit Approval page")
+	public void user_clicks_submit_on_the_credit_approval_page() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.clickCreditApprovalPageSubmitBtn();
+	}
+	
 }

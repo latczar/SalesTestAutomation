@@ -45,7 +45,7 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	}
 	
 	public void clickCreateAccountBtn() throws Exception {
-		waitForVisibleElement(driver, REVIEWPROPOSALSIGNEDTXT);
+		waitForVisibleElement(driver, MYSUNPOWERCREATEACCTBTN);
 		click(MYSUNPOWERCREATEACCTBTN, "MYSUNPOWERCREATEACCTBTN");
 	}
 }

@@ -17,7 +17,7 @@ And User creates a Residential Customer account
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SpwrTest" and Last Name as "tAutomation02012021Test02"
+Then User enters his/her Residential First Name as "SpwrTest" and Last Name as "tAutomation02012021Test06"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555555555"
 Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
@@ -74,6 +74,7 @@ Then User will click on the Next Steps in Going Solar email to View Proposal
 
 #QA - On the SDS MYSunPower page to Sign Proposal
 And User will click on the Review & Sign Proposal
+#Signing of proposal goes here
 Then User will click on the MySunPower Create Account button
 Then User enters a password and confirms it
 Then User clicks the phone skip button
@@ -89,4 +90,15 @@ When User enters "20" years living at this address
 Then User will choose Yes for own or intend to own this home
 And User will select Yes for primary residence
 And User will click the next button on the Solar Address page
+
+#QA - On the SDS MySunPower Credit Approval page information
+And User will enter thw date of birth as "01/01/1980"
+Then User will enter Social Security Number as "555555555"
+When User adds the Individual Annual Income as "15000000"
+And Household Annual Income as "15000000"
+And Monthly Mortgage Payment as "10000"
+And the User is Retired
+Then User will click Next on the Credit Approval page
+And User agrees to the terms
+Then User clicks Submit on the Credit Approval page
 Then User ends the test scenario

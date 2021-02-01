@@ -406,7 +406,7 @@ public class AccountsPage extends BasePage {
 	public void inputNewAddress(String address) throws Exception {
 		scrollPageDown();
 		enterText(ADDRESSTXTBOX, "ADDRESSTXTBOX", address);
-		WebElement element = new WebDriverWait(driver, 12).until(ExpectedConditions.elementToBeClickable(AUTOCOMPLETEADDRESSTABLE));
+		WebElement element = new WebDriverWait(driver, 12).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(AUTOCOMPLETEADDRESSTABLE));
 		AUTOCOMPLETEADDRESSTABLE.click();
 	}
 	
