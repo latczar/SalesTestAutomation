@@ -1,9 +1,7 @@
 package utils;
 
-import java.util.Collection;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.WebDriver;
 
 public class Constant {
 			

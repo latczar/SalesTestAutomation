@@ -1,12 +1,7 @@
 package utils;
 
-import java.io.File;
-import java.util.Properties;
 import java.util.Random;
-import utils.Constant;
-
 import org.apache.commons.lang.RandomStringUtils;
-import org.testng.annotations.Test;
 
 public class FunctionLibrary {
 	
