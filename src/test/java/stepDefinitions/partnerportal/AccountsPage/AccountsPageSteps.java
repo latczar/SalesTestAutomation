@@ -1,6 +1,5 @@
 package stepDefinitions.partnerportal.AccountsPage;
 
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -39,11 +38,13 @@ public class AccountsPageSteps extends BasePage {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.inputNewResidentialCustomerName(firstName, lastName);
 	}
-
-	@Then("^User enters his/her Residential Email as \"([^\"]*)\"$")
-	public void user_enters_his_her_Residential_Email_as(String email) throws Exception {
+	
+	@Then("User enters his\\/her Residential Email as {string} {string}")
+	public void user_enters_his_her_residential_email_as(String email, String randNum) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.inputNewEmail(email);
+		accountsPage.inputRandomDigits(randNum);
+		
 	}
 
 	@Then("^User enters his/her Residential Phone Number as \"([^\"]*)\"$")

@@ -259,7 +259,7 @@ public class BasePage {
 		try {
 			Thread.sleep(1000);
 			System.out.println("Waiting for element visibility of" + element);
-			WebDriverWait wait = new WebDriverWait(driver, 80);
+			WebDriverWait wait = new WebDriverWait(driver, 180);
 			wait.until(ExpectedConditions.visibilityOf(element));
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {

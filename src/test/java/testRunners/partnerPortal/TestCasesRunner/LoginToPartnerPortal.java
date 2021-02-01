@@ -18,7 +18,7 @@ import io.cucumber.junit.CucumberOptions;
 				},
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
-		dryRun = true,
+		dryRun = false,
 		plugin = {"pretty", /*"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"*/},
 		monochrome = true
 		)

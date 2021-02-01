@@ -21,7 +21,7 @@ public class FunctionLibrary {
 	
 	public static String generateContactNumber() {
 		String mobile = "" ;
-		int suffix = generateRandomDigits(10);
+		int suffix = generateRandomDigits(6);
 	    mobile = "" + suffix;
 		return mobile;
 	}

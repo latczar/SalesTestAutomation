@@ -1,23 +1,16 @@
 package pageObjects.partnerportal.Accounts;
 
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.Test;
 
 import pageObjects.partnerportal.home.BasePage;
-import utils.Constant;
 import utils.FunctionLibrary;
 
 public class AccountsPage extends BasePage {
@@ -403,6 +396,11 @@ public class AccountsPage extends BasePage {
 	
 	public void inputNewEmail(String email) throws Exception {
 		enterText(EMAILTXTBOX, "EMAILTXTBOX", email);
+	}
+	
+	public void inputRandomDigits(String randNum) throws Exception {
+		randNum = FunctionLibrary.generateContactNumber() + "@gmail.com";
+		enterText(EMAILTXTBOX, "EMAILTXTBOX", randNum);
 	}
 	
 	public void inputNewAddress(String address) throws Exception {
