@@ -60,5 +60,11 @@ public class LoginPage extends BasePage {
 		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATPartnerPortalUser);
 		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATPartnerPortalPass);
 		click(LOGINBTN, "LOGINBTN");
+	}
+	
+	public void loginAsNDPartnerUAT(String username, String password) throws Exception {
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.NDUATPartnerPortalUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.NDUATPartnerPortalPass);
+		click(LOGINBTN, "LOGINBTN");
 	}	
 }

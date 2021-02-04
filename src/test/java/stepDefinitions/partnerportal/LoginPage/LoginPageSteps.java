@@ -15,10 +15,21 @@ public class LoginPageSteps {
 		BasePage.initialize(browser, Constant.qaPartnerPortal);
 	}
 	
+	@Given("^User navigates to SunPower UAT Partner Portal using \"([^\"]*)\" browser$")
+	public void user_navigates_to_SunPower_Uat_Partner_Portal_using_browser(String browser) throws Exception {
+		BasePage.initialize(browser, Constant.UATPartnerPortal);
+	}
+	
 	@When("^User logs in as a partner$")
 	public void user_logs_in_as_a_partner() throws Exception {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginAsPartnerQA(Constant.qaPartnerPortalUser, Constant.qaPartnerPortalPass);
+	}
+	
+	@When("User logs in at UAT as ND")
+	public void user_logs_in_at_uat_as_nd() throws Exception {
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginAsNDPartnerUAT(Constant.NDUATPartnerPortalUser, Constant.NDUATPartnerPortalPass);
 	}
 	
 	/*always include RunListEndFlag for end of test scenarios*/

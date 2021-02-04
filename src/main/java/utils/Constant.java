@@ -11,6 +11,8 @@ public class Constant {
 		public static final String DownloadPath = System.getProperty("user.home") + "\\Downloads\\";
 		public static final String qaPartnerPortalUser = "tpsqa.test@tpsgabisolar.com.qa";
 		public static final String qaPartnerPortalPass = "Solar12347";
+		public static final String NDUATPartnerPortalUser = "tpsqa.test@tpsgabisolar.com.uat";
+		public static final String NDUATPartnerPortalPass = "P5v4vk394SsnsP";
 		public static final String UATPartnerPortalUser = "bad.pritt@gabisolar.com.uat";
 		public static final String UATPartnerPortalPass = "DgQEhz2J6Q";
 		public static final String GmailApp = "http://mail.google.com";

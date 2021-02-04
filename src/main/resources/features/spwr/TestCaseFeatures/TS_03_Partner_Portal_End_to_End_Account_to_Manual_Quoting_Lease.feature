@@ -8,8 +8,8 @@ Feature: PartnerPortal_E2E_AccountToManualQuoting_Lease_03
 Scenario: TS_03 Partner Portal End to End Account to Manual Quoting Lease
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to SunPower Partner Portal using "Chrome" browser
-When User logs in as a partner
+Given User navigates to SunPower UAT Partner Portal using "Chrome" browser
+When User logs in at UAT as ND
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -17,7 +17,7 @@ And User creates a Residential Customer account
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SpwrTest" and Last Name as "tAutomation02012021Test02"
+Then User enters his/her Residential First Name as "tAutomation" and Last Name as "02012021Test05"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555555555"
 Then User enters Residential address as "17723 W Banff Ln, Surprise, AZ 85388"
