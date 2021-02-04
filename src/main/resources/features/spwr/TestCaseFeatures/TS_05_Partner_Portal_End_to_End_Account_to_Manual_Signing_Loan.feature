@@ -17,7 +17,7 @@ And User creates a Residential Customer account
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SpwrTest" and Last Name as "tAutomation02012021Test06"
+Then User enters his/her Residential First Name as "SpwrTest" and Last Name as "tAutomation02042021Test02"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555555555"
 Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
@@ -30,14 +30,14 @@ And User edits the Usage Input values
 Then Electric Rate and Energy Usage modal is displayed
 And User sets the value for Current Electric Rate
 And Sets the value for Proposed Electric Rate
-And Sets Total Annual Bill to "400"
+And Sets Total Annual Bill to "4000"
 Then User saves the values inputted in the Electric Rate and Energy Usage modal
 When User clicks the Quotes tab
 And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "02/01/2021"
+Then User enters the Shading Measurement Date as "02/04/2021"
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"

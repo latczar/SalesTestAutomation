@@ -149,43 +149,49 @@ public class AccountsPageSteps extends BasePage {
 	
 	//Start of EDDiE portal Design page steps
 	@When("^the EDDiE portal Design page is displayed$")
-	public void the_EDDiE_portal_Design_page_is_displayed() throws Throwable {
+	public void the_EDDiE_portal_Design_page_is_displayed() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.isEDDiEPortalPageDisplayed();
 	}
 	
+	@And("User enters the module type as {string}")
+	public void user_enters_the_module_type_as(String moduleType) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickUserInputModuleTypeBtn(moduleType);
+	}
+	
 	@Then("^User enters the Shading Measurement Date as \"([^\"]*)\"$")
-	public void user_enters_the_Shading_Measurement_Date_as(String shadingDate) throws Throwable {
+	public void user_enters_the_Shading_Measurement_Date_as(String shadingDate) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterShadingDate(shadingDate);
 	}
-
+	
 	@Then("^clicks on the New Roof button$")
-	public void clicks_on_the_New_Roof_button() throws Throwable {
+	public void clicks_on_the_New_Roof_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickNewRoofBtn();
 	}
 
 	@Then("^New Roof modal is displayed$")
-	public void new_Roof_modal_is_displayed() throws Throwable {
+	public void new_Roof_modal_is_displayed() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.isNewRoofModalDisplayed();
 	}
 
 	@Then("^User enters a value for Pitch as \"([^\"]*)\"$")
-	public void user_enters_a_value_for_Pitch_as(String pitchValue) throws Throwable {
+	public void user_enters_a_value_for_Pitch_as(String pitchValue) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterPitch(pitchValue);
 	}
 
 	@Then("^User enters a value for Azimuth as \"([^\"]*)\"$")
-	public void user_enters_a_value_for_Azimuth_as(String azimuthValue) throws Throwable {
+	public void user_enters_a_value_for_Azimuth_as(String azimuthValue) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterAzimuth(azimuthValue);
 	}
 
 	@Then("^User enters a value for Module Count as \"([^\"]*)\"$")
-	public void user_enters_a_value_for_Module_Count_as(String moduleCountValue) throws Throwable {
+	public void user_enters_a_value_for_Module_Count_as(String moduleCountValue) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterModuleCount(moduleCountValue);
 	}
@@ -201,19 +207,19 @@ public class AccountsPageSteps extends BasePage {
 	}
 
 	@Then("^User saves the changes$")
-	public void user_saves_the_changes() throws Throwable {
+	public void user_saves_the_changes() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickNewRoofSaveChangesBtn();
 	}
 
 	@When("^User clicks the Quote Settings button$")
-	public void user_clicks_the_Quote_Settings_button() throws Throwable {
+	public void user_clicks_the_Quote_Settings_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickQuoteSettingsBtn();
 	}
 
 	@Then("^the Quote Settings modal is displayed$")
-	public void the_Quote_Settings_modal_is_displayed() throws Throwable {
+	public void the_Quote_Settings_modal_is_displayed() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.isQuoteSettingsModalDisplayed();
 
@@ -227,89 +233,89 @@ public class AccountsPageSteps extends BasePage {
 	}
 
 	@Then("^User enters \"([^\"]*)\" in the Price Per Watt tab for Cash option$")
-	public void user_enters_in_the_Price_Per_Watt_tab_for_Cash_option(String cashPricePerWatt) throws Throwable {
+	public void user_enters_in_the_Price_Per_Watt_tab_for_Cash_option(String cashPricePerWatt) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterCashPricePerWattValue(cashPricePerWatt);
 	}
 
 	@Then("^User checks the show Lease option$")
-	public void user_checks_the_show_Lease_option() throws Throwable {
+	public void user_checks_the_show_Lease_option() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickLeaseOptionTab();
 		accountsPage.clickCheckboxLeaseLoanShowOption();
 	}
 
 	@Then("^User enters \"([^\"]*)\" in the Price Per Watt tab for Lease option$")
-	public void user_enters_in_the_Price_Per_Watt_tab_for_Least_option(String leasePricePerWatt) throws Throwable {
+	public void user_enters_in_the_Price_Per_Watt_tab_for_Least_option(String leasePricePerWatt) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterLeasePricePerWatt(leasePricePerWatt);
 	}
 
 	@Then("^User checks the show Loan option$")
-	public void user_checks_the_show_Loan_option() throws Throwable {
+	public void user_checks_the_show_Loan_option() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickLoanOptionTab();
 		accountsPage.clickCheckboxLeaseLoanShowOption();
 	}
 
 	@Then("^User enters \"([^\"]*)\" in the Price Per Watt tab for Loan option$")
-	public void user_enters_in_the_Price_Per_Watt_tab_for_Loan_option(String loanPricePerWatt) throws Throwable {
+	public void user_enters_in_the_Price_Per_Watt_tab_for_Loan_option(String loanPricePerWatt) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterLoanPricePerWatt(loanPricePerWatt);
 	}
 
 	@Then("^clicks on save changes for the Quote Settings modal$")
-	public void clicks_on_save_changes_for_the_Quote_Settings_modal() throws Throwable {
+	public void clicks_on_save_changes_for_the_Quote_Settings_modal() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickQuoteSettingsSaveChanges();
 	}
 
 	@Then("^User clicks on the Save Design button$")
-	public void user_clicks_on_the_Save_Design_button() throws Throwable {
+	public void user_clicks_on_the_Save_Design_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickEddieSaveDesignBtn();
 	}
 	
 	@When("^the EDDiE portal Design page will calculate savings$")
-	public void the_EDDiE_portal_Design_page_will_calculate_savings() throws Throwable {
+	public void the_EDDiE_portal_Design_page_will_calculate_savings() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.isViewEstimatedSavingsBtnDisplayed();
 	}
 
 	@Then("^User will click on View Estimated Savings button$")
-	public void user_will_click_on_View_Estimated_Savings_button() throws Throwable {
+	public void user_will_click_on_View_Estimated_Savings_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickEddieViewEstimatedSavingsBtn();
 	}
 	
 	@And("^User will click on the EDDiE Savings button$")
-	public void user_will_click_on_the_EDDiE_Savings_button() throws Throwable {
+	public void user_will_click_on_the_EDDiE_Savings_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickEddieSavingsMenuBtn();
 	}
 
 	@Then("^the EDDiE portal Savings page will be displayed$")
-	public void the_EDDiE_portal_Savings_page_will_be_displayed() throws Throwable {
+	public void the_EDDiE_portal_Savings_page_will_be_displayed() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.isEstimatedAverageSavingsTextDisplayed();
 	}
 	
 	@And("^User will click the arrow button to select preferred payment option as Cash$")
-	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Cash() throws Throwable {
+	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Cash() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnShowBtn();
 		accountsPage.clickOnSelectCashPayment();
 	}
 	
 	@And("^User will click the arrow button to select preferred payment option as Loan$")
-	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Loan() throws Throwable {
+	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Loan() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnShowBtn();
 		accountsPage.clickOnSelectLoanPayment();
 	}
 	
 	@And("^User will click the arrow button to edit lease information$")
-	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Lease() throws Throwable {
+	public void user_will_click_the_arrow_button_to_edit_lease_information() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnShowBtn();
 		accountsPage.clickEditLeaseBtn();
@@ -317,14 +323,23 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickSaveBtnEditLeaseBtn();
 	}
 	
+	@And("User will click the arrow button to edit lease information and selects a Down Payment value")
+	public void user_will_click_the_arrow_button_to_edit_lease_information_and_select_down_payment_value() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnShowBtn();
+		accountsPage.clickEditLeaseBtn();
+		accountsPage.clickDownPaymentValue();
+		accountsPage.clickSaveBtnEditLeaseBtn();
+	}
+	
 	@Then("User will select preferred payment option as Lease")
-	public void user_will_click_the_arrow_button_to_edit_lease_information() throws Exception {
+	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Lease() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnSelectLeasePayment();
 	}
 	
 	@Then("^User will click the View Proposal button$")
-	public void user_will_click_the_View_Proposal_button() throws Throwable {
+	public void user_will_click_the_View_Proposal_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnViewProposalCashBtn();
 	}

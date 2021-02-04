@@ -2,6 +2,7 @@ package pageObjects.partnerportal.Accounts;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -204,6 +205,9 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]")
 	WebElement MODULETYPEBTN;
 	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'327W E20-327-E-AC')]")
+	WebElement MODULE327W;
+	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]")
 	WebElement SHADINGMEASUREMENTDATEINPUTBOX;
 	
@@ -330,7 +334,6 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/ul/li[2]")
 	WebElement PAYMENTOPTIONLEASETAB;
 	
-	//body/div[@id='root']/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/button[1]")
 	@FindBy(how = How.XPATH, using = "//*[@id='main-content']/div[3]/div/div[2]/div/div/div/div/div[3]/button")
 	WebElement SELECTLEASEBTN;
 	
@@ -340,9 +343,11 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/button[1]")
 	WebElement SELECTLOANBTN;
 	
-	//@FindBy(how = How.XPATH, using = "//*[@id='lease_view_edit_lease_toggle'])")
 	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/a[1]")
 	WebElement EDITLEASEBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")
+	WebElement DOWNPAYMENTBTN;
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='edit-lease']/div[3]/div/label/span")
 	WebElement FULLPREPAYMENTCHECKBOX;
@@ -382,8 +387,7 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void inputNewResidentialCustomerName(String firstName, String lastName) throws Exception {
-		WebElement element = new WebDriverWait(driver, 120).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(FIRSTNAMETXTBOX));
+		waitForVisibleElement(driver, FIRSTNAMETXTBOX);
 		enterText(FIRSTNAMETXTBOX, "FIRSTNAMETXTBOX", firstName);
 		enterText(LASTNAMETXTBOX, "LASTNAMETXTBOX", lastName);
 	}
@@ -406,20 +410,19 @@ public class AccountsPage extends BasePage {
 	public void inputNewAddress(String address) throws Exception {
 		scrollPageDown();
 		enterText(ADDRESSTXTBOX, "ADDRESSTXTBOX", address);
-		WebElement element = new WebDriverWait(driver, 12).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(AUTOCOMPLETEADDRESSTABLE));
+		waitForVisibleElement(driver, AUTOCOMPLETEADDRESSTABLE);
 		AUTOCOMPLETEADDRESSTABLE.click();
 	}
 	
 	public void clickSaveBtn() throws Exception {
 		Thread.sleep(1000);
 		scrollPageDown();
-		WebElement element = new WebDriverWait(driver, 15).until(ExpectedConditions.elementToBeClickable(SAVEBTN));
+		waitForVisibleElement(driver, SAVEBTN);
 		click(SAVEBTN, "SAVEBTN");
 	}
 	
 	public boolean isBasicInfoPageDisplayed() throws Exception {
-		WebElement element = new WebDriverWait(driver, 120).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(BASICINFOTAB));
+		waitForVisibleElement(driver, BASICINFOTAB);
 		return BASICINFOTAB.isDisplayed();
 	}
 	
@@ -430,25 +433,25 @@ public class AccountsPage extends BasePage {
 	
 	public void editUsageInputvalues() throws Exception {
 		scrollPageDown();
-		WebElement element = new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(EDITUSAGEINPUTBTN));
+		waitForVisibleElement(driver, EDITUSAGEINPUTBTN);
 		jse.executeScript("arguments[0].click()", EDITUSAGEINPUTBTN);
 	}
 	
 	public boolean isElectricModalDisplayed() throws Exception {
-		WebElement element = new WebDriverWait(driver, 15).until(ExpectedConditions.visibilityOf(ELECTRICRATEANDENERGYUSAGEMODAL));
+		waitForVisibleElement(driver, ELECTRICRATEANDENERGYUSAGEMODAL);
 		return ELECTRICRATEANDENERGYUSAGEMODAL.isDisplayed();
 	}
 	
 	public void inputCurrentElectricRate() throws Exception {
 		Boolean wait = new WebDriverWait(driver, 20).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//html/body/app-root/sp-loading/div/div/span")));
 		jse.executeScript("arguments[0].click()", CURRENTELECTRICRATEDROPDOWN);
-		WebElement wait2 = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(CURRENTELECTRICRATEFIRSTDROPDOWNITEM));
+		waitForVisibleElement(driver, CURRENTELECTRICRATEFIRSTDROPDOWNITEM);
 		jse.executeScript("arguments[0].click()", CURRENTELECTRICRATEFIRSTDROPDOWNITEM);
 	}
 	
 	public void inputProposedElectricRate() throws Exception {
 		jse.executeScript("arguments[0].click()", PROPOSEDELECTRICRATEDROPDOWN);
-		WebElement wait = new WebDriverWait(driver, 20).until(ExpectedConditions.visibilityOf(PROPOSEDELECTRICRATEFIRSTDROPDOWNITEM));
+		waitForVisibleElement(driver, PROPOSEDELECTRICRATEFIRSTDROPDOWNITEM);
 		jse.executeScript("arguments[0].click()", PROPOSEDELECTRICRATEFIRSTDROPDOWNITEM);
 	}
 	
@@ -470,13 +473,13 @@ public class AccountsPage extends BasePage {
 	
 	public void clickNewManualQuoteBtn() throws Exception {
 		Boolean wait = new WebDriverWait(driver, 60).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//html/body/app-root/sp-loading/div/div/span")));
-		WebElement wait2 = new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(NEWMANUALQUOTEBTN));
+		waitForVisibleElement(driver, NEWMANUALQUOTEBTN);
 		click(NEWMANUALQUOTEBTN, "NEWMANUALQUOTEBTN");
 	}
 	
 	public void navigateBackToQuotingPage() throws Exception {
 		switchToOriginalWindow();
-		WebElement wait1 = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOf(NEWMANUALQUOTEBTN));
+		waitForVisibleElement(driver, NEWMANUALQUOTEBTN);
 		driver.navigate().refresh();
 		Thread.sleep(3900);
         Boolean wait2 = new WebDriverWait(driver, 120)
@@ -497,8 +500,7 @@ public class AccountsPage extends BasePage {
 	
 	public void clickComplianceCheckBoxesforCash() throws Exception {
 		System.out.println("Clicking on Compliance checkboxes...");
-		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(VERIFIEDCUSTOMERIDCHECKBOX));
+		waitForVisibleElement(driver, VERIFIEDCUSTOMERIDCHECKBOX);
 		click(VERIFIEDCUSTOMERIDCHECKBOX, "VERIFIEDCUSTOMERIDCHECKBOX");
 		click(VERBALLYNOTIFIEDCHECKBOX, "VERBALLYNOTIFIEDCHECKBOX");
 		click(GENERATEAGREEMENTBTN, "GENERATEAGREEMENTBTN");
@@ -512,8 +514,7 @@ public class AccountsPage extends BasePage {
 	
 	public void clickComplianceCheckBoxesforLoan() throws Exception {
 		System.out.println("Clicking on Compliance checkboxes...");
-		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(VERIFIEDCUSTOMERIDCHECKBOX));
+		waitForVisibleElement(driver, VERIFIEDCUSTOMERIDCHECKBOX);
 		click(VERIFIEDCUSTOMERIDCHECKBOX, "VERIFIEDCUSTOMERIDCHECKBOX");
 		click(VERBALLYNOTIFIEDCHECKBOX, "VERBALLYNOTIFIEDCHECKBOX");
 		Boolean wait1 = new WebDriverWait(driver, 120)
@@ -523,14 +524,12 @@ public class AccountsPage extends BasePage {
 	
 	public void clickSendFirstContractBtn() throws Exception {
 		System.out.println("Sending Contract to email...");
-		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(SENDCONTRACTFIRSTBTN));
+		waitForVisibleElement(driver, SENDCONTRACTFIRSTBTN);
 		scrollPageDownBy500();
 		Thread.sleep(2000);
 		jse.executeScript("arguments[0].click()", SENDCONTRACTFIRSTBTN);
 		
-		WebElement wait1 = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(OUTFORSIGNATURETXT));
+		waitForVisibleElement(driver, OUTFORSIGNATURETXT);
 		String ContractNumber = driver.findElement(By.xpath("//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[2]/agreements-list/table/tbody/tr[1]/td[1]")).getText();
 		System.out.println("Contract Number: " + ContractNumber + " is Out for Signature");
 		Thread.sleep(1500);
@@ -539,9 +538,14 @@ public class AccountsPage extends BasePage {
 	//Start of EDDiE Portal quoting activities ------------------------------------------------------------------------>
 	public boolean isEDDiEPortalPageDisplayed() throws Exception {
 		switchHandlesToNewWindow();
-		WebElement element = new WebDriverWait(driver, 180).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(DESIGNMENUBTN));
+		waitForVisibleElement(driver, DESIGNMENUBTN);
 		return DESIGNMENUBTN.isDisplayed();
+	}
+	
+	public void clickUserInputModuleTypeBtn(String moduleType) throws Exception {
+		waitForVisibleElement(driver, MODULETYPEBTN);
+		click(MODULETYPEBTN, "MODULETYPEBTN");
+		driver.findElement(By.xpath("//div[contains(text(),'"+moduleType+"')]")).click();;
 	}
 
 	public void enterShadingDate(String shadingDate) throws Exception {
@@ -553,14 +557,12 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public boolean isNewRoofModalDisplayed() throws Exception {
-		WebElement element = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(PITCHDROPDOWNBTN));
+		waitForVisibleElement(driver, PITCHDROPDOWNBTN);
 		return PITCHDROPDOWNBTN.isDisplayed();
 	}
 	
 	public void enterPitch(String pitchValue) throws Exception {
-		WebElement element = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(PITCHDROPDOWNBTN));
+		waitForVisibleElement(driver, PITCHDROPDOWNBTN);
 		enterText(PITCHDROPDOWNBTN,"PITCHDROPDOWNBTN", pitchValue);
 	}
 	
@@ -594,14 +596,12 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickQuoteSettingsBtn() throws Exception {
-		WebElement element = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(QUOTESETTINGSBTN));
+		waitForVisibleElement(driver, QUOTESETTINGSBTN);
 		click(QUOTESETTINGSBTN, "QUOTESETTINGSBTN");
 	}
 	
 	public boolean isQuoteSettingsModalDisplayed() throws Exception {
-		WebElement element = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(PRICEPERWATTCASHTXTBOX));
+		waitForVisibleElement(driver, PRICEPERWATTCASHTXTBOX);
 		return PRICEPERWATTCASHTXTBOX.isDisplayed();
 	}
 	
@@ -660,8 +660,7 @@ public class AccountsPage extends BasePage {
 	
 	public void clickEddieViewEstimatedSavingsBtn() throws Exception {
 		scrollPageDown();
-		WebElement element = new WebDriverWait(driver, 60).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(VIEWESTIMATEDSAVINGSBUTTON));
+		waitForVisibleElement(driver, VIEWESTIMATEDSAVINGSBUTTON);
 		click(VIEWESTIMATEDSAVINGSBUTTON, "VIEWESTIMATEDSAVINGSBUTTON");
 	}
 	
@@ -670,8 +669,7 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public boolean isEstimatedAverageSavingsTextDisplayed() throws Exception {
-		WebElement element = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(FINANCEOPTIONSDROPDOWN));
+		waitForVisibleElement(driver, FINANCEOPTIONSDROPDOWN);
 		return FINANCEOPTIONSDROPDOWN.isDisplayed();
 	}
 	
@@ -707,9 +705,16 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickFullPrepaymentBtn() throws Exception {
-		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(FULLPREPAYMENTCHECKBOX));
+		waitForVisibleElement(driver, FULLPREPAYMENTCHECKBOX);
 		click(FULLPREPAYMENTCHECKBOX, "FULLPREPAYMENTCHECKBOX");
+	}
+	
+	public void clickDownPaymentValue() throws Exception {
+		waitForVisibleElement(driver, DOWNPAYMENTBTN);
+		click(DOWNPAYMENTBTN, "DOWNPAYMENTBTN");
+		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")).sendKeys(Keys.ENTER);
+		
 	}
 	
 	public void clickSaveBtnEditLeaseBtn() throws Exception {
@@ -723,8 +728,7 @@ public class AccountsPage extends BasePage {
 		String url = driver.getCurrentUrl();
 		System.out.println("Generating Proposal...");
 		System.out.println("Quote Link: " + url);
-		WebElement wait = new WebDriverWait(driver, 30).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.elementToBeClickable(SELECTLEASEBTN));
+		waitForVisibleElement(driver, SELECTLEASEBTN);
 		jse.executeScript("arguments[0].click()", SELECTLEASEBTN);
 		Boolean wait1 = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
@@ -740,10 +744,8 @@ public class AccountsPage extends BasePage {
 	
 	public void clickOnSendOptionsEmail() throws Exception {
 		waitForVisibleElement(driver, SENDOPTIONSBTN);
-		//jse.executeScript("arguments[0].click()", SENDOPTIONSBTN);
 		click(SENDOPTIONSBTN, "SENDOPTIONSBTN");
 		waitForVisibleElement(driver, SENDTOMYSUNPOWERVIAEMAILBTN);
-		//jse.executeScript("arguments[0].click()", SENDTOMYSUNPOWERVIAEMAILBTN);
 		click(SENDTOMYSUNPOWERVIAEMAILBTN, "SENDTOMYSUNPOWERVIAEMAILBTN");
 		Thread.sleep(1900);
 	}
