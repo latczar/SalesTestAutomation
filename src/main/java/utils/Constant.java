@@ -35,6 +35,6 @@ public class Constant {
 		public static WebDriver driver = null;
 		public static String prodSpwrSDS = "https://us.sunpower.com/";
 		public static String qaPartnerPortal = "https://qa-sunpower1.cs196.force.com/CommunityLogin";
-		public static String UATPartnerPortal = "https://uat-sunpower1.cs196.force.com/CommunityLogin";
+		public static String UATPartnerPortal = "https://uat-sunpower1.cs40.force.com/"; //Updated as of 02/04/2021
 
 		}
