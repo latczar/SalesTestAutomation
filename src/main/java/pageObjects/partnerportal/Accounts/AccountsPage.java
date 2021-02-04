@@ -713,6 +713,7 @@ public class AccountsPage extends BasePage {
 		waitForVisibleElement(driver, DOWNPAYMENTBTN);
 		click(DOWNPAYMENTBTN, "DOWNPAYMENTBTN");
 		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")).sendKeys(Keys.ARROW_DOWN);
+		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")).sendKeys(Keys.ARROW_DOWN);
 		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")).sendKeys(Keys.ENTER);
 		
 	}
@@ -724,13 +725,15 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickOnSelectLeasePayment() throws Exception {
-		//click(SELECTLEASEBTN, "SELECTLEASEBTN");
 		String url = driver.getCurrentUrl();
 		System.out.println("Generating Proposal...");
 		System.out.println("Quote Link: " + url);
 		waitForVisibleElement(driver, SELECTLEASEBTN);
 		jse.executeScript("arguments[0].click()", SELECTLEASEBTN);
-		Boolean wait1 = new WebDriverWait(driver, 120)
+		Boolean wait1 = new WebDriverWait(driver, 180)
+				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
+		Thread.sleep(2900);
+		Boolean wait2 = new WebDriverWait(driver, 180)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
 	}
 

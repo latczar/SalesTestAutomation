@@ -51,18 +51,21 @@ public class LoginPage extends BasePage {
 	
 	
 	public void loginAsPartnerQA(String username, String password) throws Exception {
+		waitForVisibleElement(driver, USERNAMETXTBOX);
 		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.qaPartnerPortalUser);
 		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.qaPartnerPortalPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	
 	public void loginAsPartnerUAT(String username, String password) throws Exception {
+		waitForVisibleElement(driver, USERNAMETXTBOX);
 		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATPartnerPortalUser);
 		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATPartnerPortalPass);
 		click(LOGINBTN, "LOGINBTN");
 	}
 	
 	public void loginAsNDPartnerUAT(String username, String password) throws Exception {
+		waitForVisibleElement(driver, USERNAMETXTBOX);
 		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.NDUATPartnerPortalUser);
 		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.NDUATPartnerPortalPass);
 		click(LOGINBTN, "LOGINBTN");

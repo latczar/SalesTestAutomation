@@ -83,8 +83,8 @@ public class HomePageMySunPowerSteps extends BasePage{
 		homepage.clickSolarAddressNextBtn();
 	}
 	
-	@And("User will enter thw date of birth as {string}")
-	public void user_will_enter_thw_date_of_birth_as(String date) throws Exception {
+	@And("User will enter the date of birth as {string}")
+	public void user_will_enter_the_date_of_birth_as(String date) throws Exception {
 		HomePageMySunPower homepage = new HomePageMySunPower();
 		homepage.enterDateOfBirth(date);
 	}

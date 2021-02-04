@@ -332,6 +332,14 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickSaveBtnEditLeaseBtn();
 	}
 	
+	@And("User will click the Full Prepayment for this Quote")
+	public void user_will_click_the_full_prepayment_for_this_quote() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickEditLeaseBtn();
+		accountsPage.clickFullPrepaymentBtn();
+		accountsPage.clickSaveBtnEditLeaseBtn();
+	}
+	
 	@Then("User will select preferred payment option as Lease")
 	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Lease() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();

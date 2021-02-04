@@ -68,7 +68,7 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	WebElement CREDITCHECKACCEPTBTN;
 	
 	//Solar Address Page
-	@FindBy(how = How.XPATH, using = "//body/div[2]/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[3]/div[2]/div[1]/div[1]/input[1])")
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[3]/div[2]/div[1]/div[1]/input[1]")
 	WebElement YEARSATADDRESSINPUT;
 	
 	@FindBy(how = How.XPATH, using = "//body/div[2]/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[4]/div[1]/div[2]/label[1]/span[1]/span[1]/input[1]")
@@ -201,6 +201,7 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
 	public void enterYearsAtThisAddress(String years) throws Exception {
 		waitForVisibleElement(driver, YEARSATADDRESSINPUT);
+		click(YEARSATADDRESSINPUT, "YEARSATADDRESSINPUT");
 		enterText(YEARSATADDRESSINPUT, "YEARSATADDRESSINPUT", years);
 	}
 	
@@ -217,10 +218,12 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	}
 	
 	public void enterDateOfBirth(String date) throws Exception {
+		waitForVisibleElement(driver, CREDITAPPROVALPAGEDOB);
 		enterText(CREDITAPPROVALPAGEDOB, "CREDITAPPROVALPAGEDOB", date);
 	}
 	
 	public void enterSocialSecurityNumber(String socialNumber) throws Exception {
+		waitForVisibleElement(driver, CREDITAPPROVALPAGESSN);
 		enterText(CREDITAPPROVALPAGESSN, "CREDITAPPROVALPAGESSN", socialNumber);
 	}
 	

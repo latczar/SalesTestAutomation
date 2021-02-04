@@ -45,8 +45,7 @@ public class HomePage extends BasePage {
 	}
 	
 	public boolean isHomeMenuBtnDisplayed() throws Exception {
-		WebElement element = new WebDriverWait(driver, 60).ignoring(StaleElementReferenceException.class)
-				.until(ExpectedConditions.visibilityOf(HOMEMENUBTN));
+		waitForVisibleElement(driver, HOMEMENUBTN);
 		return HOMEMENUBTN.isDisplayed();
 	}
 }
