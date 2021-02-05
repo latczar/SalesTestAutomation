@@ -5,7 +5,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.mySunPower.ReviewProposal.ReviewProposalPageMySunPower;
 import pageObjects.mySunPower.Login.HomePageMySunPower;
-import pageObjects.partnerportal.HomePage.HomePage;
 import pageObjects.partnerportal.home.BasePage;
 
 public class HomePageMySunPowerSteps extends BasePage{
@@ -137,4 +136,45 @@ public class HomePageMySunPowerSteps extends BasePage{
 		homepage.clickCreditApprovalPageSubmitBtn();
 	}
 	
+	@When("the Credit Check is Approved")
+	public void the_credit_check_is_approved() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.isCreditApprovalApprovedDisplayed();
+	}
+	
+	@Then("User will click Next to Review Agreement in QA Env")
+	public void user_will_click_next_to_review_agreement() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.clickQANextReviewAgreementBtn();
+	}
+	
+	@When("the User is on the Sign Agreement page")
+	public void the_user_is_on_the_sign_agreement_page() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.isSignAgreementDisplayed();
+	}
+	
+	@Then("User will sign the ACH Opt In form")
+	public void user_will_sign_the_ach_opt_in_form() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.clickAchOptInFormBtn();
+	}
+	
+	@Then("after the ACH OPT IN form is signed")
+	public void after_the_ach_opt_in_form_is_signed() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.isACHOptInSignedDisplayed();
+	}
+	
+	@Then("User will sign the Loan Agreement Package")
+	public void user_will_sign_the_loan_agreement_package() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.clickLoanAgreementSignBtn();
+	}
+	
+	@Then("the Agreement is Signed - Pending Further Action is displayed")
+	public void the_agreement_is_signed_pending_further_action_is_displayed() throws Exception {
+		HomePageMySunPower homepage = new HomePageMySunPower();
+		homepage.isAgreementSignedPendingActionDisplayed();
+	}
 }

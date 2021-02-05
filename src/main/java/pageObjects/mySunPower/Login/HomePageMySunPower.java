@@ -123,11 +123,35 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Next')]")
 	WebElement CREDITAPPROVALPAGENEXTBTN;
 	
-	@FindBy(how = How.XPATH, using = "//body/div[2]/main[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[2]/div[4]/div[1]/label[1]/span[1]/span[1]/input[1]")
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main/div/div[2]/div[2]/div/div/div[2]/div[2]/div[4]/div[1]/label/span[1]/span")
 	WebElement CREDITAPPROVALPAGETERMSCHECKBOX;
 	
 	@FindBy(how = How.XPATH, using = "//button[contains(text(),'Submit')]")
 	WebElement CREDITAPPROVALPAGESUBMITBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[7]/a/button")
+	WebElement QACREDITAPPROVALNEXTREVIEWAGREEMENTBTN;
+
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[6]/a/button")
+	WebElement UATCREDITAPPROVALNEXTREVIEWAGREEMENTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[2]")
+	WebElement CREDITAPPROVALAPPROVEDTXT;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[2]")
+	WebElement SIGNAGREEMENTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[6]/div[1]/div[2]/button")
+	WebElement ACHOPTINFORMSIGNBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[6]/div[1]/div[2]/button/div/div[2]/span")
+	WebElement SIGNEDACHOPTINFORMTXT;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[2]/main/div/div[2]/div[2]/div[2]/div/div[6]/div[2]/div[2]/button")
+	WebElement LOANAGREEMENTSIGNBTN;
+	
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Agreement: SIGNED ‐ PENDING FURTHER ACTION')]")
+	WebElement SIGNEDPENDINGFUTHERACTION;
 	
 	public HomePageMySunPower() {
 		//this.driver = driver;
@@ -224,6 +248,7 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
 	public void enterSocialSecurityNumber(String socialNumber) throws Exception {
 		waitForVisibleElement(driver, CREDITAPPROVALPAGESSN);
+		click(CREDITAPPROVALPAGESSN, "CREDITAPPROVALPAGESSN");
 		enterText(CREDITAPPROVALPAGESSN, "CREDITAPPROVALPAGESSN", socialNumber);
 	}
 	
@@ -254,5 +279,46 @@ JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
 	public void clickCreditApprovalPageSubmitBtn() throws Exception {
 		click(CREDITAPPROVALPAGESUBMITBTN, "CREDITAPPROVALPAGESUBMITBTN");
+	}
+	
+	public boolean isCreditApprovalApprovedDisplayed() throws Exception {
+		waitForVisibleElement(driver, CREDITAPPROVALAPPROVEDTXT);
+		return CREDITAPPROVALAPPROVEDTXT.isDisplayed();
+		
+	}
+	
+	public void clickQANextReviewAgreementBtn() throws Exception {
+		waitForVisibleElement(driver, QACREDITAPPROVALNEXTREVIEWAGREEMENTBTN);
+		click(QACREDITAPPROVALNEXTREVIEWAGREEMENTBTN, "QACREDITAPPROVALNEXTREVIEWAGREEMENTBTN");
+	}
+	
+	public void clickUATNextReviewAgreementBtn() throws Exception {
+		waitForVisibleElement(driver, QACREDITAPPROVALNEXTREVIEWAGREEMENTBTN);
+		click(QACREDITAPPROVALNEXTREVIEWAGREEMENTBTN, "QACREDITAPPROVALNEXTREVIEWAGREEMENTBTN");
+	}
+	
+	public boolean isSignAgreementDisplayed() throws Exception {
+		waitForVisibleElement(driver, SIGNAGREEMENTBTN);
+		return SIGNAGREEMENTBTN.isDisplayed();
+	}
+	
+	public void clickAchOptInFormBtn() throws Exception {
+		waitForVisibleElement(driver, ACHOPTINFORMSIGNBTN);
+		click(ACHOPTINFORMSIGNBTN, "ACHOPTINFORMSIGNBTN");
+	}
+	
+	public boolean isACHOptInSignedDisplayed() throws Exception {
+		waitForVisibleElement(driver,SIGNEDACHOPTINFORMTXT);
+		return SIGNEDACHOPTINFORMTXT.isDisplayed();
+	}
+	
+	public void clickLoanAgreementSignBtn() throws Exception {
+		waitForVisibleElement(driver, LOANAGREEMENTSIGNBTN);
+		click(LOANAGREEMENTSIGNBTN, "LOANAGREEMENTSIGNBTN");
+	}
+	
+	public boolean isAgreementSignedPendingActionDisplayed() throws Exception {
+		waitForVisibleElement(driver, SIGNEDPENDINGFUTHERACTION);
+		return SIGNEDPENDINGFUTHERACTION.isDisplayed();
 	}
 }

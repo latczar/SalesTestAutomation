@@ -376,4 +376,22 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickOnSendProposalsToMySunPowerBtn();
 		accountsPage.clickOnSendProposalBtn();
 	}
+	
+	@Then("User will click the Draft Lease Contract button")
+	public void user_will_click_the_draft_lease_contract_button() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickDraftLeaseContractBtn();
+		accountsPage.clickComplianceCheckBoxesforLoan();
+		Constant.agreementName = BasePage.getTextFromFirstContract();
+		System.out.println("Agreement Name = " + Constant.agreementName);
+	}
+	
+	@Then("User will click the Contract for Lease and will send it via Email")
+	public void user_will_click_on_the_contract_for_lease_and_will_send_it_via_email() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnContractOne();
+		accountsPage.clickOnSendOptionsEmail();
+		accountsPage.clickOnSendProposalsToMySunPowerBtn();
+		accountsPage.clickOnSendProposalBtn();
+	}
 }

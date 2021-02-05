@@ -273,7 +273,7 @@ public class BasePage {
 	}
 	
 	public static String getTextFromFirstContract() {
-		WebElement wait1 = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/app-root/ng-component/residential-main-tabs/main/h2/span[1]")));
+		WebElement wait1 = new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//html/body/app-root/ng-component/residential-main-tabs/main/h2/span[1]")));
 		String firstContractText = 
 				driver.findElement(By.xpath("//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[2]/agreements-list/table/tbody/tr/td[2]/a/div"))
 						.getText();

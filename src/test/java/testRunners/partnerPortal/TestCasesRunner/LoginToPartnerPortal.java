@@ -13,7 +13,8 @@ import io.cucumber.junit.CucumberOptions;
 				//"src/main/resources/features/spwr/TestCaseFeatures/TS_02_Partner_Portal_End_to_End_Account_to_Manual_Quoting_Loan.feature",
 				//"src/main/resources/features/spwr/TestCaseFeatures/TS_03_Partner_Portal_End_to_End_Account_to_Manual_Quoting_Lease.feature",
 				//"src/main/resources/features/spwr/TestCaseFeatures/TS_04_Partner_Portal_End_to_End_Account_to_Manual_Signing_Cash.feature",
-				"src/main/resources/features/spwr/TestCaseFeatures/TS_05_Partner_Portal_End_to_End_Account_to_Manual_Signing_Loan.feature"
+				//"src/main/resources/features/spwr/TestCaseFeatures/TS_05_Partner_Portal_End_to_End_Account_to_Manual_Signing_Loan.feature",
+				"src/main/resources/features/spwr/TestCaseFeatures/TS_06_Partner_Portal_End_to_End_Account_to_Manual_Signing_Lease.feature"
 				
 				//"src/main/resources/features/spwr/UATNDLeaseTestCasesEddieFinEng/TS_01_UAT_ND_Eddie_Manual_Quoting_Lease.feature",
 				//"src/main/resources/features/spwr/UATNDLeaseTestCasesEddieFinEng/TS_02_UAT_ND_Eddie_Manual_Quoting_Lease.feature",

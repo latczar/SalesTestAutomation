@@ -191,6 +191,10 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//html/body/app-root/ng-component/residential-main-tabs/initial-consumer-lending-compliance-modal/section/div/div/section[2]/button")
 	WebElement LOANSENDPROPOSALSTOMYSUNPOWERBTN;
 	
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'DRAFT LEASE CONTRACT')]")
+	WebElement DRAFTLEASECONTRACTBTN;
+			
+	
 	//Start of EDDiE Portal Web Elements ------------------------------------------------------------------------>
 	
 	@FindBy(how = How.XPATH, using = "//*[@id=\"page\"]/div[1]/nav/div[2]/div[1]/div/div/div/a")
@@ -767,5 +771,10 @@ public class AccountsPage extends BasePage {
 		Boolean wait1 = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
 		Thread.sleep(1900);
+	}
+	
+	public void clickDraftLeaseContractBtn() throws Exception {
+		waitForVisibleElement(driver, DRAFTLEASECONTRACTBTN);
+		click(DRAFTLEASECONTRACTBTN, "DRAFTLEASECONTRACTBTN");
 	}
 }
