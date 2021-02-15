@@ -50,24 +50,24 @@ public class LoginPage extends BasePage {
 	}
 	
 	
-	public void loginAsPartnerQA(String username, String password) throws Exception {
+	public void loginAsIndirectPartnerQA(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.qaPartnerPortalUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.qaPartnerPortalPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectPartnerGabiSolarUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectPartnerGabiSolarPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	
-	public void loginAsPartnerUAT(String username, String password) throws Exception {
+	public void loginAsTPSUAT(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATPartnerPortalUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATPartnerPortalPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATNDGabiTPSUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATNDGabiTPSPass);
 		click(LOGINBTN, "LOGINBTN");
 	}
 	
-	public void loginAsNDPartnerUAT(String username, String password) throws Exception {
+	public void loginAsIndirectPartnerUAT(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.NDUATPartnerPortalUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.NDUATPartnerPortalPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATIndirectPartnerGabiSolarUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATIndirectPartnerGabiSolarPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 }

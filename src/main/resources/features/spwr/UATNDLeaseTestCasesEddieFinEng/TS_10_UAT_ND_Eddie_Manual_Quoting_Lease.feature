@@ -9,7 +9,7 @@ Scenario: TS_10 UAT ND Eddie Manual Quoting Lease
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to SunPower UAT Partner Portal using "Chrome" browser
-When User logs in at UAT as ND
+When User logs in at UAT as TPS
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button

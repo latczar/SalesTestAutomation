@@ -20,16 +20,22 @@ public class LoginPageSteps {
 		BasePage.initialize(browser, Constant.UATPartnerPortal);
 	}
 	
-	@When("^User logs in as a partner$")
-	public void user_logs_in_as_a_partner() throws Exception {
+	@When("^User logs in as an Indirect Partner in QA$")
+	public void user_logs_in_as_an_indirect_partner_in_qa() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsPartnerQA(Constant.qaPartnerPortalUser, Constant.qaPartnerPortalPass);
+		loginPage.loginAsIndirectPartnerQA(Constant.QAIndirectPartnerGabiSolarUser, Constant.QAIndirectPartnerGabiSolarPass);
 	}
 	
-	@When("User logs in at UAT as ND")
-	public void user_logs_in_at_uat_as_nd() throws Exception {
+	@When("User logs in at UAT as TPS")
+	public void user_logs_in_at_uat_as_tps() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsNDPartnerUAT(Constant.NDUATPartnerPortalUser, Constant.NDUATPartnerPortalPass);
+		loginPage.loginAsTPSUAT(Constant.UATNDGabiTPSUser, Constant.UATNDGabiTPSPass);
+	}
+	
+	@When("User logs in at UAT as an Indirect Partner")
+	public void user_logs_in_at_uat_as_indirect() throws Exception {
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerGabiSolarUser, Constant.UATIndirectPartnerGabiSolarPass);
 	}
 	
 	/*always include RunListEndFlag for end of test scenarios*/
@@ -37,5 +43,5 @@ public class LoginPageSteps {
 	public void user_ends_the_test_scenario() throws Throwable {
 		BasePage.RunListEndFlag();
 	}
-		
+	
 }

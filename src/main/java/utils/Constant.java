@@ -9,12 +9,25 @@ public class Constant {
 		public static final String DriversPath = ProjectPath + "\\src\\main\\java\\drivers\\";
 		public static final String TestDataFilePath = ProjectPath + "\\src\\main\\java\\testData\\";
 		public static final String DownloadPath = System.getProperty("user.home") + "\\Downloads\\";
-		public static final String qaPartnerPortalUser = "tpsqa.test@tpsgabisolar.com.qa";
-		public static final String qaPartnerPortalPass = "Solar12347";
-		public static final String NDUATPartnerPortalUser = "tpsqa.test@tpsgabisolar.com.uat";
-		public static final String NDUATPartnerPortalPass = "P5v4vk394SsnsP";
-		public static final String UATPartnerPortalUser = "bad.pritt@gabisolar.com.uat";
-		public static final String UATPartnerPortalPass = "DgQEhz2J6Q";
+		
+		//QA_TPS
+		public static final String QATPSUser = "tpsqa.test@tpsgabisolar.com.qa";
+		public static final String QATPSPass = "Solar12347";
+		
+		//QA_IndirectPartner
+		public static final String QAIndirectPartnerGabiSolarUser = "bad.pritt@gabisolar.com.qa";
+		public static final String QAIndirectPartnerGabiSolarPass = "ZTffpf4vDqU5MK2";
+		public static final String QAIndirectPartnerEugeneBuenUser = "eugene.buen@pe.com.qa";
+		public static final String QAIndirectPartnerEugeneBuenPass = "Solar090321";
+		
+		//UAT_TPS
+		public static final String UATNDGabiTPSUser = "tpsqa.test@tpsgabisolar.com.uat";
+		public static final String UATNDGabiTPSPass = "P5v4vk394SsnsP";
+		
+		//UAT_IndirectPartner
+		public static final String UATIndirectPartnerGabiSolarUser = "bad.pritt@gabisolar.com.uat";
+		public static final String UATIndirectPartnerGabiSolarPass = "DgQEhz2J6Q";
+		
 		public static final String GmailApp = "http://mail.google.com";
 		public static final String GmailInbox = "https://mail.google.com/mail/u/0/#inbox";
 		public static final String StackOverflowApp = "https://stackoverflow.com/";

@@ -8,10 +8,8 @@ Feature: PartnerPortal_E2E_AccountToManualQuotingWithSigning_Loan_05
 Scenario: TS_05 Partner Portal End to End Account to Manual Signing Loan
 
 #QA - Start New Residential Customer Account creation
-#Given User navigates to SunPower Partner Portal using "Chrome" browser
-#When User logs in as a partner
-Given User navigates to SunPower UAT Partner Portal using "Chrome" browser
-When User logs in at UAT as ND
+Given User navigates to SunPower Partner Portal using "Chrome" browser
+When User logs in as an Indirect Partner in QA
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
