@@ -29,8 +29,11 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//a[@id='newRecordButton']")
 	WebElement NEWACCOUNTBTN;
 	
-	@FindBy(how = How.XPATH, using = "//*[@id=\"myDropdown\"]/a") //For UAT = //*[@id="myDropdown"]/a[2]
-	WebElement RESIDENTIALCUSTOMERBTN;
+	@FindBy(how = How.XPATH, using = "//*[@id='myDropdown']/a") //For UAT = //*[@id="myDropdown"]/a[2]
+	WebElement RESIDENTIALCUSTOMERBTNQA;
+	
+	@FindBy(how = How.XPATH, using = "//*[@id='myDropdown']/a[2]")
+	WebElement RESIDENTIALCUSTOMERBTNUAT;
 	
 	@FindBy(how = How.XPATH, using = "//body/div[1]/div[1]/span[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/select[1]")
 	WebElement LISTVIEWDROPDOWNBTN;
@@ -344,6 +347,18 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/ul/li[3]")
 	WebElement PAYMENTOPTIONLOANTAB;
 	
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Edit Loan')]")
+	WebElement EDITLOANBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/input[1]")
+	WebElement COPAYMENTTXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]")
+	WebElement TERMDROPDOWN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[3]/div[1]")
+	WebElement APRDROPDOWN;
+	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[3]/button[1]")
 	WebElement SELECTLOANBTN;
 	
@@ -382,8 +397,12 @@ public class AccountsPage extends BasePage {
 		click(NEWACCOUNTBTN,"NEWACCOUNTBTN");
 	}
 	
-	public void createNewResidentialCustomerAccount() throws Exception {
-		click(RESIDENTIALCUSTOMERBTN, "RESIDENTIALCUSTOMERBTN");
+	public void createNewResidentialCustomerAccountForUAT() throws Exception {
+		click(RESIDENTIALCUSTOMERBTNUAT, "RESIDENTIALCUSTOMERBTNUAT");
+	}
+	
+	public void createNewResidentialCustomerAccountForQA() throws Exception {
+		click(RESIDENTIALCUSTOMERBTNQA, "RESIDENTIALCUSTOMERBTNQA");
 	}
 	
 	public boolean isNewAccountResidentialFormDisplayed() throws Exception {
@@ -695,6 +714,24 @@ public class AccountsPage extends BasePage {
 		
 	}
 	
+	public void clickOnEditLoanBtn() throws Exception {
+		jse.executeScript("arguments[0].click()", EDITLOANBTN);
+	}
+	
+	public void clickOnCoPayment(String coPaymentInput) throws Exception {
+		waitForVisibleElement(driver, COPAYMENTTXTBOX);
+		click(COPAYMENTTXTBOX, "COPAYMENTTXTBOX");
+		enterText(COPAYMENTTXTBOX, "COPAYMENTTXTBOX", coPaymentInput);
+	}
+	
+	public void clickOnTerm() throws Exception {
+		
+	}
+	
+	public void clickonAPR() throws Exception {
+		
+	}
+		
 	public void clickOnSelectLoanPayment() throws Exception {
 		String url = driver.getCurrentUrl();
 		System.out.println("Generating Proposal...");
@@ -746,6 +783,7 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickOnContractOne() throws Exception {
+		waitForVisibleElement(driver, CONTRACTONECHECKBOX);
 		jse.executeScript("arguments[0].click()", CONTRACTONECHECKBOX);
 	}
 	

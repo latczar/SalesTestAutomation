@@ -9,15 +9,18 @@ import pageObjects.partnerportal.home.BasePage;
 import utils.Constant;
 
 public class LoginPageSteps {
+		
+	//For QA
 	
 	@Given("^User navigates to SunPower Partner Portal using \"([^\"]*)\" browser$")
 	public void user_navigates_to_SunPower_Partner_Portal_using_browser(String browser) throws Exception {
 		BasePage.initialize(browser, Constant.qaPartnerPortal);
 	}
 	
-	@Given("^User navigates to SunPower UAT Partner Portal using \"([^\"]*)\" browser$")
-	public void user_navigates_to_SunPower_Uat_Partner_Portal_using_browser(String browser) throws Exception {
-		BasePage.initialize(browser, Constant.UATPartnerPortal);
+	@When("^User logs in as TPS in QA$")
+	public void user_logs_in_as_tps_in_qa() throws Exception {
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginAsTPSQA(Constant.QATPSUser, Constant.QATPSPass);
 	}
 	
 	@When("^User logs in as an Indirect Partner in QA$")
@@ -26,16 +29,25 @@ public class LoginPageSteps {
 		loginPage.loginAsIndirectPartnerQA(Constant.QAIndirectPartnerGabiSolarUser, Constant.QAIndirectPartnerGabiSolarPass);
 	}
 	
+//----------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	//For UAT
+	
+	@Given("^User navigates to SunPower UAT Partner Portal using \"([^\"]*)\" browser$")
+	public void user_navigates_to_SunPower_Uat_Partner_Portal_using_browser(String browser) throws Exception {
+		BasePage.initialize(browser, Constant.UATPartnerPortal);
+	}
+	
 	@When("User logs in at UAT as TPS")
 	public void user_logs_in_at_uat_as_tps() throws Exception {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginAsTPSUAT(Constant.UATNDGabiTPSUser, Constant.UATNDGabiTPSPass);
 	}
 	
-	@When("User logs in at UAT as an Indirect Partner")
+	@When("User logs in at UAT as an Indirect Partner Eugene C Buen")
 	public void user_logs_in_at_uat_as_indirect() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerGabiSolarUser, Constant.UATIndirectPartnerGabiSolarPass);
+		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerEugeneCBuenUser, Constant.UATIndirectPartnerEugeneCBuenPass);
 	}
 	
 	/*always include RunListEndFlag for end of test scenarios*/

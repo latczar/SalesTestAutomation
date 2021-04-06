@@ -17,10 +17,10 @@ And User creates a Residential Customer account
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SpwrTest" and Last Name as "tAutomation02012021Test01"
+Then User enters his/her Residential First Name as "tAutomation" and Last Name as "02162021Testv2"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555555555"
-Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
+Then User enters Residential address as "16388 Midwood Dr, Granada Hills, CA 91344, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -37,7 +37,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "02/01/2021"
+Then User enters the Shading Measurement Date as "02/16/2021"
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"

@@ -13,7 +13,7 @@ When User logs in as an Indirect Partner in QA
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
-And User creates a Residential Customer account
+And User creates a Residential Customer account in QA
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed

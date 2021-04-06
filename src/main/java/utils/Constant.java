@@ -26,7 +26,11 @@ public class Constant {
 		
 		//UAT_IndirectPartner
 		public static final String UATIndirectPartnerGabiSolarUser = "bad.pritt@gabisolar.com.uat";
-		public static final String UATIndirectPartnerGabiSolarPass = "DgQEhz2J6Q";
+		public static final String UATIndirectPartnerGabiSolarPass = "qsNMg8EeeT9j3ex0";
+		public static final String UATIndirectPartnerEugeneBuenUser = "eugene.buen@sunpowercorp.com.qa";
+		public static final String UATIndirectPartnerEugeneBuenPass = "";
+		public static final String UATIndirectPartnerEugeneCBuenUser= "eugene.buen@pe.com.uat";
+		public static final String UATIndirectPartnerEugeneCBuenPass= "WuUty2HRTvv4eN";
 		
 		public static final String GmailApp = "http://mail.google.com";
 		public static final String GmailInbox = "https://mail.google.com/mail/u/0/#inbox";

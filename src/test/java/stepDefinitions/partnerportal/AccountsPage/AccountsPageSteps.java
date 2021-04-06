@@ -21,10 +21,16 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickNewAccountbtn();
 	}
 
-	@When("^User creates a Residential Customer account$")
-	public void user_creates_a_Residential_Customer_account() throws Exception {
+	@When("^User creates a Residential Customer account in UAT$")
+	public void user_creates_a_Residential_Customer_account_in_uat() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
-		accountsPage.createNewResidentialCustomerAccount();	    
+		accountsPage.createNewResidentialCustomerAccountForUAT();	    
+	}
+	
+	@When("^User creates a Residential Customer account in QA$")
+	public void user_creates_a_Residential_Customer_account_in_qa() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.createNewResidentialCustomerAccountForQA();	    
 	}
 	
 	@Then("^Residential - New Account page is displayed$")
@@ -307,10 +313,17 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickOnSelectCashPayment();
 	}
 	
+	@And("^User will add a CoPayment input as \"([^\"]*)\"$")
+	public void user_will_add_a_co_payment_input_as(String coPaymentInput) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnCoPayment(coPaymentInput);
+	}
+	
 	@And("^User will click the arrow button to select preferred payment option as Loan$")
-	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Loan() throws Exception {
+	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Loan(String coPaymentInput) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnShowBtn();
+		accountsPage.clickOnCoPayment(coPaymentInput);
 		accountsPage.clickOnSelectLoanPayment();
 	}
 	
@@ -359,6 +372,8 @@ public class AccountsPageSteps extends BasePage {
 		System.out.println("Agreement Name = " + Constant.agreementName);
 		accountsPage.clickOnContractOne();
 		accountsPage.clickOnSendOptionsEmail();
+		accountsPage.clickComplianceCheckBoxesforLoan();
+		accountsPage.clickOnSendProposalsToMySunPowerBtn();
 		accountsPage.clickOnSendProposalBtn();
 	}
 	

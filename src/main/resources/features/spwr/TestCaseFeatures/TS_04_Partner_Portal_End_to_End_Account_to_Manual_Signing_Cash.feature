@@ -9,18 +9,18 @@ Scenario: TS_04 Partner Portal End to End Account to Manual Signing Cash
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to SunPower Partner Portal using "Chrome" browser
-When User logs in as an Indirect Partner in QA
+When User logs in as TPS in QA
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
-And User creates a Residential Customer account
+And User creates a Residential Customer account in QA
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "SpwrTest" and Last Name as "tAutomation02012021Test01"
+Then User enters his/her Residential First Name as "tAutomation" and Last Name as "02162021Test01"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555555555"
-Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
+Then User enters Residential address as "16388 Midwood Dr, Granada Hills, CA 91344, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -37,7 +37,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "02/01/2021"
+Then User enters the Shading Measurement Date as "02/20/2021"
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
@@ -57,15 +57,34 @@ Then User will click on View Estimated Savings button
 And User will click on the EDDiE Savings button
 And User will click the arrow button to select preferred payment option as Cash
 
-#QA - Back to SunPower Quoting Page for Agreement
-When User will switch back to the original window
-And User will click the Cash Contract button and generate agreement
-Then User will click Send Contract
+#QA - Back to SunPower Quoting Page for Sending of Contract to Email
+Then User will switch back to the original window
+And User will refresh the page
+Then User will click on the Contract for Cash and will send it via Email
+
+#QA - User to login his/her Gmail account to access Email to View Proposal
 And User will open the StackOverflow app
 And User will click the Log in button
 And User will enter username and password credentials for the User
 And User will navigate back to Gmail app
-Then User will click on the SunPower Cash Agreement email to Review and Sign
+Then User will click on the Next Steps in Going Solar email to View Proposal
+
+#QA - On the SDS MYSunPower page to Sign Proposal
+And User will click on the Review & Sign Proposal
+#Signing of proposal goes here
+Then User will click on the MySunPower Create Account button
+Then User enters a password and confirms it
+Then User clicks the phone skip button
+
+#QA - Back to SunPower Quoting Page for Agreement
+#When User will switch back to the original window
+#And User will click the Cash Contract button and generate agreement
+#Then User will click Send Contract
+#And User will open the StackOverflow app
+#And User will click the Log in button
+#And User will enter username and password credentials for the User
+#And User will navigate back to Gmail app
+#Then User will click on the SunPower Cash Agreement email to Review and Sign
 
 #QA - Registration of Account in sds mySunPower
 Then User enters a password and confirms it
