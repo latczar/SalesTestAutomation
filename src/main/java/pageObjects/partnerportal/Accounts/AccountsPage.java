@@ -32,7 +32,7 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//*[@id='myDropdown']/a") //For UAT = //*[@id="myDropdown"]/a[2]
 	WebElement RESIDENTIALCUSTOMERBTNQA;
 	
-	@FindBy(how = How.XPATH, using = "//*[@id='myDropdown']/a[2]")
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Residential Customer')]")
 	WebElement RESIDENTIALCUSTOMERBTNUAT;
 	
 	@FindBy(how = How.XPATH, using = "//body/div[1]/div[1]/span[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/select[1]")
@@ -134,8 +134,11 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/app-root[1]/ng-component[1]/residential-main-tabs[1]/edit-usage-input-modal[1]/section[1]/div[1]/div[1]/section[3]/button[2]")
 	WebElement ENERGYUSAGEMODALSAVEBTN;
 	
-	@FindBy(how = How.XPATH, using = "//html/body/app-root/ng-component/residential-main-tabs/main/div[2]/div[2]/div/section[1]/residential-quotes/div/div/div[2]/div/span[2]/a")
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'MANUAL QUOTE')]")
 	WebElement NEWMANUALQUOTEBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/app-root[1]/ng-component[1]/residential-main-tabs[1]/main[1]/div[2]/div[2]/div[1]/section[1]/residential-quotes[1]/div[1]/div[1]/div[2]/div[1]/button[1]")
+	WebElement CREATENEWQUOTEBTN;
 	
 	@FindBy(how = How.XPATH, using = "//tbody/tr[1]/td[1]/label[1]")
 	WebElement CONTRACTONECHECKBOX;
@@ -417,7 +420,7 @@ public class AccountsPage extends BasePage {
 	
 	public void inputNewPhoneNumber(String phoneNum) throws Exception {
 		click(PHONENUMBERTXTBOX, "PHONENUMBERTXTBOX");
-		enterText(PHONENUMBERTXTBOX, "PHONENUMBERTXTBOX", phoneNum);
+		enterTextforAddressAndPhone(PHONENUMBERTXTBOX, "PHONENUMBERTXTBOX", phoneNum);
 
 	}
 	
@@ -432,9 +435,9 @@ public class AccountsPage extends BasePage {
 	
 	public void inputNewAddress(String address) throws Exception {
 		scrollPageDown();
-		enterText(ADDRESSTXTBOX, "ADDRESSTXTBOX", address);
-		waitForVisibleElement(driver, AUTOCOMPLETEADDRESSTABLE);
-		AUTOCOMPLETEADDRESSTABLE.click();
+		enterTextforAddressAndPhone(ADDRESSTXTBOX, "ADDRESSTXTBOX", address);
+		Thread.sleep(1000);		
+		arrowDownClick(ADDRESSTXTBOX);
 	}
 	
 	public void clickSaveBtn() throws Exception {
@@ -496,6 +499,8 @@ public class AccountsPage extends BasePage {
 	
 	public void clickNewManualQuoteBtn() throws Exception {
 		Boolean wait = new WebDriverWait(driver, 60).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//html/body/app-root/sp-loading/div/div/span")));
+		waitForVisibleElement(driver, CREATENEWQUOTEBTN);
+		click(CREATENEWQUOTEBTN, "CREATENEWQUOTEBTN");
 		waitForVisibleElement(driver, NEWMANUALQUOTEBTN);
 		click(NEWMANUALQUOTEBTN, "NEWMANUALQUOTEBTN");
 	}
@@ -682,7 +687,6 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickEddieViewEstimatedSavingsBtn() throws Exception {
-		scrollPageDown();
 		waitForVisibleElement(driver, VIEWESTIMATEDSAVINGSBUTTON);
 		click(VIEWESTIMATEDSAVINGSBUTTON, "VIEWESTIMATEDSAVINGSBUTTON");
 	}

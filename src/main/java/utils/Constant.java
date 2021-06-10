@@ -31,6 +31,8 @@ public class Constant {
 		public static final String UATIndirectPartnerEugeneBuenPass = "";
 		public static final String UATIndirectPartnerEugeneCBuenUser= "eugene.buen@pe.com.uat";
 		public static final String UATIndirectPartnerEugeneCBuenPass= "WuUty2HRTvv4eN";
+		public static final String UATSPDEugeneBuenUser = "direct@email.com.uat";
+		public static final String UATSPDEugeneBuenPass = "Solar99999";
 		
 		public static final String GmailApp = "http://mail.google.com";
 		public static final String GmailInbox = "https://mail.google.com/mail/u/0/#inbox";

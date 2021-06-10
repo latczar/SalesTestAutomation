@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 				//"src/main/resources/features/spwr/TestCaseFeatures/TS_01_Partner_Portal_End_to_End_Account_to_Manual_Quoting_Cash.feature",
 				//"src/main/resources/features/spwr/TestCaseFeatures/TS_02_Partner_Portal_End_to_End_Account_to_Manual_Quoting_Loan.feature",
 				//"src/main/resources/features/spwr/TestCaseFeatures/TS_03_Partner_Portal_End_to_End_Account_to_Manual_Quoting_Lease.feature",
-				"src/main/resources/features/spwr/TestCaseFeatures/TS_04_Partner_Portal_End_to_End_Account_to_Manual_Signing_Cash.feature",
+				//"src/main/resources/features/spwr/TestCaseFeatures/TS_04_Partner_Portal_End_to_End_Account_to_Manual_Signing_Cash.feature",
 				//"src/main/resources/features/spwr/TestCaseFeatures/TS_05_Partner_Portal_End_to_End_Account_to_Manual_Signing_Loan.feature",
 				//"src/main/resources/features/spwr/TestCaseFeatures/TS_06_Partner_Portal_End_to_End_Account_to_Manual_Signing_Lease.feature"
 				
@@ -26,6 +26,7 @@ import io.cucumber.junit.CucumberOptions;
 				//"src/main/resources/features/spwr/UATNDLeaseTestCasesEddieFinEng/TS_08_UAT_ND_Eddie_Manual_Quoting_Lease.feature",
 				//"src/main/resources/features/spwr/UATNDLeaseTestCasesEddieFinEng/TS_09_UAT_ND_Eddie_Manual_Quoting_Lease.feature",
 				//"src/main/resources/features/spwr/UATNDLeaseTestCasesEddieFinEng/TS_10_UAT_ND_Eddie_Manual_Quoting_Lease.feature"
+				"src/main/resources/features/spwr/QuoteCreation/MultipleFO_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature"
 				},
 		glue = {"stepDefinitions"},
 		stepNotifications = true,

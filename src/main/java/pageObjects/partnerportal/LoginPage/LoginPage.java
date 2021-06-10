@@ -13,9 +13,13 @@ public class LoginPage extends BasePage {
 	String pageName = this.getClass().getSimpleName();
 	// Using FindBy for locating elements
 	
-	@FindBy(how = How.XPATH, using = "//input[@id='j_id0:pploginForm:username']") WebElement USERNAMETXTBOX;
-	@FindBy(how = How.XPATH, using = "//input[@id='j_id0:pploginForm:password']") WebElement PASSWORDTXTBOX;
-	@FindBy(how = How.XPATH, using = "//input[@id='j_id0:pploginForm:loginButton']") WebElement LOGINBTN;
+	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/div[1]/c-pl-signin[1]/div[1]/lightning-layout[1]/slot[1]/lightning-layout-item[1]/slot[1]/div[1]/lightning-layout[4]/slot[1]/lightning-layout-item[1]/slot[1]/input")
+	WebElement USERNAMETXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/div[1]/c-pl-signin[1]/div[1]/lightning-layout[1]/slot[1]/lightning-layout-item[1]/slot[1]/div[1]/lightning-layout[5]/slot[1]/lightning-layout-item[1]/slot[1]/input")
+	WebElement PASSWORDTXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//button[contains(text(),'LOGIN')]") WebElement LOGINBTN;
 	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Forgot Your Password?')]") WebElement FORGOTPASSWORDBTN;
 	
 	public LoginPage() {
@@ -82,4 +86,11 @@ public class LoginPage extends BasePage {
 		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATIndirectPartnerGabiSolarPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
+	
+	public void loginAsSPDUAT(String username, String password) throws Exception {
+		waitForVisibleElement(driver, USERNAMETXTBOX);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATSPDEugeneBuenUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATSPDEugeneBuenPass);
+		click(LOGINBTN, "LOGINBTN");
+	}
 }

@@ -17,6 +17,11 @@ public class LoginPageSteps {
 		BasePage.initialize(browser, Constant.qaPartnerPortal);
 	}
 	
+	@Given("^User navigates to UAT SunPower Partner Portal using \"([^\"]*)\" browser$")
+	public void user_navigates_to_UAT_SunPower_Partner_Portal_using_browser(String browser) throws Exception {
+		BasePage.initialize(browser, Constant.UATPartnerPortal);
+	}
+	
 	@When("^User logs in as TPS in QA$")
 	public void user_logs_in_as_tps_in_qa() throws Exception {
 		LoginPage loginPage = new LoginPage();
@@ -48,6 +53,12 @@ public class LoginPageSteps {
 	public void user_logs_in_at_uat_as_indirect() throws Exception {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerEugeneCBuenUser, Constant.UATIndirectPartnerEugeneCBuenPass);
+	}
+	
+	@When("User logs in at UAT as SPD")
+	public void user_logs_in_at_uat_as_spd() throws Exception {
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginAsSPDUAT(Constant.UATSPDEugeneBuenUser, Constant.UATSPDEugeneBuenPass);
 	}
 	
 	/*always include RunListEndFlag for end of test scenarios*/

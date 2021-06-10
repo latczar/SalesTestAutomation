@@ -158,6 +158,14 @@ public class BasePage {
 	
 	public static void enterText(WebElement element, String locator, String value) {
 	// ***** Test Step - description *****
+		element.click();
+		String tcStepDesc = "Entering text '" + value + "' in '" + locator + "' text field";
+		System.out.println(tcStepDesc);
+		element.sendKeys(value);	
+		}
+	
+	public static void enterTextforAddressAndPhone(WebElement element, String locator, String value) {
+	// ***** Test Step - description *****
 		String tcStepDesc = "Entering text '" + value + "' in '" + locator + "' text field";
 		System.out.println(tcStepDesc);
 		element.sendKeys(value);	
@@ -290,5 +298,11 @@ public class BasePage {
 		driver.navigate().refresh();
 		Boolean wait1 = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Processing...')]")));
+	}
+	
+	public void arrowDownClick(WebElement element) throws Exception{
+		Thread.sleep(1000);
+		element.sendKeys(Keys.ARROW_DOWN);
+		element.sendKeys(Keys.RETURN);
 	}
 }

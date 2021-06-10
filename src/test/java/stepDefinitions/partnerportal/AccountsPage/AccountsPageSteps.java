@@ -319,11 +319,18 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickOnCoPayment(coPaymentInput);
 	}
 	
-	@And("^User will click the arrow button to select preferred payment option as Loan$")
+	@And("^User will click the arrow button to select preferred payment option as Loan with Co-Payment$")
 	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Loan(String coPaymentInput) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnShowBtn();
 		accountsPage.clickOnCoPayment(coPaymentInput);
+		accountsPage.clickOnSelectLoanPayment();
+	}
+	
+	@And("^User will click the arrow button to select preferred payment option as Loan$")
+	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Loan() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnShowBtn();
 		accountsPage.clickOnSelectLoanPayment();
 	}
 	
@@ -353,9 +360,10 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickSaveBtnEditLeaseBtn();
 	}
 	
-	@Then("User will select preferred payment option as Lease")
+	@And("^User will click the arrow button to select preferred payment option as Lease$")
 	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Lease() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnShowBtn();
 		accountsPage.clickOnSelectLeasePayment();
 	}
 	
