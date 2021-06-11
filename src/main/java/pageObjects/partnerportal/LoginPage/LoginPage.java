@@ -82,8 +82,8 @@ public class LoginPage extends BasePage {
 	
 	public void loginAsIndirectPartnerUAT(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATIndirectPartnerGabiSolarUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATIndirectPartnerGabiSolarPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATIndirectPartnerEugeneCBuenUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATIndirectPartnerEugeneCBuenPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	

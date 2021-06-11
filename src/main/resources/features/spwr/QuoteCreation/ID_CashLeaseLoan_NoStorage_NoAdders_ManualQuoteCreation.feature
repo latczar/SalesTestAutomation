@@ -1,4 +1,4 @@
-Feature: SPD_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreationOnly
+Feature: ID_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreationOnly
 
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 06/11/2021
@@ -9,7 +9,7 @@ Scenario: CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
-When User logs in at UAT as SPD
+When User logs in at UAT as an ID
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -17,10 +17,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "ManualTestA" and Last Name as "L0611t04docgspd"
+Then User enters his/her Residential First Name as "ManualTestA" and Last Name as "L0611t01docgid"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "16388 Midwood Dr, Granada Hills, CA 91344, USA"
+Then User enters Residential address as " 4 Elaine Pl, Islandia, NY 11749, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer

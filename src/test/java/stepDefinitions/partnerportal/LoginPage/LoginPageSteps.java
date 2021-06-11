@@ -49,7 +49,7 @@ public class LoginPageSteps {
 		loginPage.loginAsTPSUAT(Constant.UATNDGabiTPSUser, Constant.UATNDGabiTPSPass);
 	}
 	
-	@When("User logs in at UAT as an Indirect Partner Eugene C Buen")
+	@When("User logs in at UAT as an ID")
 	public void user_logs_in_at_uat_as_indirect() throws Exception {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerEugeneCBuenUser, Constant.UATIndirectPartnerEugeneCBuenPass);

@@ -22,15 +22,13 @@ public class Constant {
 		
 		//UAT_TPS
 		public static final String UATNDGabiTPSUser = "tpsqa.test@tpsgabisolar.com.uat";
-		public static final String UATNDGabiTPSPass = "P5v4vk394SsnsP";
+		public static final String UATNDGabiTPSPass = "Solar!2345";
 		
 		//UAT_IndirectPartner
-		public static final String UATIndirectPartnerGabiSolarUser = "bad.pritt@gabisolar.com.uat";
-		public static final String UATIndirectPartnerGabiSolarPass = "qsNMg8EeeT9j3ex0";
 		public static final String UATIndirectPartnerEugeneBuenUser = "eugene.buen@sunpowercorp.com.qa";
 		public static final String UATIndirectPartnerEugeneBuenPass = "";
 		public static final String UATIndirectPartnerEugeneCBuenUser= "eugene.buen@pe.com.uat";
-		public static final String UATIndirectPartnerEugeneCBuenPass= "WuUty2HRTvv4eN";
+		public static final String UATIndirectPartnerEugeneCBuenPass= "Solar123123!";
 		public static final String UATSPDEugeneBuenUser = "direct@email.com.uat";
 		public static final String UATSPDEugeneBuenPass = "Solar99999";
 		

@@ -26,7 +26,11 @@ import io.cucumber.junit.CucumberOptions;
 				//"src/main/resources/features/spwr/UATNDLeaseTestCasesEddieFinEng/TS_08_UAT_ND_Eddie_Manual_Quoting_Lease.feature",
 				//"src/main/resources/features/spwr/UATNDLeaseTestCasesEddieFinEng/TS_09_UAT_ND_Eddie_Manual_Quoting_Lease.feature",
 				//"src/main/resources/features/spwr/UATNDLeaseTestCasesEddieFinEng/TS_10_UAT_ND_Eddie_Manual_Quoting_Lease.feature"
-				"src/main/resources/features/spwr/QuoteCreation/MultipleFO_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature"
+				
+				
+				"src/main/resources/features/spwr/QuoteCreation/ID_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/ND_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/SPD_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature"
 				},
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
