@@ -9,6 +9,7 @@ Dedicated quickstart project written in Selenium Java with the integration of Cu
 * Functional testing interaction
 * Regression testing suites
 * Externalised test configuration (QA, UAT, PROD env)
+* Page Factory
 
 ## Tools used
 * Eclipse IDE
