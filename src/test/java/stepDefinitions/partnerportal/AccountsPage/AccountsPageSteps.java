@@ -172,6 +172,13 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.enterShadingDate(shadingDate);
 	}
 	
+	@Then("User clicks on the SunVault Storage button")
+	public void user_clicks_on_the_sun_vault_storage_button() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.addSunvaultStorage();
+	}
+
+	
 	@Then("^clicks on the New Roof button$")
 	public void clicks_on_the_New_Roof_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
@@ -243,7 +250,19 @@ public class AccountsPageSteps extends BasePage {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterCashPricePerWattValue(cashPricePerWatt);
 	}
-
+	
+	@Then("User enters {string} in the Gross Price tab for Cash option")
+	public void user_enters_in_the_gross_price_tab_for_cash_option(String cashGrossPrice) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+	    accountsPage.enterCashGrossPriceValue(cashGrossPrice);
+	}
+	
+	@Then("User enters {string} in the Storage Dealer Commission tab for Cash option")
+	public void user_enters_in_the_storage_dealer_commission_tab_for_cash(String cashStorageDealerCommission) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.enterCashStorageDealerComm(cashStorageDealerCommission);
+	}	
+	
 	@Then("^User checks the show Lease option$")
 	public void user_checks_the_show_Lease_option() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
@@ -256,11 +275,36 @@ public class AccountsPageSteps extends BasePage {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterLeasePricePerWatt(leasePricePerWatt);
 	}
+	
+	@Then("User enters {string} in the Price Per kWh tab for Lease option")
+	public void user_enters_in_the_price_per_k_wh_tab_for_lease_option(String leasePricePerkWh) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.enterLeasePricePerkWhValue(leasePricePerkWh);
+	}
+	
+	@Then("User clicks on the Price Per kWh RUN button")
+	public void user_clicks_on_the_price_per_k_wh_run_button() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickLeasePricePerkWhRun();		
+	}
+	
+	@Then("User enters {string} in the Storage Dealer Commission tab for Lease option")
+	public void user_enters_in_the_storage_dealer_commission_tab_for_lease(String leaseStorageDealerCommission) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.enterLeaseStorageDealerComm(leaseStorageDealerCommission);
+	}
 
 	@Then("^User checks the show Loan option$")
 	public void user_checks_the_show_Loan_option() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickLoanOptionTab();
+		accountsPage.clickCheckboxLeaseLoanShowOption();
+	}
+	
+	@Then("^User checks the show Loan option for OR$")
+	public void user_checks_the_show_Loan_option_for_OR() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickORLoanOptionTab();
 		accountsPage.clickCheckboxLeaseLoanShowOption();
 	}
 
@@ -269,7 +313,13 @@ public class AccountsPageSteps extends BasePage {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterLoanPricePerWatt(loanPricePerWatt);
 	}
-
+	
+	@Then("User enters {string} in the Storage Dealer Commission tab for Loan option")
+	public void user_enters_in_the_storage_dealer_commission_tab_for_loan(String loanStorageDealerCommission) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.enterLoanStorageDealerComm(loanStorageDealerCommission);
+	}
+	
 	@Then("^clicks on save changes for the Quote Settings modal$")
 	public void clicks_on_save_changes_for_the_Quote_Settings_modal() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();

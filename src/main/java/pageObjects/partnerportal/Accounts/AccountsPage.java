@@ -221,12 +221,27 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]")
 	WebElement SHADINGMEASUREMENTDATEINPUTBOX;
 	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]")
+	WebElement SELECTSTORAGEDROPDOWNBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/span[1]")
+	WebElement SUNVAULTSTORAGEBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[1]/span[1]")
+	WebElement ONESUNVAULTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/span[1]")
+	WebElement TWOSUNVAULTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/input[1]")
+	WebElement ACCESSORYFRONTEDGESKIRTCHECKBOX;
+	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/input[2]")
+	WebElement ACCESSORYCRITTERGUARDCHECKBOX;
+	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]")
 	WebElement MONITORINGBTN;
-	
-	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[1]/div[3]/div/div[1]/div")
-	WebElement STORAGEBTN;
-	
+		
 	@FindBy(how = How.XPATH, using = "//a[@id='new_roof_modal_toggle']")
 	WebElement NEWROOFBTN;
 	
@@ -296,17 +311,50 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//*[@id='cash_settings_price_per_watt']")
 	WebElement PRICEPERWATTCASHTXTBOX;
 	
+	@FindBy(how = How.XPATH, using = "//input[@id='cash_settings_gross_price']")
+	WebElement GROSSPRICECASHTXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='cash_storage_dealer_fee']")
+	WebElement CASHSTORAGEDEALERCOMMISSIONTXTBOX;
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='settings']/div[2]/div[2]/div[1]/ul/li[2]")
 	WebElement LEASEQUOTESETTINGSBTN;
 		
 	@FindBy(how = How.XPATH, using = "//input[@id='lease_settings_price_per_watt']")
 	WebElement PRICEPERWATTLEASETXTBOX;
 	
+	@FindBy(how = How.XPATH, using = "//input[@id='lease_settings_price_per_kwh']")
+	WebElement PRICEPERKWHLEASETXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Run')]")
+	WebElement PRICEPERKWHLEASERUNBTN;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='lease_settings_gross_price']")
+	WebElement GROSSPRICELEASETXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='lease_settings_dealer_fee_per_watt']")
+	WebElement LEASEDEALERCOMMISSIONPERWATTTXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='lease_storage_dealer_fee']")
+	WebElement LEASESTORAGEDEALERCOMMISSIONTXTBOX;
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='settings']/div[2]/div[2]/div[1]/ul/li[3]")
 	WebElement LOANQUOTESETTINGSBTN;
 	
+	@FindBy(how = How.XPATH, using = "//@//*[@id='settings']/div[2]/div[2]/div[1]/ul/li[2]")
+	WebElement ORLOANQUOTESETTINGSBTN;
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='loan_settings_price_per_watt']")
 	WebElement PRICEPERWATTLOANTXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='loan_settings_gross_price']")
+	WebElement GROSSPRICELOANTXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='loan_settings_dealer_fee_per_watt']")
+	WebElement LOANDEALERCOMMISSIONPERWATTTXBOX;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='loan_storage_dealer_fee']")
+	WebElement LOANSTORAGEDEALERCOMMISSIONTXTBOX;
 	
 	@FindBy(how = How.XPATH, using = "//span[contains(text(),'Show customer this option')]")
 	WebElement LEASELOANQUOTECHECKBOX;
@@ -578,6 +626,13 @@ public class AccountsPage extends BasePage {
 
 	public void enterShadingDate(String shadingDate) throws Exception {
 		enterText(SHADINGMEASUREMENTDATEINPUTBOX, "SHADINGMEASUREMENTDATEINPUTBOX", shadingDate);
+		sendKeysTab(SHADINGMEASUREMENTDATEINPUTBOX);
+	}
+	
+	public void addSunvaultStorage() throws Exception {
+		click(SELECTSTORAGEDROPDOWNBTN, "SELECTSTORAGEDROPDOWNBTN");
+		waitForVisibleElement(driver, SUNVAULTSTORAGEBTN);
+		click(SUNVAULTSTORAGEBTN, "SUNVAULTSTORAGEBTN");
 	}
 	
 	public void clickNewRoofBtn() throws Exception {
@@ -640,7 +695,25 @@ public class AccountsPage extends BasePage {
 	public void enterCashPricePerWattValue(String cashPricePerWatt) throws Exception {
 		enterText(PRICEPERWATTCASHTXTBOX, "PRICEPERWATTCASHTXTBOX", cashPricePerWatt);
 		sendKeysTab(PRICEPERWATTCASHTXTBOX);
-		
+	}
+	
+	public void enterCashGrossPriceValue(String cashGrossPrice) throws Exception {
+		enterText(GROSSPRICECASHTXTBOX, "GROSSPRICECASHTXTBOX", cashGrossPrice);
+		sendKeysTab(GROSSPRICECASHTXTBOX);
+	}
+	
+	public void enterLeasePricePerkWhValue(String leasePricePerkWh) throws Exception {
+		enterText(PRICEPERKWHLEASETXTBOX, "PRICEPERKWHLEASETXTBOX", leasePricePerkWh);
+		sendKeysTab(PRICEPERKWHLEASETXTBOX);
+	}
+	
+	public void clickLeasePricePerkWhRun() throws Exception {
+		jse.executeScript("arguments[0].click()", PRICEPERKWHLEASERUNBTN);
+	}	
+	
+	public void enterCashStorageDealerComm(String cashStorageDealerComm) throws Exception {
+		enterText(CASHSTORAGEDEALERCOMMISSIONTXTBOX, "CASHSTORAGEDEALERCOMMISSIONTXTBOX", cashStorageDealerComm);
+		sendKeysTab(CASHSTORAGEDEALERCOMMISSIONTXTBOX);
 	}
 	
 	public void clickCheckboxCashShowOption() throws Exception {
@@ -660,13 +733,27 @@ public class AccountsPage extends BasePage {
 		sendKeysTab(PRICEPERWATTLEASETXTBOX);
 	}
 	
+	public void enterLeaseStorageDealerComm(String leaseStorageDealerComm) throws Exception {
+		enterText(LEASESTORAGEDEALERCOMMISSIONTXTBOX, "LEASESTORAGEDEALERCOMMISSIONTXTBOX", leaseStorageDealerComm);
+		sendKeysTab(LEASESTORAGEDEALERCOMMISSIONTXTBOX);
+	}
+	
 	public void clickLoanOptionTab() throws Exception {
 		jse.executeScript("arguments[0].click()", LOANQUOTESETTINGSBTN);
+	}
+	
+	public void clickORLoanOptionTab() throws Exception {
+		jse.executeScript("arguments[0].click()", ORLOANQUOTESETTINGSBTN);
 	}
 	
 	public void enterLoanPricePerWatt(String loanPricePerWatt) throws Exception {
 		enterText(PRICEPERWATTLOANTXTBOX, "PRICEPERWATTLOANTXTBOX", loanPricePerWatt);
 		sendKeysTab(PRICEPERWATTLOANTXTBOX);
+	}
+	
+	public void enterLoanStorageDealerComm(String loanStorageDealerComm) throws Exception {
+		enterText(LOANSTORAGEDEALERCOMMISSIONTXTBOX, "LOANSTORAGEDEALERCOMMISSIONTXTBOX", loanStorageDealerComm);
+		sendKeysTab(LOANSTORAGEDEALERCOMMISSIONTXTBOX);
 	}
 	
 	public void clickQuoteSettingsSaveChanges() throws Exception {

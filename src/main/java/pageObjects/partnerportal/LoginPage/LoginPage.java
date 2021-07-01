@@ -13,13 +13,13 @@ public class LoginPage extends BasePage {
 	String pageName = this.getClass().getSimpleName();
 	// Using FindBy for locating elements
 	
-	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/div[1]/c-pl-signin[1]/div[1]/lightning-layout[1]/slot[1]/lightning-layout-item[1]/slot[1]/div[1]/lightning-layout[4]/slot[1]/lightning-layout-item[1]/slot[1]/input")
+	@FindBy(how = How.XPATH, using = "//*[@id=\"LightningComponentid\"]/c-pl-signin/div/lightning-layout/slot/lightning-layout-item[1]/slot/div/lightning-layout[4]/slot/lightning-layout-item/slot/input")
 	WebElement USERNAMETXTBOX;
 	
-	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/div[1]/c-pl-signin[1]/div[1]/lightning-layout[1]/slot[1]/lightning-layout-item[1]/slot[1]/div[1]/lightning-layout[5]/slot[1]/lightning-layout-item[1]/slot[1]/input")
+	@FindBy(how = How.XPATH, using = "//*[@id=\"LightningComponentid\"]/c-pl-signin/div/lightning-layout/slot/lightning-layout-item[1]/slot/div/lightning-layout[5]/slot/lightning-layout-item/slot/input")
 	WebElement PASSWORDTXTBOX;
 	
-	@FindBy(how = How.XPATH, using = "//button[contains(text(),'LOGIN')]") WebElement LOGINBTN;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"LightningComponentid\"]/c-pl-signin/div/lightning-layout/slot/lightning-layout-item[1]/slot/div/lightning-layout[6]/slot/lightning-layout-item/slot/button") WebElement LOGINBTN;
 	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Forgot Your Password?')]") WebElement FORGOTPASSWORDBTN;
 	
 	public LoginPage() {
@@ -52,6 +52,8 @@ public class LoginPage extends BasePage {
 		objExists(pageName, FORGOTPASSWORDBTN, "FORGOTPASSWORDBTN", true);
 		return FORGOTPASSWORDBTN.isDisplayed();
 	}
+	
+//----------------------------------------------------------------------------------------------------------------------------------------------------------	
 	
 	//For QA
 	
@@ -91,6 +93,31 @@ public class LoginPage extends BasePage {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
 		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATSPDEugeneBuenUser);
 		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATSPDEugeneBuenPass);
+		click(LOGINBTN, "LOGINBTN");
+	}
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------	
+	
+	//For PROD
+	
+	public void loginAsTPSPROD(String username, String password) throws Exception {
+		waitForVisibleElement(driver, USERNAMETXTBOX);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODSPDEugeneBuenUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODSPDEugeneBuenPass);
+		click(LOGINBTN, "LOGINBTN");
+	}
+	
+	public void loginAsIndirectPartnerPROD(String username, String password) throws Exception {
+		waitForVisibleElement(driver, USERNAMETXTBOX);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODIndirectPartnerEugeneBuenUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODIndirectPartnerEugeneBuenPass);
+		click(LOGINBTN, "LOGINBTN");
+	}	
+	
+	public void loginAsSPDPROD(String username, String password) throws Exception {
+		waitForVisibleElement(driver, USERNAMETXTBOX);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODNDGabiTPSUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODNDGabiTPSPass);
 		click(LOGINBTN, "LOGINBTN");
 	}
 }
