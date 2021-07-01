@@ -4,7 +4,7 @@ Dedicated quickstart project written in Selenium Java with the integration of Cu
 
 ## Approach/Concepts Included in the Project
 * Page Object Model design pattern
-* Easy to understand test cases c/o Cucumber step definitions
+* Easy to understand test cases c/o Cucumber feature files
 * Continuous test runs as needed
 * Functional testing interaction
 * Regression testing suites
