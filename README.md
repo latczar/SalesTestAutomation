@@ -33,4 +33,4 @@ The project is mainly used for end-to-end manual quoting for several test enviro
 
 ## Reporting
 
-Will be adding test reporting function in the future. As well as the plugin to support CI and also to have the individual test reports joined as one via the Jenkins Cucumber-JVM-Reports plugin which is yet to be configured.
+Will be adding test reporting function in the future. As well as a plugin to support CI and also to have the individual test reports joined as one via the Jenkins Cucumber-JVM-Reports plugin which is yet to be configured.
