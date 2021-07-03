@@ -32,6 +32,9 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//*[@id='myDropdown']/a") //For UAT = //*[@id="myDropdown"]/a[2]
 	WebElement RESIDENTIALCUSTOMERBTNQA;
 	
+	@FindBy(how = How.XPATH, using = "//*[@id='myDropdown']/a[2]")
+	WebElement IDRESIDENTIALCUSTOMERBTNQA;
+	
 	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Residential Customer')]")
 	WebElement RESIDENTIALCUSTOMERBTNUAT;
 	
@@ -314,6 +317,9 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//input[@id='cash_settings_gross_price']")
 	WebElement GROSSPRICECASHTXTBOX;
 	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/form[1]/div[2]/div[3]/div[3]/div[2]/div[1]/input[2]")
+	WebElement OVERRIDEREBATECASHLEASELOANTXTBOX;
+	
 	@FindBy(how = How.XPATH, using = "//input[@id='cash_storage_dealer_fee']")
 	WebElement CASHSTORAGEDEALERCOMMISSIONTXTBOX;
 	
@@ -337,6 +343,7 @@ public class AccountsPage extends BasePage {
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='lease_storage_dealer_fee']")
 	WebElement LEASESTORAGEDEALERCOMMISSIONTXTBOX;
+	
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='settings']/div[2]/div[2]/div[1]/ul/li[3]")
 	WebElement LOANQUOTESETTINGSBTN;
@@ -454,6 +461,10 @@ public class AccountsPage extends BasePage {
 	
 	public void createNewResidentialCustomerAccountForQA() throws Exception {
 		click(RESIDENTIALCUSTOMERBTNQA, "RESIDENTIALCUSTOMERBTNQA");
+	}
+	
+	public void createNewIDResidentialCustomerAccountForQA() throws Exception {
+		click(IDRESIDENTIALCUSTOMERBTNQA, "IDRESIDENTIALCUSTOMERBTNQA");
 	}
 	
 	public boolean isNewAccountResidentialFormDisplayed() throws Exception {
@@ -686,6 +697,12 @@ public class AccountsPage extends BasePage {
 	public boolean isQuoteSettingsModalDisplayed() throws Exception {
 		waitForVisibleElement(driver, PRICEPERWATTCASHTXTBOX);
 		return PRICEPERWATTCASHTXTBOX.isDisplayed();
+	}
+	
+	public void enterOverrideEstimateCashLeaseLoan(String overrideRebateValue) throws Exception {
+		waitForVisibleElement(driver, OVERRIDEREBATECASHLEASELOANTXTBOX);
+		enterText(OVERRIDEREBATECASHLEASELOANTXTBOX, "OVERRIDEREBATECASHLEASELOANTXTBOX", overrideRebateValue);
+		sendKeysTab(OVERRIDEREBATECASHLEASELOANTXTBOX);
 	}
 	
 	public void clickCashOptionTab() throws Exception {

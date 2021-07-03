@@ -59,8 +59,8 @@ public class LoginPage extends BasePage {
 	
 	public void loginAsIndirectPartnerQA(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectPartnerGabiSolarUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectPartnerGabiSolarPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectPartnerEugeneBuenUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectPartnerEugeneBuenPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	
@@ -68,6 +68,13 @@ public class LoginPage extends BasePage {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
 		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QATPSUser);
 		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QATPSPass);
+		click(LOGINBTN, "LOGINBTN");
+	}
+	
+	public void loginAsSPDQA(String username, String password) throws Exception {
+		waitForVisibleElement(driver, USERNAMETXTBOX);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QASPDEmilySabetUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QASPDEmilySabetPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	

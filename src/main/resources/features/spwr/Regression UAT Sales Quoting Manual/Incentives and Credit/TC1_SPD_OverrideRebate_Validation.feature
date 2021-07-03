@@ -1,11 +1,11 @@
-Feature: TC2_SPD_MinimumPricePerkWh_Validation_2
+Feature: TC1_SPD_OverrideRebate_Validation
 
 #Author: lcaesar@sunpowercorp.com
-#Date Created: 06/29/2021
+#Date Created: 07/02/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: SPD_MinimumPricePerkWh_Validation_2
+Scenario: SPD_OverrideRebate_Validation
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
@@ -17,7 +17,7 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LMinPPkWhregspd"
+Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LOverrideRebateregspd"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
 Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
@@ -37,7 +37,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "06/29/2021"
+Then User enters the Shading Measurement Date as "07/02/2021"
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
@@ -49,9 +49,13 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-Then User checks the show Lease option
-And User enters "0.01" in the Price Per kWh tab for Lease option
-Then User clicks on the Price Per kWh RUN button
-Then User unticks the show Cash option
+And User enters "4.00" in the Price Per Watt tab for Cash option
+And User enters "1000" in the Override Rebate tab
 Then clicks on save changes for the Quote Settings modal
+Then User clicks on the Save Design button
+
+When the EDDiE portal Design page will calculate savings
+Then User will click on View Estimated Savings button
+And User will click on the EDDiE Savings button
+And User will click the arrow button to select preferred payment option as Cash
 Then User ends the test scenario

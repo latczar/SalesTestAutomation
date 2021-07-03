@@ -22,17 +22,22 @@ public class LoginPageSteps {
 		BasePage.initialize(browser, Constant.UATPartnerPortal);
 	}
 	
-	
-	@When("^User logs in as TPS in QA$")
-	public void user_logs_in_as_tps_in_qa() throws Exception {
+	@When("^User logs in at QA as TPS$")
+	public void user_logs_in_at_qa_as_tps() throws Exception {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginAsTPSQA(Constant.QATPSUser, Constant.QATPSPass);
 	}
 	
-	@When("^User logs in as an Indirect Partner in QA$")
-	public void user_logs_in_as_an_indirect_partner_in_qa() throws Exception {
+	@When("^User logs in at QA as ID$")
+	public void user_logs_in_at_qa_as_id() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerQA(Constant.QAIndirectPartnerGabiSolarUser, Constant.QAIndirectPartnerGabiSolarPass);
+		loginPage.loginAsIndirectPartnerQA(Constant.QAIndirectPartnerEugeneBuenUser, Constant.QAIndirectPartnerEugeneBuenPass);
+	}
+	
+	@When("^User logs in at QA as SPD$")
+	public void user_logs_in_at_qa_as_spd() throws Exception {
+		LoginPage loginPage = new LoginPage();
+		loginPage.loginAsSPDQA(Constant.QASPDEmilySabetUser, Constant.QASPDEmilySabetPass);
 	}
 	
 //----------------------------------------------------------------------------------------------------------------------------------------------------------

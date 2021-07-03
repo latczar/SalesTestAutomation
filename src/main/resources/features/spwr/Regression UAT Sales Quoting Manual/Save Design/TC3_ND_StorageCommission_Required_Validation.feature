@@ -1,15 +1,15 @@
-Feature: TC5_ND_DealerCommissionVerification_Cash_5
+Feature:  TC3_ND_StorageCommission_Required_Validation
 
 #Author: lcaesar@sunpowercorp.com
-#Date Created: 06/15/2021
+#Date Created: 06/23/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: ND_DealerCommissionVerification_Cash_5
+Scenario: ND_StorageCommission_Required_Validation
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
-When User logs in at UAT as SPD
+When User logs in at UAT as ND
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -17,7 +17,7 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "L0621t01regnd"
+Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LStorageCommReqregnd"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
 Then User enters Residential address as "16388 Midwood Dr, Granada Hills, CA 91344, USA"
@@ -37,20 +37,20 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "06/21/2021"
+Then User enters the Shading Measurement Date as "06/29/2021"
+Then User clicks on the SunVault Storage button
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
 And User enters a value for Azimuth as "180"
-And User enters a value for Module Count as "50"
+And User enters a value for Module Count as "20"
 And User enter values for Roof Solar Access Percentages for Jan-Dec as "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "99"
 Then User saves the changes
 
-#QA - Continuation of EDDiE portal Design page activities - Cash
+#QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-Then User checks the show Loan option
 And User enters "4.00" in the Price Per Watt tab for Cash option
-Then User unticks the show Cash option
+#And User enters "1" in the Storage Dealer Commission tab for Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User ends the test scenario

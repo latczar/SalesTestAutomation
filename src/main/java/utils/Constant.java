@@ -12,13 +12,20 @@ public class Constant {
 		
 		//QA_TPS
 		public static final String QATPSUser = "tpsqa.test@tpsgabisolar.com.qa";
-		public static final String QATPSPass = "Solar12347";
+		public static final String QATPSPass = "Solar123!";
 		
 		//QA_IndirectPartner
 		public static final String QAIndirectPartnerGabiSolarUser = "bad.pritt@gabisolar.com.qa";
 		public static final String QAIndirectPartnerGabiSolarPass = "ZTffpf4vDqU5MK2";
 		public static final String QAIndirectPartnerEugeneBuenUser = "eugene.buen@pe.com.qa";
-		public static final String QAIndirectPartnerEugeneBuenPass = "Solar090321";
+		public static final String QAIndirectPartnerEugeneBuenPass = "Solar12345!"; //updated as of 07/03/2021
+		
+		//QA_SPD
+		public static final String QASPDEugeneBuenUser = "direct@email.com.qa";
+		public static final String QASPDEugeneBuenPass = "Solar12345";
+		public static final String QASPDEmilySabetUser = "emily.sabet@sunpowercorp.com.qa";
+		public static final String QASPDEmilySabetPass = "Solar@321!";
+		
 		
 		//UAT_TPS
 		public static final String UATNDGabiTPSUser = "tpsqa.test@tpsgabisolar.com.uat";
@@ -29,6 +36,8 @@ public class Constant {
 		public static final String UATIndirectPartnerEugeneBuenPass = "";
 		public static final String UATIndirectPartnerEugeneCBuenUser= "eugene.buen@pe.com.uat";
 		public static final String UATIndirectPartnerEugeneCBuenPass= "Solar123123!";
+		
+		//UAT_SPD
 		public static final String UATSPDEugeneBuenUser = "direct@email.com.uat";
 		public static final String UATSPDEugeneBuenPass = "Solar99999";
 		
@@ -63,7 +72,7 @@ public class Constant {
 		public static String PageName = null;
 		public static WebDriver driver = null;
 		public static String prodSpwrSDS = "https://us.sunpower.com/";
-		public static String qaPartnerPortal = "https://qa-sunpower1.cs196.force.com/CommunityLogin";
+		public static String qaPartnerPortal = "https://qa-sunpower1.cs61.force.com/"; //Updated as of 07/03/2021
 		public static String UATPartnerPortal = "https://uat-sunpower1.cs37.force.com/"; //Updated as of 06/23/2021
 		public static String PRODPartnerPortal = "https://sunpower1.force.com";
 

@@ -33,6 +33,12 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.createNewResidentialCustomerAccountForQA();	    
 	}
 	
+	@When("^User creates a Residential Customer account in ID - QA$")
+	public void user_creates_a_Residential_Customer_account_in_id_qa() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.createNewIDResidentialCustomerAccountForQA();	    
+	}
+		
 	@Then("^Residential - New Account page is displayed$")
 	public void residential_New_Account_page_is_displayed() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
@@ -235,7 +241,12 @@ public class AccountsPageSteps extends BasePage {
 	public void the_Quote_Settings_modal_is_displayed() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.isQuoteSettingsModalDisplayed();
-
+	}
+	
+	@Then("User enters {string} in the Override Rebate tab")
+	public void user_enters_in_the_override_rebate_tab(String overrideRebateValue) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.enterOverrideEstimateCashLeaseLoan(overrideRebateValue);
 	}
 	
 	@Then("User unticks the show Cash option")

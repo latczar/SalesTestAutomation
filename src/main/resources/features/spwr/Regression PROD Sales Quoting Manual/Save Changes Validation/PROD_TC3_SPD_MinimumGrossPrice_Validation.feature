@@ -1,15 +1,15 @@
-Feature: TC1_SPD_MinimumPricePerWatt_Validation_1
+Feature: PROD_TC3_SPD_MinimumGrossPrice_Validation
 
 #Author: lcaesar@sunpowercorp.com
-#Date Created: 06/29/2021
+#Date Created: 07/03/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: SPD_MinimumPricePerWatt_Validation_1
+Scenario: PROD_SPD_MinimumGrossPrice_Validation
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
-When User logs in at UAT as SPD
+Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
+When User logs in at PROD as SPD
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -17,7 +17,7 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LMinPPWregspd"
+Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LGPregspd"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
 Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
@@ -49,6 +49,6 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-And User enters "0.01" in the Price Per Watt tab for Cash option
+And User enters "5000" in the Gross Price tab for Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User ends the test scenario
