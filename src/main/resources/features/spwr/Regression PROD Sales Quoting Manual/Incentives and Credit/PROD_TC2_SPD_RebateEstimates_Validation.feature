@@ -1,15 +1,15 @@
-Feature: TC2_SPD_RebateEstimates_Validation
+Feature: PROD_TC2_SPD_RebateEstimates_Validation
 
 #Author: lcaesar@sunpowercorp.com
-#Date Created: 07/05/2021
+#Date Created: 07/07/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: SPD_RebateEstimates_Validation
+Scenario: PROD_SPD_RebateEstimates_Validation
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
-When User logs in at UAT as SPD
+Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
+When User logs in at PROD as SPD
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button

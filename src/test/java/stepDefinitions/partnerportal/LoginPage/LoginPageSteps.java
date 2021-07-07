@@ -2,13 +2,19 @@ package stepDefinitions.partnerportal.LoginPage;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import pageObjects.partnerportal.LoginPage.LoginPage;
 import pageObjects.partnerportal.home.BasePage;
 import utils.Constant;
 
-public class LoginPageSteps {
+public class LoginPageSteps extends BasePage{
 		
 	//For QA
 	

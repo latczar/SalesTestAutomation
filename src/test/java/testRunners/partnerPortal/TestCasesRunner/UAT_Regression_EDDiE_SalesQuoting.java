@@ -1,9 +1,19 @@
 package testRunners.partnerPortal.TestCasesRunner;
 
 import org.junit.AfterClass;
+import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
@@ -22,22 +32,30 @@ import io.cucumber.junit.CucumberOptions;
 			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC1_100k validation.feature",
 			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC2_8_perWatt_Loan_withoutStorage_validation.feature",
 			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC3_10_perWatt_Loan_withStorage_validation.feature",
-			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC1_SPD_OverrideRebate_Validation.feature"
-				
+			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC1_SPD_OverrideRebate_Validation.feature",
+			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC2_SPD_RebateEstimates_Validation.feature",
+			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC3_SPD_FederalTaxCredit26_Validation.feature",
+			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC4_SPD_StateTaxCreditMA_Validation.feature"
+			
 			},
 		
 		
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
 		dryRun = false,
-		plugin = {"pretty", /*"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"*/},
+		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true
 		)
 
 public class UAT_Regression_EDDiE_SalesQuoting {
 	
-	@AfterClass	
-	public static void tearDown() throws Exception {
-
+	@BeforeClass
+	public static void initDriver() {
+		System.out.println("Browser initializing...");
 	}
+	
+	@AfterClass
+	public static void tearDown() {
+		System.out.println("Browser is closing...");
+	}	
 }

@@ -61,14 +61,14 @@ public class Constant {
 		public static final String PartnerUsernameGmailApp = "qatestingspwr@gmail.com";
 		public static final String PartnerPasswordGmailApp = "Solar123";
 		public static String agreementName = "";
-		public static String filePath = "target/screenshots/testScreenshot.png";
+		public static String screenshotFileName = null;
 
 		public static boolean isEndStepReached = false;
 		public static final int defaultBrowserTimeOut = 60;
 		public static boolean DefaultoptionalFlag = true;
 		public static String ScreenshotFolderName = null;
+		public static String url = "";
 		public static String locator = null;
-		public static String RecentScreenshot = null;
 		public static String PageName = null;
 		public static WebDriver driver = null;
 		public static String prodSpwrSDS = "https://us.sunpower.com/";

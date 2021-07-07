@@ -1,6 +1,12 @@
 package stepDefinitions.partnerportal.AccountsPage;
 
 import io.cucumber.java.en.Then;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import pageObjects.partnerportal.Accounts.AccountsPage;
@@ -8,6 +14,12 @@ import pageObjects.partnerportal.home.BasePage;
 import utils.Constant;
 
 public class AccountsPageSteps extends BasePage {
+		
+	@AfterStep
+	public static void addScreenshot (Scenario scenario) {
+		final byte[] scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+			scenario.attach(scr, "image/png", "png");
+	}	
 	
 	@When("^User navigates to the Accounts page$")
 	public void user_navigates_to_the_Accounts_page() throws Exception {
@@ -172,10 +184,10 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickUserInputModuleTypeBtn(moduleType);
 	}
 	
-	@Then("^User enters the Shading Measurement Date as \"([^\"]*)\"$")
-	public void user_enters_the_Shading_Measurement_Date_as(String shadingDate) throws Exception {
+	@Then("^User enters the Shading Measurement Date as date today$")
+	public void user_enters_the_Shading_Measurement_Date_as() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
-		accountsPage.enterShadingDate(shadingDate);
+		accountsPage.enterShadingDate();
 	}
 	
 	@Then("User clicks on the SunVault Storage button")

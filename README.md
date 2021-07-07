@@ -1,6 +1,6 @@
 # TestAutomation - Sales Quoting EDDiE Automation Framework
 
-Dedicated quickstart project written in Selenium Java with the integration of Cucumber for the test automation of Sales Quoting. Framework is able to cover the end-to-end manual quoting process for QA, UAT, and PROD enviroment, creation of residential customer accounts, creation of manual quotes with storage, adders, selection of Financial Options from Cash, Lease, or Loan, input different types of pricing values in the Quote Settings.
+Dedicated open-source quickstart project written in Selenium Java with the integration of Cucumber for the test automation of Sales Quoting. Framework is able to cover the end-to-end manual quoting process for QA, UAT, and PROD enviroment, creation of residential customer accounts, creation of manual quotes with storage, adders, selection of Financial Options from Cash, Lease, or Loan, input different types of pricing values in the Quote Settings.
 
 ## Approach/Concepts Included in the Project
 * Page Object Model design pattern
@@ -33,4 +33,4 @@ The project is mainly used for end-to-end manual quoting for several test enviro
 
 ## Reporting
 
-Will be adding test reporting function in the future. As well as a plugin to support CI and also to have the individual test reports joined as one via the Jenkins Cucumber-JVM-Reports plugin which is yet to be configured.
+For Test Report generation, the project has been integrated with Cucumber-JVM 6 ExtentReports Adapter plugin and is properly configured as of writing. This plugin creates detailed HTML Spark and PDF Extent Reports, reports can be seen in the test-output folder of the project folder. Future updates for Test Report generation would be the integration of a plugin to support CI and also to have the individual test reports joined as one via the Jenkins Cucumber-JVM-Reports plugin which is yet to be configured.

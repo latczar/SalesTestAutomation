@@ -37,7 +37,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "06/29/2021"
+Then User enters the Shading Measurement Date as date today
 #Then User clicks on the SunVault Storage button
 And clicks on the New Roof button
 Then New Roof modal is displayed

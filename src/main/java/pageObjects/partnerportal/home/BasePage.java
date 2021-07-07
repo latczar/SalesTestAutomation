@@ -3,7 +3,10 @@ package pageObjects.partnerportal.home;
 import java.io.File;
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -28,7 +31,12 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.AfterStep;
+import io.cucumber.java.Scenario;
+
 import org.openqa.selenium.chrome.ChromeOptions;
+
 
 import utils.Constant;
 
@@ -253,16 +261,7 @@ public class BasePage {
 	    ArrayList<String> tabs4 = new ArrayList<String> (driver.getWindowHandles());
 	    driver.switchTo().window(tabs4.get(2));
 	}
-	
-	public static void takeScreenshot() throws Exception {
-		TakesScreenshot scrShot = (TakesScreenshot) driver;
-		System.out.println("Taking screenshot...");
-			File srcFile = scrShot.getScreenshotAs(OutputType.FILE);
-				File destFile = new File (Constant.filePath);
-					FileUtils.copyFile(srcFile, destFile);
-					System.out.println("Screenshot saved!");
-	}
-	
+		
 	public void waitForVisibleElement(WebDriver driver, WebElement element) {
 		try {
 			Thread.sleep(1000);
@@ -304,5 +303,5 @@ public class BasePage {
 		Thread.sleep(1000);
 		element.sendKeys(Keys.ARROW_DOWN);
 		element.sendKeys(Keys.RETURN);
-	}
+	}	
 }
