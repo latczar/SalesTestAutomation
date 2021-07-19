@@ -22,7 +22,12 @@ import io.cucumber.junit.CucumberOptions;
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Design Validation/PROD_TC4_SPD_MA_SystemSize_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Changes Validation/PROD_TC1_SPD_MinimumPricePerWatt_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Changes Validation/PROD_TC2_SPD_MinimumPricePerkWh_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Changes Validation/PROD_TC3_SPD_MinimumGrossPrice_Validation.feature"
+			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Changes Validation/PROD_TC3_SPD_MinimumGrossPrice_Validation.feature",
+			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC1_SPD_OverrideRebate_Validation.feature",
+			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC2_SPD_RebateEstimates_Validation.feature",
+			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC3_SPD_FederalTaxCredit26_Validation.feature",
+			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC4_SPD_StateTaxCreditMA_Validation.feature"
+				
 		},
 		
 		
@@ -33,7 +38,7 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome = true
 		)
 
-public class PROD_UAT_Regression_EDDiE_SalesQuoting {
+public class PROD_Regression_EDDiE_SalesQuoting {
 
 		@BeforeClass
 		public static void initDriver() {

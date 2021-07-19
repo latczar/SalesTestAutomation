@@ -109,8 +109,8 @@ public class LoginPage extends BasePage {
 	
 	public void loginAsTPSPROD(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODSPDEugeneBuenUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODSPDEugeneBuenPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODNDGabiTPSUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODNDGabiTPSPass);
 		click(LOGINBTN, "LOGINBTN");
 	}
 	
@@ -123,8 +123,8 @@ public class LoginPage extends BasePage {
 	
 	public void loginAsSPDPROD(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODNDGabiTPSUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODNDGabiTPSPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODSPDEugeneBuenUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODSPDEugeneBuenPass);
 		click(LOGINBTN, "LOGINBTN");
 	}
 }
