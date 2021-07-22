@@ -2,3 +2,4 @@
 debug.log
 target/
 test-output/
+src/main/java/utils/Constant.java
