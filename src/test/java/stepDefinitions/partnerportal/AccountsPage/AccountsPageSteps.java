@@ -133,6 +133,12 @@ public class AccountsPageSteps extends BasePage {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.inputTotalAnnualBill(totalAnnualBill);
 	}
+	
+	@And("User sets the Utility Account Holder")
+	public void user_sets_the_utility_account_holder() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.selectUtilityAccountHolderFirstRadioBtn();
+	}
 
 	@Then("^User saves the values inputted in the Electric Rate and Energy Usage modal$")
 	public void user_saves_the_values_inputted_in_the_Electric_Rate_and_Energy_Usage_modal() throws Throwable {
@@ -248,6 +254,12 @@ public class AccountsPageSteps extends BasePage {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickQuoteSettingsBtn();
 	}
+	
+	@And("User enters {string} for the new Quote Name")
+		public void user_enters_for_the_quote_name(String quoteNameNewValue) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.enterQuoteName(quoteNameNewValue);
+	}
 
 	@Then("^the Quote Settings modal is displayed$")
 	public void the_Quote_Settings_modal_is_displayed() throws Exception {
@@ -311,6 +323,12 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickLeasePricePerkWhRun();		
 	}
 	
+	@Then("User enters {string} in the Gross Price tab for Lease option")
+	public void user_enters_in_the_gross_price_tab_for_lease_option(String leaseGrossPrice) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+	    accountsPage.enterLeaseGrossPriceValue(leaseGrossPrice);
+	}
+	
 	@Then("User enters {string} in the Storage Dealer Commission tab for Lease option")
 	public void user_enters_in_the_storage_dealer_commission_tab_for_lease(String leaseStorageDealerCommission) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
@@ -341,6 +359,12 @@ public class AccountsPageSteps extends BasePage {
 	public void user_enters_in_the_storage_dealer_commission_tab_for_loan(String loanStorageDealerCommission) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.enterLoanStorageDealerComm(loanStorageDealerCommission);
+	}
+	
+	@Then("User enters {string} in the Gross Price tab for Loan option")
+	public void user_enters_in_the_gross_price_tab_for_loan_option(String loanGrossPrice) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+	    accountsPage.enterLoanGrossPriceValue(loanGrossPrice);
 	}
 	
 	@Then("^clicks on save changes for the Quote Settings modal$")

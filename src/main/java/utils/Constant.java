@@ -35,7 +35,7 @@ public class Constant {
 		public static final String UATIndirectPartnerEugeneBuenUser = "eugene.buen@sunpowercorp.com.qa";
 		public static final String UATIndirectPartnerEugeneBuenPass = "";
 		public static final String UATIndirectPartnerEugeneCBuenUser= "eugene.buen@pe.com.uat";
-		public static final String UATIndirectPartnerEugeneCBuenPass= "Solar123123!";
+		public static final String UATIndirectPartnerEugeneCBuenPass= "Solar123"; //updated as of 07/23/2021
 		
 		//UAT_SPD
 		public static final String UATSPDEugeneBuenUser = "direct@email.com.uat";

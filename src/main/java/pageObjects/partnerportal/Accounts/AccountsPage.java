@@ -142,6 +142,12 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/app-root[1]/ng-component[1]/residential-main-tabs[1]/edit-usage-input-modal[1]/section[1]/div[1]/div[1]/section[3]/button[2]")
 	WebElement ENERGYUSAGEMODALSAVEBTN;
 	
+	@FindBy(how = How.XPATH, using = "//h3[contains(text(),'Utility Account Holder')]")
+	WebElement UTILITYACCOUNTHOLDERTEXT;
+	
+	@FindBy(how = How.XPATH, using = "//input[@id='radio-1']")
+	WebElement UTILITYACCOUNTHOLDERFIRSTRADIOBTN;
+	
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'MANUAL QUOTE')]")
 	WebElement NEWMANUALQUOTEBTN;
 	
@@ -222,10 +228,7 @@ public class AccountsPage extends BasePage {
 	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/span[1]")
 	WebElement MODULETYPEBTN;
-	
-	@FindBy(how = How.XPATH, using = "//div[contains(text(),'327W E20-327-E-AC')]")
-	WebElement MODULE327W;
-	
+		
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/input[1]")
 	WebElement SHADINGMEASUREMENTDATEINPUTBOX;
 	
@@ -308,8 +311,8 @@ public class AccountsPage extends BasePage {
 	WebElement QUOTESETTINGSBTN;
 	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]/div[1]/input[1]")
-	WebElement QUOTENAMETXTBOX;
-	
+	WebElement QUOTENAMEINPUTBOX;
+
 	@FindBy(how = How.XPATH, using = "//*[@id='settings']/div[2]/div[2]/div[1]/ul/li[1]")
 	WebElement CASHQUOTESETTINGSBTN;
 	
@@ -321,7 +324,7 @@ public class AccountsPage extends BasePage {
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='cash_settings_gross_price']")
 	WebElement GROSSPRICECASHTXTBOX;
-	
+		
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/form[1]/div[2]/div[3]/div[3]/div[2]/div[1]/input[2]")
 	WebElement OVERRIDEREBATECASHLEASELOANTXTBOX;
 	
@@ -347,8 +350,7 @@ public class AccountsPage extends BasePage {
 	WebElement LEASEDEALERCOMMISSIONPERWATTTXTBOX;
 	
 	@FindBy(how = How.XPATH, using = "//input[@id='lease_storage_dealer_fee']")
-	WebElement LEASESTORAGEDEALERCOMMISSIONTXTBOX;
-	
+	WebElement LEASESTORAGEDEALERCOMMISSIONTXTBOX;	
 	
 	@FindBy(how = How.XPATH, using = "//*[@id='settings']/div[2]/div[2]/div[1]/ul/li[3]")
 	WebElement LOANQUOTESETTINGSBTN;
@@ -550,6 +552,15 @@ public class AccountsPage extends BasePage {
 		enterText(INPUTBILLTXTBOX, "INPUTBILLTXTBOX", totalAnnualBill);
 	}
 	
+	public boolean isUtilityAccountHolderTextDisplayed() throws Exception {
+		waitForVisibleElement(driver, UTILITYACCOUNTHOLDERTEXT);
+		return UTILITYACCOUNTHOLDERTEXT.isDisplayed();
+	}
+	
+	public void selectUtilityAccountHolderFirstRadioBtn() throws Exception {
+		click(UTILITYACCOUNTHOLDERFIRSTRADIOBTN, "UTILITYACCOUNTHOLDERFIRSTRADIOBTN");
+	}
+	
 	public void clickEnergyUsageModalSaveBtn() throws Exception {
 		scrollPageDownBy500();
 		click(ENERGYUSAGEMODALSAVEBTN, "ENERGYUSAGEMODALSAVEBTN");
@@ -705,6 +716,12 @@ public class AccountsPage extends BasePage {
 		click(QUOTESETTINGSBTN, "QUOTESETTINGSBTN");
 	}
 	
+	public void enterQuoteName(String quoteNameNewValue) throws Exception {
+		waitForVisibleElement(driver, QUOTENAMEINPUTBOX);
+		click(QUOTENAMEINPUTBOX, "QUOTENAMEINPUTBOX");
+		enterText(QUOTENAMEINPUTBOX, "QUOTENAMEINPUTBOX", quoteNameNewValue);
+	}
+	
 	public boolean isQuoteSettingsModalDisplayed() throws Exception {
 		waitForVisibleElement(driver, PRICEPERWATTCASHTXTBOX);
 		return PRICEPERWATTCASHTXTBOX.isDisplayed();
@@ -737,7 +754,12 @@ public class AccountsPage extends BasePage {
 	
 	public void clickLeasePricePerkWhRun() throws Exception {
 		jse.executeScript("arguments[0].click()", PRICEPERKWHLEASERUNBTN);
-	}	
+	}
+	
+	public void enterLeaseGrossPriceValue(String leaseGrossPrice) throws Exception {
+		enterText(GROSSPRICELEASETXTBOX, "GROSSPRICELEASETXTBOX", leaseGrossPrice);
+		sendKeysTab(GROSSPRICELEASETXTBOX);
+	}
 	
 	public void enterCashStorageDealerComm(String cashStorageDealerComm) throws Exception {
 		enterText(CASHSTORAGEDEALERCOMMISSIONTXTBOX, "CASHSTORAGEDEALERCOMMISSIONTXTBOX", cashStorageDealerComm);
@@ -784,6 +806,11 @@ public class AccountsPage extends BasePage {
 		sendKeysTab(LOANSTORAGEDEALERCOMMISSIONTXTBOX);
 	}
 	
+	public void enterLoanGrossPriceValue(String loanGrossPrice) throws Exception {
+		enterText(GROSSPRICELOANTXTBOX, "GROSSPRICELOANTXTBOX", loanGrossPrice);
+		sendKeysTab(GROSSPRICELOANTXTBOX);
+	}
+	
 	public void clickQuoteSettingsSaveChanges() throws Exception {
 		click(EDDIESAVECHANGESBTN, "EDDIESAVECHANGESBTN");
 	}
@@ -827,7 +854,6 @@ public class AccountsPage extends BasePage {
 		click(SELECTCASHBTN, "SELECTCASHBTN");		
 		Boolean wait1 = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
-		
 	}
 	
 	public void clickOnEditLoanBtn() throws Exception {
