@@ -29,7 +29,7 @@ public class Constant {
 		
 		//UAT_TPS
 		public static final String UATNDGabiTPSUser = "tpsqa.test@tpsgabisolar.com.uat";
-		public static final String UATNDGabiTPSPass = "Gd9nG37XEZL5Ra9"; //Updated as of 06/23/2021
+		public static final String UATNDGabiTPSPass = "Solar321!"; //Updated as of 07/23/2021
 		
 		//UAT_IndirectPartner
 		public static final String UATIndirectPartnerEugeneBuenUser = "eugene.buen@sunpowercorp.com.qa";
