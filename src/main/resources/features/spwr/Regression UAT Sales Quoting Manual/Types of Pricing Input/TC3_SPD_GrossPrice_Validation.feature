@@ -76,7 +76,7 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities - LOAN
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-Then User checks the show Lease option
+Then User checks the show Loan option
 Then User enters "50000" in the Gross Price tab for Loan option
 Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal

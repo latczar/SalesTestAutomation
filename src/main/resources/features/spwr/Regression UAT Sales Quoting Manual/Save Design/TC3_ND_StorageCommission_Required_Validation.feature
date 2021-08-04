@@ -31,7 +31,7 @@ Then Electric Rate and Energy Usage modal is displayed
 And User sets the value for Current Electric Rate
 And Sets the value for Proposed Electric Rate
 And Sets Total Annual Bill to "4000"
-And User sets the Utility Account Holder
+#And User sets the Utility Account Holder
 Then User saves the values inputted in the Electric Rate and Energy Usage modal
 When User clicks the Quotes tab
 And clicks on the New Manual Quote button

@@ -43,7 +43,7 @@ And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
 And User enters a value for Azimuth as "180"
-And User enters a value for Module Count as "100"
+And User enters a value for Module Count as "30"
 And User enter values for Roof Solar Access Percentages for Jan-Dec as "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "99"
 Then User saves the changes
 
