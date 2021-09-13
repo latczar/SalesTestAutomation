@@ -72,7 +72,7 @@ public class BasePage {
 				driver = new EdgeDriver();
 				break;
 		case "CHROME":
-			System.setProperty("webdriver.chrome.driver", Constant.DriversPath + "/chromedriver.exe"); // for windows
+			System.setProperty("webdriver.chrome.driver", Constant.DriversPath + "chromedriver.exe"); // for windows
 			ChromeOptions chroOptions = new ChromeOptions();
 			//chroOptions.addArguments("--user-data-dir=C:\\Users\\lcaesar\\AppData\\Local\\Google\\Chrome\\User Data\\");
 			//chroOptions.addArguments("--profile-directory=Profile 8");
