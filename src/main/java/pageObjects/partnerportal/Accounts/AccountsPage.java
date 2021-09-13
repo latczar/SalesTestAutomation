@@ -403,6 +403,9 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[2]/div/div/div/div[3]/button")
 	WebElement SELECTCASHBTN;
 	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[1]/nav[1]/div[3]/div[3]/div[1]/button[1]")
+	WebElement SELECTFOBTN;
+	
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/ul/li[2]")
 	WebElement PAYMENTOPTIONLEASETAB;
 	
@@ -851,7 +854,8 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickOnSelectCashPayment() throws Exception {
-		click(SELECTCASHBTN, "SELECTCASHBTN");		
+		click(SELECTCASHBTN, "SELECTCASHBTN");
+		click(SELECTFOBTN, "SELECTFOBTN");
 		Boolean wait1 = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
 	}
@@ -878,7 +882,7 @@ public class AccountsPage extends BasePage {
 		String url = driver.getCurrentUrl();
 		System.out.println("Generating Proposal...");
 		System.out.println("Quote Link: " + url);
-		click(SELECTLOANBTN, "SELECTLOANBTN");
+		click(SELECTFOBTN, "SELECTFOBTN");
 		Boolean wait = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
 	}
