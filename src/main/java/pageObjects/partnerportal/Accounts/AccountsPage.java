@@ -938,6 +938,7 @@ public class AccountsPage extends BasePage {
 		waitForVisibleElement(driver, SENDTOMYSUNPOWERVIAEMAILBTN);
 		click(SENDTOMYSUNPOWERVIAEMAILBTN, "SENDTOMYSUNPOWERVIAEMAILBTN");
 		Thread.sleep(1900);
+		
 	}
 	
 	public void clickOnSendProposalBtn() throws Exception {
