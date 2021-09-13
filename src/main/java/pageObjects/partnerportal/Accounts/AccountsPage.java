@@ -854,7 +854,6 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public void clickOnSelectCashPayment() throws Exception {
-		click(SELECTCASHBTN, "SELECTCASHBTN");
 		click(SELECTFOBTN, "SELECTFOBTN");
 		Boolean wait1 = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
@@ -915,8 +914,8 @@ public class AccountsPage extends BasePage {
 		String url = driver.getCurrentUrl();
 		System.out.println("Generating Proposal...");
 		System.out.println("Quote Link: " + url);
-		waitForVisibleElement(driver, SELECTLEASEBTN);
-		jse.executeScript("arguments[0].click()", SELECTLEASEBTN);
+		waitForVisibleElement(driver, SELECTFOBTN);
+		jse.executeScript("arguments[0].click()", SELECTFOBTN);
 		Boolean wait1 = new WebDriverWait(driver, 180)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
 		Thread.sleep(2900);
