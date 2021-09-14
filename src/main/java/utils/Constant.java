@@ -73,7 +73,7 @@ public class Constant {
 		public static WebDriver driver = null;
 		public static String prodSpwrSDS = "https://us.sunpower.com/";
 		public static String qaPartnerPortal = "https://qa-sunpower1.cs61.force.com/"; //Updated as of 07/03/2021
-		public static String UATPartnerPortal = "https://uat-sunpower1.cs37.force.com/"; //Updated as of 06/23/2021
+		public static String UATPartnerPortal = "https://uat-sunpower1.cs220.force.com/"; //Updated as of 06/23/2021
 		public static String PRODPartnerPortal = "https://sunpower1.force.com";
 
 		}
