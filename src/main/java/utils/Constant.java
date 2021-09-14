@@ -29,17 +29,17 @@ public class Constant {
 		
 		//UAT_TPS
 		public static final String UATNDGabiTPSUser = "tpsqa.test@tpsgabisolar.com.uat";
-		public static final String UATNDGabiTPSPass = "Solar321!"; //Updated as of 07/23/2021
+		public static final String UATNDGabiTPSPass = "Solar123"; //Updated as of 09/13/2021
 		
 		//UAT_IndirectPartner
-		public static final String UATIndirectPartnerEugeneBuenUser = "eugene.buen@sunpowercorp.com.qa";
-		public static final String UATIndirectPartnerEugeneBuenPass = "";
+		public static final String UATIndirectPartnerEugeneBuenUser = "eugene.buen@sunpowercorp.com.uat";
+		public static final String UATIndirectPartnerEugeneBuenPass = "Solar123";
 		public static final String UATIndirectPartnerEugeneCBuenUser= "eugene.buen@pe.com.uat";
 		public static final String UATIndirectPartnerEugeneCBuenPass= "Solar123"; //updated as of 07/23/2021
 		
 		//UAT_SPD
-		public static final String UATSPDEugeneBuenUser = "direct@email.com.uat";
-		public static final String UATSPDEugeneBuenPass = "Solar99999";
+		public static final String UATSPDEugeneBuenUser = "direct@email.com.uat"; 
+		public static final String UATSPDEugeneBuenPass = "Solar123"; //Updated as of 09/13/2021
 		
 		//PROD_ND
 		public static final String PRODSPDEugeneBuenUser = "direct@email.com";

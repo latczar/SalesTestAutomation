@@ -22,41 +22,23 @@ import io.cucumber.java.Scenario;
 				
 			//REGRESSION UAT TEST SUITE created: (06/29/2021), updated: (07/23/2021)
 				
-			"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Changes/TC1_SPD_MinimumPricePerWatt_Validation.feature",
-		/*
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Changes/TC2_SPD_MinimumPricePerkWh_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Changes/TC3_SPD_MinimumGrossPrice_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC1_SPD_IL_SystemSize_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC2_SPD_MA_SystemSize_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC3_ND_StorageCommission_Required_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC4_SPD_StorageCommission_NotRequired_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC5_SPD_QuoteName_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC1_100k validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC2_8_perWatt_Loan_withoutStorage_validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC3_10_perWatt_Loan_withStorage_validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC1_SPD_OverrideRebate_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC2_SPD_RebateEstimates_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC3_SPD_FederalTaxCredit26_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC4_SPD_StateTaxCreditMA_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Types of Pricing Input/TC1_ID_PricePerWatt_Validation.feature"
-		 * ,
-		 * "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Types of Pricing Input/TC3_SPD_GrossPrice_Validation.feature"
-		 */
-			
+		"src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Changes/TC1_SPD_MinimumPricePerWatt_Validation.feature",		
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Changes/TC2_SPD_MinimumPricePerkWh_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Changes/TC3_SPD_MinimumGrossPrice_Validation.feature" ,
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC1_SPD_IL_SystemSize_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC2_SPD_MA_SystemSize_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC3_ND_StorageCommission_Required_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC4_SPD_StorageCommission_NotRequired_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Save Design/TC5_SPD_QuoteName_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC1_100k validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC2_8_perWatt_Loan_withoutStorage_validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Savings Tab validation/TC3_10_perWatt_Loan_withStorage_validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC1_SPD_OverrideRebate_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC2_SPD_RebateEstimates_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC3_SPD_FederalTaxCredit26_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Incentives and Credit/TC4_SPD_StateTaxCreditMA_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Types of Pricing Input/TC1_ID_PricePerWatt_Validation.feature",
+		  "src/main/resources/features/spwr/Regression UAT Sales Quoting Manual/Types of Pricing Input/TC3_SPD_GrossPrice_Validation.feature"
 			},
 		
 		
