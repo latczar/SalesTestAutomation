@@ -64,7 +64,7 @@ public class LoginPageSteps extends BasePage{
 	@When("User logs in at UAT as an ID")
 	public void user_logs_in_at_uat_as_indirect() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerEugeneCBuenUser, Constant.UATIndirectPartnerEugeneCBuenPass);
+		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerEugeneBuenUser, Constant.UATIndirectPartnerEugeneBuenPass);
 	}
 	
 	@When("User logs in at UAT as SPD")
