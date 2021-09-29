@@ -42,7 +42,7 @@ And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
 And User enters a value for Azimuth as "180"
-And User enters a value for Module Count as "100"
+And User enters a value for Module Count as "78"
 And User enter values for Roof Solar Access Percentages for Jan-Dec as "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "99"
 Then User saves the changes
 
@@ -52,4 +52,5 @@ Then the Quote Settings modal is displayed
 And User enters "4.00" in the Price Per Watt tab for Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
+Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario

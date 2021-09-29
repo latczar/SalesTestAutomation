@@ -59,4 +59,5 @@ Then User will click on View Estimated Savings button
 
 #And User will click on the EDDiE Savings button
 And User will click the arrow button to select preferred payment option as Loan
+Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario

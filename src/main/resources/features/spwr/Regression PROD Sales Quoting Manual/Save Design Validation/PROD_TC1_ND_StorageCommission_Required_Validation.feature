@@ -53,4 +53,5 @@ Then the Quote Settings modal is displayed
 And User enters "4.00" in the Price Per Watt tab for Cash option
 #And User enters "1" in the Storage Dealer Commission tab for Cash option
 Then clicks on save changes for the Quote Settings modal
+Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario

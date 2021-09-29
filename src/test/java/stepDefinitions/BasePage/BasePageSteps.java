@@ -15,7 +15,7 @@ import utils.Constant;
 
 public class BasePageSteps extends BasePage {
 	
-	@When("^User takes a screenshot of the current state of the web application$")
+	@Then("^User takes a screenshot of the current state of the web application$")
 	public void user_takes_a_screenshot_of_the_current_state_of_the_web_application() throws Exception {
 		BasePage basePage = new BasePage();
 		BasePage.takeScreenShotAsImage();
