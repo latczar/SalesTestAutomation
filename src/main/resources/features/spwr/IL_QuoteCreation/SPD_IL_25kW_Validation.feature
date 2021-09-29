@@ -17,7 +17,7 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "ManualTest" and Last Name as "L0924spdIL"
+Then User enters his/her Residential First Name as "ManualTest" and Last Name as "L0929spdIL3"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
 Then User enters Residential address as "998 Butler Dr, Crystal Lake, IL 60014"
@@ -52,8 +52,4 @@ Then the Quote Settings modal is displayed
 And User enters "4.00" in the Price Per Watt tab for Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
-
-#When the EDDiE portal Design page will calculate savings
-#Then User will click on View Estimated Savings button
-#And User will click on the EDDiE Savings button
-#And User will click the arrow button to select preferred payment option as Cash
+Then User takes a screenshot of the current state of the web application

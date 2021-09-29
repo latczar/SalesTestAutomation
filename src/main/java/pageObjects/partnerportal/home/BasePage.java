@@ -39,6 +39,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 
 import utils.Constant;
+import utils.FunctionLibrary;
 
 public class BasePage {
 	public static WebDriver driver = null;
@@ -303,5 +304,11 @@ public class BasePage {
 		Thread.sleep(1000);
 		element.sendKeys(Keys.ARROW_DOWN);
 		element.sendKeys(Keys.RETURN);
-	}	
+	}
+	
+    public static void  takeScreenShotAsImage() throws Exception {
+        String scrShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
+    	File file = OutputType.FILE.convertFromBase64Png(scrShot);
+    	FileUtils.copyFile(file, new File("./test-output/Screenshots/" + FunctionLibrary.generateRandomString(6, true, true) + ".png"), true);
+    }
 }

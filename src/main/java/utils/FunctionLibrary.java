@@ -5,7 +5,7 @@ import org.apache.commons.lang.RandomStringUtils;
 
 public class FunctionLibrary {
 	
-	public String genarateRandomString(int length, boolean useLetters, boolean useNumbers) throws Exception {
+	public static String generateRandomString(int length, boolean useLetters, boolean useNumbers) throws Exception {
 		return RandomStringUtils.random(length, useLetters, useNumbers);
 	}
 	

@@ -14,13 +14,7 @@ import pageObjects.partnerportal.home.BasePage;
 import utils.Constant;
 
 public class AccountsPageSteps extends BasePage {
-		
-	@AfterStep
-	public static void addScreenshot (Scenario scenario) {
-		final byte[] scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-			scenario.attach(scr, "image/png", "png");
-	}	
-	
+			
 	@When("^User navigates to the Accounts page$")
 	public void user_navigates_to_the_Accounts_page() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
