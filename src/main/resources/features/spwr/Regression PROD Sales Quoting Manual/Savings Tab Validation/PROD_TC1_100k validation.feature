@@ -59,6 +59,5 @@ When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
 #And User will click on the EDDiE Savings button
 And User will click the arrow button to select preferred payment option as Loan
-When User will switch back to the original window
 Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario

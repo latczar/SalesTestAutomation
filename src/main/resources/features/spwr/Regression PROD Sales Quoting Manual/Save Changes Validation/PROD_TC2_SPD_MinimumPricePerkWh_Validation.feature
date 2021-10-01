@@ -55,4 +55,5 @@ And User enters "0.01" in the Price Per kWh tab for Lease option
 Then User clicks on the Price Per kWh RUN button
 Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
+Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario
