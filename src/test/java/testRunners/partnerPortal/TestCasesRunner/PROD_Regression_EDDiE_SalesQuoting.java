@@ -17,7 +17,7 @@ import io.cucumber.junit.CucumberOptions;
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Savings Tab Validation/PROD_TC2_8_perWatt_Loan_withoutStorage_validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Savings Tab Validation/PROD_TC3_10_perWatt_Loan_withStorage_validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Design Validation/PROD_TC1_ND_StorageCommission_Required_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Design Validation/PROD_TC2_SPD_StorageCommission_NotRequired_Validation.feature",
+			//"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Design Validation/PROD_TC2_SPD_StorageCommission_NotRequired_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Design Validation/PROD_TC3_SPD_IL_SystemSize_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Design Validation/PROD_TC4_SPD_MA_SystemSize_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Save Design Validation/PROD_TC5_SPD_QuoteName_Validation.feature",
@@ -28,7 +28,7 @@ import io.cucumber.junit.CucumberOptions;
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC2_SPD_RebateEstimates_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC3_SPD_FederalTaxCredit26_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC4_SPD_StateTaxCreditMA_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC1_ID_PricePerWatt_Validation.feature",
+			//"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC1_ID_PricePerWatt_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC3_SPD_GrossPrice_Validation.feature"
 				
 		},
