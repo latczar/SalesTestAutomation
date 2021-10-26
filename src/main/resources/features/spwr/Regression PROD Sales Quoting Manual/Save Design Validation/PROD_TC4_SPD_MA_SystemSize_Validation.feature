@@ -9,7 +9,7 @@ Scenario: SPD_MA_SystemSize_Validation
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
-When User logs in at PROD as SPD
+When User logs in at PROD as ND
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
