@@ -30,12 +30,7 @@ import io.cucumber.junit.CucumberOptions;
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC4_SPD_StateTaxCreditMA_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC5_ID_CTrebate_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC6_ID_SCrebate_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC7_SPD_NYstateTaxCredit_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC1_ID_PricePerWatt_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC3_SPD_GrossPrice_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC3_SPD_GrossPrice_Validation.feature"
-
-				
+			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC7_SPD_NYstateTaxCredit_Validation.feature"
 		},
 		
 		
