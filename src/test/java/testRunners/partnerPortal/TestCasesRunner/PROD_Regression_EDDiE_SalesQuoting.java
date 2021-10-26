@@ -28,8 +28,8 @@ import io.cucumber.junit.CucumberOptions;
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC2_SPD_RebateEstimates_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC3_SPD_FederalTaxCredit26_Validation.feature",
 			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Incentives and Credit/PROD_TC4_SPD_StateTaxCreditMA_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC1_ID_PricePerWatt_Validation.feature",
-			"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC3_SPD_GrossPrice_Validation.feature"
+			//"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC1_ID_PricePerWatt_Validation.feature",
+			//"src/main/resources/features/spwr/Regression PROD Sales Quoting Manual/Types of Pricing Input/PROD_TC3_SPD_GrossPrice_Validation.feature"
 				
 		},
 		
