@@ -190,10 +190,29 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.enterShadingDate();
 	}
 	
+	@Then("^User enters the Mounting type to Non-SunPower Ground Mount")
+	public void user_enters_the_mounting_type_to_nonsunpower_ground_mount() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickGroundMount();
+		
+	}
+	
 	@Then("User clicks on the SunVault Storage button")
 	public void user_clicks_on_the_sun_vault_storage_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.addSunvaultStorage();
+	}
+	
+	@Then("User adds the Front Edge Skirt Accessory")
+	public void user_adds_the_front_edge_skirt() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.addFrontEdgeSkirt();
+	}
+	
+	@Then("User adds the Front Edge Skirt Accessory")
+	public void user_adds_the_critter_guard() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.addCritterGuard();
 	}
 
 	

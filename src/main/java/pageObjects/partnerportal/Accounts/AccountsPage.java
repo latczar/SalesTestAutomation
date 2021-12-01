@@ -235,6 +235,15 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]")
 	WebElement SELECTSTORAGEDROPDOWNBTN;
 	
+	@FindBy(how = How.XPATH, using = "//body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[2]/div[1]/select[1]")
+	WebElement MOUNTINGTYPEBTN;
+	
+	@FindBy(how = How.XPATH, using = "//option[contains(text(),'Non-SunPower Ground Mount')]")
+	WebElement NONSPWRGROUNDMOUNTBTN;
+	
+	@FindBy(how = How.XPATH, using = "//option[contains(text(),'Non-SunPower Roof Mount')]")
+	WebElement NONSPWRWROOFBTN;
+	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[2]/span[1]")
 	WebElement SUNVAULTSTORAGEBTN;
 	
@@ -665,10 +674,24 @@ public class AccountsPage extends BasePage {
 		sendKeysTab(SHADINGMEASUREMENTDATEINPUTBOX);
 	}
 	
+	public void clickGroundMount() throws Exception {
+		click(MOUNTINGTYPEBTN, "MOUNTINGTYPEBTN");
+		waitForVisibleElement(driver, NONSPWRGROUNDMOUNTBTN);
+		click(NONSPWRGROUNDMOUNTBTN, "NONSPWRGROUNDMOUNTBTN");
+	}
+	
 	public void addSunvaultStorage() throws Exception {
 		click(SELECTSTORAGEDROPDOWNBTN, "SELECTSTORAGEDROPDOWNBTN");
 		waitForVisibleElement(driver, SUNVAULTSTORAGEBTN);
 		click(SUNVAULTSTORAGEBTN, "SUNVAULTSTORAGEBTN");
+	}
+
+	public void addCritterGuard() throws Exception {
+		click(ACCESSORYCRITTERGUARDCHECKBOX, "ACCESSORYCRITTERGUARDCHECKBOX");
+	}
+
+	public void addFrontEdgeSkirt() throws Exception {
+		click(ACCESSORYFRONTEDGESKIRTCHECKBOX, "ACCESSORYFRONTEDGESKIRTCHECKBOX");
 	}
 	
 	public void clickNewRoofBtn() throws Exception {
