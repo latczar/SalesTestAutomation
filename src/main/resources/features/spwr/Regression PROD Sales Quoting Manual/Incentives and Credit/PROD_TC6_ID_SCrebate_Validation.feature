@@ -20,11 +20,8 @@ Then Residential - New Account page is displayed
 Then User enters his/her Residential First Name as "RegManualTest" and Last Name as "RebateForSC"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-<<<<<<< HEAD
 Then User enters Residential address as "SC 1400 Main Street, Columbia, SC, United States, 29201"
-=======
 Then User enters Residential address as "1400 Main Street, Columbia, SC, United States, 29201"
->>>>>>> 14d3b0f6202e26e266cc04f207742e42148882a9
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
