@@ -1,11 +1,11 @@
-Feature: PROD_TC6_ID_SCrebate_Validation
+Feature: 010_Loan_HI_withoutCoPayment
 
 #Author: lcaesar@sunpowercorp.com
-#Date Created: 10/27/2021
+#Date Created: 07/07/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: PROD_ID_SCrebate_Validation
+Scenario: 001_Loan_HI_withoutCoPayment
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
@@ -17,10 +17,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "RegManualTest" and Last Name as "RebateForSC"
+Then User enters his/her Residential First Name as "ManualTest" and Last Name as "HINoCopayment10"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "SC 1400 Main Street, Columbia, SC, United States, 29201"
+Then User enters Residential address as "87-1698 Farrington Hwy N, Waianae, HI 96792"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -49,13 +49,14 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-And User enters "4.00" in the Price Per Watt tab for Cash option
-And User enters "1000" in the Override Rebate tab
+Then User checks the show Loan option
+And User enters "4.00" in the Price Per Watt tab for Loan option
+Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
 When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
 And User will click on the EDDiE Savings button
-And User will click the arrow button to select preferred payment option as Cash
+And User will click the arrow button to select preferred payment option as Loan
 Then User ends the test scenario

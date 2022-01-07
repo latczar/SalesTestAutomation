@@ -139,7 +139,7 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//body/app-root[1]/ng-component[1]/residential-main-tabs[1]/edit-usage-input-modal[1]/section[1]/div[1]/div[1]/section[2]/section[1]/div[1]/input[1]")
 	WebElement INPUTBILLTXTBOX;
 	
-	@FindBy(how = How.XPATH, using = "//html[1]/body[1]/app-root[1]/ng-component[1]/residential-main-tabs[1]/edit-usage-input-modal[1]/section[1]/div[1]/div[1]/section[3]/button[2]")
+	@FindBy(how = How.XPATH, using = "//div[@class= 'modal']//button[contains(text(), 'SAVE')]")
 	WebElement ENERGYUSAGEMODALSAVEBTN;
 	
 	@FindBy(how = How.XPATH, using = "//h3[contains(text(),'Utility Account Holder')]")
@@ -403,7 +403,7 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[2]/div/div/div/div[3]/button")
 	WebElement SELECTCASHBTN;
 	
-	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[1]/nav[1]/div[3]/div[3]/div[1]/button[1]")
+	@FindBy(how = How.XPATH, using = "//button[@class= 'btn btn-primary nav-action-btn']")
 	WebElement SELECTFOBTN;
 	
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/ul/li[2]")
@@ -414,12 +414,18 @@ public class AccountsPage extends BasePage {
 	
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/ul/li[3]")
 	WebElement PAYMENTOPTIONLOANTAB;
+
+	@FindBy(how = How.XPATH, using = "//div[@class= 'tabs__header-container loan-calculator-tabs-container']//span[contains(text(), 'Calculator')]")
+	WebElement LOANCALCULATORTAB;
 	
-	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Edit Loan')]")
+	@FindBy(how = How.XPATH, using = "//div[@class= 'edit-loan']")
 	WebElement EDITLOANBTN;
 	
-	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[1]/input[1]")
+	@FindBy(how = How.XPATH, using = "//div[@class= 'input-container']//input[@id= 'co-payment']")
 	WebElement COPAYMENTTXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//div[@class= 'save-btn-container']//button[@id= 'save-pricing-btn']")
+	WebElement SAVEPRICINGBTN;
 	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[2]/div[1]")
 	WebElement TERMDROPDOWN;
@@ -859,6 +865,11 @@ public class AccountsPage extends BasePage {
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
 	}
 	
+	public void clickOnLoanCalculatorBtn() throws Exception {
+		waitForVisibleElement(driver, LOANCALCULATORTAB);
+		jse.executeScript("arguments[0].click()",LOANCALCULATORTAB);
+	}
+	
 	public void clickOnEditLoanBtn() throws Exception {
 		jse.executeScript("arguments[0].click()", EDITLOANBTN);
 	}
@@ -867,6 +878,10 @@ public class AccountsPage extends BasePage {
 		waitForVisibleElement(driver, COPAYMENTTXTBOX);
 		click(COPAYMENTTXTBOX, "COPAYMENTTXTBOX");
 		enterText(COPAYMENTTXTBOX, "COPAYMENTTXTBOX", coPaymentInput);
+	}
+	
+	public void clickOnSavePricingButton() throws Exception {
+		click(SAVEPRICINGBTN, "SAVEPRICINGBTN");
 	}
 	
 	public void clickOnTerm() throws Exception {

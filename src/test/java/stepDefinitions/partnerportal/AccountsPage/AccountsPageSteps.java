@@ -404,17 +404,29 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickOnSelectCashPayment();
 	}
 	
+	@Then("User will click on the Calculator tab of the Loan Pricing pane")
+	public void user_will_click_on_the_calculator_tab_of_the_loan_pricing_pane() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnShowBtn();
+		accountsPage.clickOnLoanCalculatorBtn();
+	}
+	
 	@And("^User will add a CoPayment input as \"([^\"]*)\"$")
 	public void user_will_add_a_co_payment_input_as(String coPaymentInput) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnEditLoanBtn();
 		accountsPage.clickOnCoPayment(coPaymentInput);
 	}
 	
-	@And("^User will click the arrow button to select preferred payment option as Loan with Co-Payment$")
+	@Then("^User will click on the Save Pricing button")
+	public void user_will_click_on_the_save_pricing_button() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnSavePricingButton();
+	}
+	
+	@And("^User will click the arrow button to select preferred payment option as Loan with CoPayment$")
 	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Loan(String coPaymentInput) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
-		accountsPage.clickOnShowBtn();
-		accountsPage.clickOnCoPayment(coPaymentInput);
 		accountsPage.clickOnSelectLoanPayment();
 	}
 	

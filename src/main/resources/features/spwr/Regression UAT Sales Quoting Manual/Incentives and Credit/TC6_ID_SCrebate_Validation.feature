@@ -1,15 +1,15 @@
-Feature: PROD_TC6_ID_SCrebate_Validation
+Feature: UAT_TC6_ID_SCrebate_Validation
 
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 10/27/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: PROD_ID_SCrebate_Validation
+Scenario: UAT_ID_SCrebate_Validation
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
-When User logs in at PROD as an ID
+Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
+When User logs in at UAT as an ID
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
