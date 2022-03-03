@@ -17,10 +17,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "aManualTest" and Last Name as "idLease01"
+Then User enters his/her Residential First Name as "aManualTest" and Last Name as "idprodLease01"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
+Then User enters Residential address as "104 Nooks Hill Rd, Cromwell, CT 06416, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer

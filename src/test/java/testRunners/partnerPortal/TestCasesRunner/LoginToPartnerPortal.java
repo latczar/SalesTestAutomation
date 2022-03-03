@@ -27,15 +27,15 @@ import io.cucumber.junit.CucumberOptions;
 				//"src/main/resources/features/spwr/QuoteCreation/SPD_CT_CashLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/SPD_CT_CashLoan_withStorage_NoAdders_ManualQuoteCreation.feature"
 				
-				"src/main/resources/features/spwr/QuoteCreation/SPD_QA_CashQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation/SPD_QA_LeaseQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/SPD_QA_CashQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/SPD_QA_LeaseQuoteCreation.feature",
 				"src/main/resources/features/spwr/QuoteCreation/SPD_QA_LoanQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation/TPS_QA_CashQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation/TPS_QA_LeaseQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation/TPS_QA_LoanQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation/ID_QA_CashQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation/ID_QA_LeaseQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation/ID_QA_LoanQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_CashQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_LeaseQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_LoanQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_CashQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LeaseQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LoanQuoteCreation.feature",
 				
 				
 		},

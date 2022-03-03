@@ -9,7 +9,7 @@ Scenario: SPD_OverrideRebate_Validation
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
-When User logs in at UAT as SPD
+When User logs in at UAT as an ID
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -17,10 +17,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LOverrideRebateregspd"
+Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "testUATCT"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
+Then User enters Residential address as "104 Nooks Hill Rd, Cromwell, CT 06416, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -50,7 +50,7 @@ Then User saves the changes
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
 And User enters "4.00" in the Price Per Watt tab for Cash option
-And User enters "1000" in the Override Rebate tab
+#And User enters "1000" in the Override Rebate tab
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 

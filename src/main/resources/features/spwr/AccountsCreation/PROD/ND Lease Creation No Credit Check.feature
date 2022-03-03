@@ -37,6 +37,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
+And User enters the module type as '420W A-420-G-AC'
 Then User enters the Shading Measurement Date as date today
 And clicks on the New Roof button
 Then New Roof modal is displayed

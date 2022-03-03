@@ -17,7 +17,7 @@ And User creates a Residential Customer account in QA
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LLoanQuoteCreation"
+Then User enters his/her Residential First Name as "AuManualTest" and Last Name as "loanQuoteCreation"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
 Then User enters Residential address as "16388 Midwood Dr, Granada Hills, CA 91344, USA"
@@ -37,7 +37,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the Shading Measurement Date as "07/03/2021"
+Then User enters the Shading Measurement Date as date today
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
@@ -59,5 +59,4 @@ When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
 #And User will click on the EDDiE Savings button
 And User will click the arrow button to select preferred payment option as Loan
-When User will switch back to the original window
 Then User ends the test scenario
