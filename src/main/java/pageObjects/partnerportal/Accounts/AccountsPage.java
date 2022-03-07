@@ -253,10 +253,10 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/ul[1]/li[2]/span[1]")
 	WebElement TWOSUNVAULTBTN;
 	
-	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/input[1]")
+	@FindBy(how = How.XPATH, using = "//div[@class = 'system-accessories']//span[contains(text(),'Front Edge Skirt')]//preceding::input[1]")
 	WebElement ACCESSORYFRONTEDGESKIRTCHECKBOX;
 	
-	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[4]/div[1]/div[1]/input[2]")
+	@FindBy(how = How.XPATH, using = "//div[@class = 'system-accessories']//span[contains(text(),'Critter Guard')]//preceding::input[1]")
 	WebElement ACCESSORYCRITTERGUARDCHECKBOX;
 	
 	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]")
@@ -367,6 +367,9 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//@//*[@id='settings']/div[2]/div[2]/div[1]/ul/li[2]")
 	WebElement ORLOANQUOTESETTINGSBTN;
 	
+	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[2]/div[2]/div[2]/div[1]/div[1]/form[1]/div[2]/div[1]/div[3]/div[1]/input[1]")
+	WebElement LOANCUSTOMADDERSBOX;
+	
 	@FindBy(how = How.XPATH, using = "//*[@id='loan_settings_price_per_watt']")
 	WebElement PRICEPERWATTLOANTXTBOX;
 	
@@ -403,7 +406,7 @@ public class AccountsPage extends BasePage {
 	@FindBy(how = How.XPATH, using = "//*[@id='finance_options_dropdown']/div))")
 	WebElement FINANCEOPTIONSDROPDOWN;
 	
-	@FindBy(how = How.XPATH, using = "//body/div[@id='root']/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]")
+	@FindBy(how = How.XPATH, using = "//div[@id = 'page']//div[@class = 'cost-breakout-show-hide-icon']")
 	WebElement EDDIESHOWHIDESAVINGSBTN;
 	
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/ul/li[1]")
@@ -423,15 +426,24 @@ public class AccountsPage extends BasePage {
 	
 	@FindBy(how = How.XPATH, using = "//html/body/div[1]/div/div/div[2]/div[3]/div/div[1]/ul/li[3]")
 	WebElement PAYMENTOPTIONLOANTAB;
-
+	
 	@FindBy(how = How.XPATH, using = "//div[@class= 'tabs__header-container loan-calculator-tabs-container']//span[contains(text(), 'Calculator')]")
 	WebElement LOANCALCULATORTAB;
+	
+	@FindBy(how = How.XPATH, using = "//div[@class = 'loan loan-container loan-calculator-container']")
+	WebElement LOANCALCULATORPANE;
 	
 	@FindBy(how = How.XPATH, using = "//div[@class= 'edit-loan']")
 	WebElement EDITLOANBTN;
 	
 	@FindBy(how = How.XPATH, using = "//div[@class= 'input-container']//input[@id= 'co-payment']")
 	WebElement COPAYMENTTXTBOX;
+	
+	@FindBy(how = How.XPATH, using = "//div[@class = 'input-container']//select[@id='term-select']")
+	WebElement LOANTERMDROPDOWNBTN;
+	
+	@FindBy(how = How.XPATH, using = "//div[@class = 'input-container']//select[@id='apr-percentage-select']")
+	WebElement APRSELECTIONBOX;
 	
 	@FindBy(how = How.XPATH, using = "//div[@class= 'save-btn-container']//button[@id= 'save-pricing-btn']")
 	WebElement SAVEPRICINGBTN;
@@ -755,8 +767,8 @@ public class AccountsPage extends BasePage {
 	}
 	
 	public boolean isQuoteSettingsModalDisplayed() throws Exception {
-		waitForVisibleElement(driver, PRICEPERWATTCASHTXTBOX);
-		return PRICEPERWATTCASHTXTBOX.isDisplayed();
+		waitForVisibleElement(driver, QUOTENAMEINPUTBOX);
+		return QUOTENAMEINPUTBOX.isDisplayed();
 	}
 	
 	public void enterOverrideEstimateCashLeaseLoan(String overrideRebateValue) throws Exception {
@@ -843,6 +855,11 @@ public class AccountsPage extends BasePage {
 		sendKeysTab(GROSSPRICELOANTXTBOX);
 	}
 	
+	public void enterLoanCustomAdders(String loanCustomAdders) throws Exception {
+		enterText(LOANCUSTOMADDERSBOX, "LOANCUSTOMADDERSBOX", loanCustomAdders);
+		sendKeysTab(LOANCUSTOMADDERSBOX);
+	}
+	
 	public void clickQuoteSettingsSaveChanges() throws Exception {
 		click(EDDIESAVECHANGESBTN, "EDDIESAVECHANGESBTN");
 	}
@@ -887,7 +904,7 @@ public class AccountsPage extends BasePage {
 		Boolean wait1 = new WebDriverWait(driver, 120)
 				.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[contains(text(),'Calculating savings...')")));
 	}
-	
+		
 	public void clickOnLoanCalculatorBtn() throws Exception {
 		waitForVisibleElement(driver, LOANCALCULATORTAB);
 		jse.executeScript("arguments[0].click()",LOANCALCULATORTAB);
@@ -895,6 +912,8 @@ public class AccountsPage extends BasePage {
 	
 	public void clickOnEditLoanBtn() throws Exception {
 		jse.executeScript("arguments[0].click()", EDITLOANBTN);
+		WebElement scrollBar = driver.findElement(By.xpath("//div[@class = 'loan loan-container loan-calculator-container']"));
+		jse.executeScript("arguments[0].scrollTop +=500", scrollBar);
 	}
 	
 	public void clickOnCoPayment(String coPaymentInput) throws Exception {
@@ -902,19 +921,26 @@ public class AccountsPage extends BasePage {
 		click(COPAYMENTTXTBOX, "COPAYMENTTXTBOX");
 		enterText(COPAYMENTTXTBOX, "COPAYMENTTXTBOX", coPaymentInput);
 	}
+		
+	public void clickOnTerm(String loanTerm) throws Exception {
+		waitForVisibleElement(driver, LOANTERMDROPDOWNBTN);
+		jse.executeScript("arguments[0].click()", LOANTERMDROPDOWNBTN);
+		driver.findElement(By.xpath("//option[contains(text(),'"+loanTerm+"')]")).click();
+		//sendKeysTab(LOANTERMDROPDOWNBTN);
+	}
+	
+	public void clickOnAPR(String aprType) throws Exception {
+		waitForVisibleElement(driver, APRSELECTIONBOX);
+		jse.executeScript("arguments[0].click()", APRSELECTIONBOX);
+		driver.findElement(By.xpath("//option[contains(text(),'"+aprType+"')]")).click();
+		//sendKeysTab(APRSELECTIONBOX);
+	}
 	
 	public void clickOnSavePricingButton() throws Exception {
 		click(SAVEPRICINGBTN, "SAVEPRICINGBTN");
+		Thread.sleep(9500);
 	}
-	
-	public void clickOnTerm() throws Exception {
-		
-	}
-	
-	public void clickonAPR() throws Exception {
-		
-	}
-		
+			
 	public void clickOnSelectLoanPayment() throws Exception {
 		String url = driver.getCurrentUrl();
 		System.out.println("Generating Proposal...");
@@ -939,7 +965,6 @@ public class AccountsPage extends BasePage {
 		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")).sendKeys(Keys.ARROW_DOWN);
 		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")).sendKeys(Keys.ARROW_DOWN);
 		driver.findElement(By.xpath("//body/div[@id='root']/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/select[1]")).sendKeys(Keys.ENTER);
-		
 	}
 	
 	public void clickSaveBtnEditLeaseBtn() throws Exception {

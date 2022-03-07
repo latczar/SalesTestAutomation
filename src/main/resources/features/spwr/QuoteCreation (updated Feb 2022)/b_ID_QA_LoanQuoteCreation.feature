@@ -1,23 +1,23 @@
-Feature: SPD_QA_LoanQuoteCreation
+Feature: ID_QA_LoanQuoteCreation
 
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 07/03/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: SPD_QA_LoanQuoteCreation
+Scenario: ID_QA_LoanQuoteCreation
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to SunPower Partner Portal using "Chrome" browser
-When User logs in at QA as SPD
+When User logs in at QA as ID
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
-And User creates a Residential Customer account in QA
+And User creates a Residential Customer account in ID - QA
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "Penfedrefi" and Last Name as "test02"
+Then User enters his/her Residential First Name as "Penfedrefi" and Last Name as "test01"
 And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
 Then User enters Residential address as "16388 Midwood Dr, Granada Hills, CA 91344, USA"
@@ -58,4 +58,5 @@ Then User clicks on the Save Design button
 When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
 #And User will click the arrow button to select preferred payment option as Loan
+When User will switch back to the original window
 Then User ends the test scenario

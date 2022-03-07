@@ -213,7 +213,7 @@ public class BasePage {
 		
 		return text;
 	}
-	
+		
 	public static void scrollPageDown() {
 		System.out.println("Scrolling page down for viewport...");
 		JavascriptExecutor js = (JavascriptExecutor) driver;

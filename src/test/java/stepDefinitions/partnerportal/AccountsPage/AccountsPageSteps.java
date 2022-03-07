@@ -194,7 +194,6 @@ public class AccountsPageSteps extends BasePage {
 	public void user_enters_the_mounting_type_to_nonsunpower_ground_mount() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickGroundMount();
-		
 	}
 	
 	@Then("User clicks on the SunVault Storage button")
@@ -317,7 +316,7 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickLeaseOptionTab();
 		accountsPage.clickCheckboxLeaseLoanShowOption();
 	}
-
+	
 	@Then("^User enters \"([^\"]*)\" in the Price Per Watt tab for Lease option$")
 	public void user_enters_in_the_Price_Per_Watt_tab_for_Least_option(String leasePricePerWatt) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
@@ -380,6 +379,13 @@ public class AccountsPageSteps extends BasePage {
 	    accountsPage.enterLoanGrossPriceValue(loanGrossPrice);
 	}
 	
+	@Then("User enters {string} as Custom Adders for Loan")
+	public void user_enters_as_Custom_Adders_for_Loan(String loanCustomAdders) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+	    accountsPage.enterLoanCustomAdders(loanCustomAdders);
+	}
+	
+	
 	@Then("^clicks on save changes for the Quote Settings modal$")
 	public void clicks_on_save_changes_for_the_Quote_Settings_modal() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
@@ -423,6 +429,12 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickOnSelectCashPayment();
 	}
 	
+	@And("^User will click the arrow button to show the FO payment details$")
+	public void user_will_click_the_arrow_button_to_show_the_FO_payment_details() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnShowBtn();
+	}
+	
 	@Then("User will click on the Calculator tab of the Loan Pricing pane")
 	public void user_will_click_on_the_calculator_tab_of_the_loan_pricing_pane() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
@@ -430,21 +442,38 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.clickOnLoanCalculatorBtn();
 	}
 	
+	@When("User will click on Edit Loan")
+	public void user_will_click_on_Edit_Loan() throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnEditLoanBtn();
+	}
+	
 	@And("^User will add a CoPayment input as \"([^\"]*)\"$")
 	public void user_will_add_a_co_payment_input_as(String coPaymentInput) throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
-		accountsPage.clickOnEditLoanBtn();
 		accountsPage.clickOnCoPayment(coPaymentInput);
+	}	
+	
+	@And("User will enter {string} as the Loan Term")
+	public void user_will_enter_as_the_Loan_Term(String loanTerm) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnTerm(loanTerm);
 	}
 	
+	@And("User will enter {string} as the APR")
+	public void user_will_enter_as_the_APR(String aprType) throws Exception {
+		AccountsPage accountsPage = new AccountsPage();
+		accountsPage.clickOnAPR(aprType);
+	}
+		
 	@Then("^User will click on the Save Pricing button")
 	public void user_will_click_on_the_save_pricing_button() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnSavePricingButton();
 	}
 	
-	@And("^User will click the arrow button to select preferred payment option as Loan with CoPayment$")
-	public void user_will_click_the_arrow_button_to_select_preferred_payment_option_as_Loan(String coPaymentInput) throws Exception {
+	@And("^User will click lock the quote  with the preferred payment option$")
+	public void user_will_lock_the_quote_with_the_preferred_payment_option() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickOnSelectLoanPayment();
 	}

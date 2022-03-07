@@ -29,18 +29,23 @@ import io.cucumber.junit.CucumberOptions;
 				
 				//"src/main/resources/features/spwr/QuoteCreation/SPD_QA_CashQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/SPD_QA_LeaseQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation/SPD_QA_LoanQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation (updated Feb 2022)/a_SPD_QA_LoanQuoteCreation.feature",
+				//"src/main/resources/features/spwr/QuoteCreation (updated Feb 2022)/a_SPD_QA_LoanQuoteCreation2.feature",
+				//"src/main/resources/features/spwr/QuoteCreation (updated Feb 2022)/a_SPD_QA_LoanQuoteCreation3.feature",
+				//"src/main/resources/features/spwr/QuoteCreation (updated Feb 2022)/a_SPD_QA_LoanQuoteCreation4.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_CashQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_LeaseQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_LoanQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_CashQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LeaseQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LoanQuoteCreation.feature",
-				
+				"src/main/resources/features/spwr/QuoteCreation  (Feb 2022) UAT"
 				
 		},
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
+		//tags = "@UAT_ND_PenFedRefi or @UAT_SPD_PenFedRefi" or @UAT_ID_PenFedRefi,
+		tags = "@PROD_ID_PenFedRefi",
 		dryRun = false,
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true

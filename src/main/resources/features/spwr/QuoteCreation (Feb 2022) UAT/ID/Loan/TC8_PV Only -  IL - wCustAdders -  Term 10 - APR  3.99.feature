@@ -1,26 +1,28 @@
-Feature: SPD_QA_LoanQuoteCreation
+Feature: ID Loan_UAT_QuoteCreationE2E
 
 #Author: lcaesar@sunpowercorp.com
-#Date Created: 07/03/2021
+#Date Created: 03/06/2022
 #Date Modified: 
 #Last Modified by:
 
-Scenario: SPD_QA_LoanQuoteCreation
+@UAT_IDv2_PenFedRefi
+
+Scenario: TC8_PV Only - IL - wCustAdders - Term 10 - APR 3.99
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to SunPower Partner Portal using "Chrome" browser
-When User logs in at QA as SPD
+Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
+When User logs in at UAT as an ID
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
-And User creates a Residential Customer account in QA
+And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "Penfedrefi" and Last Name as "test02"
+Then User enters his/her Residential First Name as "PenfedRefi" and Last Name as "v2idtest08"
 And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "16388 Midwood Dr, Granada Hills, CA 91344, USA"
+Then User enters Residential address as "IL 998 Butler Dr, Crystal Lake, IL 60014"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -51,11 +53,18 @@ When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
 #Then User checks the show Loan option
 And User enters "4.00" in the Price Per Watt tab for Loan option
+Then User enters "3000" as Custom Adders for Loan
 #Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
 When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
-#And User will click the arrow button to select preferred payment option as Loan
+Then User will click on the Calculator tab of the Loan Pricing pane
+When User will click on Edit Loan
+When User will add a CoPayment input as "5000"
+Then User will enter "10" as the Loan Term
+Then User will enter "3.99" as the APR
+When User will click on the Save Pricing button
+Then User will click lock the quote  with the preferred payment option
 Then User ends the test scenario
