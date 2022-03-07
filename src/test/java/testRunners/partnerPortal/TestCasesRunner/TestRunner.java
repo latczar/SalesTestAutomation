@@ -51,7 +51,7 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome = true
 		)
 
-public class LoginToPartnerPortal {
+public class TestRunner {
 	
 	@AfterClass	
 	public static void tearDown() throws Exception {
