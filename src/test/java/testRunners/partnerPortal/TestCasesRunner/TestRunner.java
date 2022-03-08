@@ -39,7 +39,8 @@ import io.cucumber.junit.CucumberOptions;
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_CashQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LeaseQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LoanQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation  (Feb 2022) UAT"
+				//"src/main/resources/features/spwr/QuoteCreation (Feb 2022) UAT"
+				"src/main/resources/features/spwr/QuoteCreation (March 2022) PROD"
 				
 		},
 		glue = {"stepDefinitions"},

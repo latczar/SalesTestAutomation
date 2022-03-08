@@ -7,10 +7,10 @@ Feature: ID Loan_UAT_QuoteCreationE2E
 
 @PROD_ID_PenFedRefi
 
-Scenario: PROD_TC8_PV Only - IL - wCustAdders - Term 10 - APR 3.99
+Scenario: PROD_TC10_PAMELA MARGETIC - PV Only - CA - wCustAdders - Term 10 - APR 3.99
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
+Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
 When User logs in at PROD as an ID
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
@@ -19,10 +19,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "PenfedRefi" and Last Name as "idtest08"
+Then User enters his/her Residential First Name as "PAMELA" and Last Name as "MARGETIC"
 And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "IL 998 Butler Dr, Crystal Lake, IL 60014"
+Then User enters Residential address as "8952 Gentle Wind Dr, Corona, CA 92883, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -51,10 +51,10 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-#Then User checks the show Loan option
+Then User checks the show Loan option
 And User enters "4.00" in the Price Per Watt tab for Loan option
 Then User enters "3000" as Custom Adders for Loan
-#Then User unticks the show Cash option
+Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
