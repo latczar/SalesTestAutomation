@@ -10,7 +10,7 @@ Feature: ID Loan_UAT_QuoteCreationE2E
 Scenario: PROD_TC7_PV Only - NY - wCustAdders - Term 10 - APR 3.99
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
+Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
 When User logs in at PROD as an ID
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
@@ -52,16 +52,15 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-#Then User checks the show Loan option
+Then User checks the show Loan option
 And User enters "4.00" in the Price Per Watt tab for Loan option
 Then User enters "3000" as Custom Adders for Loan
-#Then User unticks the show Cash option
+Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
 When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
-When User will click the arrow button to show the Loan Calculator pane
 Then User will click on the Calculator tab of the Loan Pricing pane
 When User will click on Edit Loan
 When User will add a CoPayment input as "5000"
