@@ -7,10 +7,10 @@ Feature: TPS_UAT_LoanQuoteCreation
 
 @PROD_ND_PenFedRefi
 
-Scenario: PROD_TC2_PVStorage- IL - wCustAdders - Term 20 - APR 0.99
+Scenario: TC4_PV Only - NY - Gross Price - wCustAdders - Term 15 - APR 4.99
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
+Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
 When User logs in at PROD as ND
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
@@ -19,10 +19,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "PenfedRefi" and Last Name as "ndtest02"
+Then User enters his/her Residential First Name as "PenfedRefi" and Last Name as "ndtest04"
 And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "IL 998 Butler Dr, Crystal Lake, IL 60014"
+Then User enters Residential address as "NY 27 Hampton Green, Staten Island, NY, USA 10312 "
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -39,9 +39,8 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the module type as "425W M-425-BLK-H-AC"
+Then User enters the module type as "400W A-400-BLK-G-AC"
 Then User enters the Shading Measurement Date as date today
-Then  User clicks on the SunVault Storage button
 Then User adds the Front Edge Skirt Accessory
 And clicks on the New Roof button
 Then New Roof modal is displayed
@@ -54,9 +53,10 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-And User enters "4.00" in the Price Per Watt tab for Loan option
-Then User enters "2000" in the Storage Dealer Commission tab for Loan option
+Then User checks the show Loan option
+When User enters "60000" in the Gross Price tab for Loan option
 Then User enters "1800" as Custom Adders for Loan
+Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
@@ -64,8 +64,9 @@ When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
 Then User will click on the Calculator tab of the Loan Pricing pane
 When User will click on Edit Loan
-Then User will enter "20" as the Loan Term
-Then User will enter "0.99" as the APR
+When User will add a CoPayment input as "5000"
+Then User will enter "15" as the Loan Term
+Then User will enter "4.99" as the APR
 When User will click on the Save Pricing button
 Then User will click lock the quote  with the preferred payment option
 Then User ends the test scenario

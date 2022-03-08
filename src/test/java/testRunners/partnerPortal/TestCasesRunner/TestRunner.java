@@ -39,13 +39,13 @@ import io.cucumber.junit.CucumberOptions;
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_CashQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LeaseQuoteCreation.feature",
 				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LoanQuoteCreation.feature",
-				"src/main/resources/features/spwr/QuoteCreation  (Feb 2022) UAT"
-				
+				//"src/main/resources/features/spwr/QuoteCreation (Feb 2022) UAT"
+				"src/main/resources/features/spwr/QuoteCreation (March 2022) PROD"				
 		},
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
 		//tags = "@UAT_ND_PenFedRefi or @UAT_SPD_PenFedRefi" or @UAT_ID_PenFedRefi,
-		tags = "@PROD_ID_PenFedRefi",
+		tags = "@PROD_ND_PenFedRefi or @PROD_SPD_PenFedRefi",
 		dryRun = false,
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true
