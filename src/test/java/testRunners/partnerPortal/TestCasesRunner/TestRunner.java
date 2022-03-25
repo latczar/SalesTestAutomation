@@ -10,9 +10,9 @@ import io.cucumber.junit.CucumberOptions;
 		features= {
 				
 				//"src/main/resources/features/spwr/QuoteCreation (Feb 2022) UAT/Dynamic (Account Creation only)"
-				//"src/main/resources/features/spwr/QuoteCreation (March 2022) PROD"
+				"src/main/resources/features/spwr/QuoteCreation (March 2022) PROD/Manual"
 				//"src/main/resources/features/spwr/QuoteCreation (March 2022) QA"
-				"src/main/resources/features/spwr/QuoteCreation (March 2022) QA/Dynamic (QA Account Creation only)"
+				//"src/main/resources/features/spwr/QuoteCreation (March 2022) QA/Dynamic (QA Account Creation only)"
 				
 		},
 		glue = {"stepDefinitions"},
@@ -28,6 +28,8 @@ import io.cucumber.junit.CucumberOptions;
 		//tags = "@UAT_ND_PenFedRefi_dynamic",
 		//tags = "@UAT_ND_PenFedRefi or @UAT_SPD_PenFedRefi" or @UAT_ID_PenFedRefi,
 		//tags = "@PROD_ND_PenFedRefi or @PROD_SPD_PenFedRefi",
+		tags = "@PROD_ID_PenFedRefi",
+		//tags = "@PROD_ID_PenFedRefi_2",
 		dryRun = false,
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true

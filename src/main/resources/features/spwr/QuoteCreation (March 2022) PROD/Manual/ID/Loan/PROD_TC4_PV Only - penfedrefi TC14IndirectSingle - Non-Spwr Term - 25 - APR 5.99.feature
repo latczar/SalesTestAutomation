@@ -1,4 +1,4 @@
-Feature: ID Loan_UAT_QuoteCreationE2E
+Feature: ID Loan_PROD_QuoteCreation
 
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 03/06/2022
@@ -7,7 +7,7 @@ Feature: ID Loan_UAT_QuoteCreationE2E
 
 @PROD_ID_PenFedRefi
 
-Scenario: PROD_TC10_PAMELA MARGETIC - PV Only - CA - wCustAdders - Term 10 - APR 3.99
+Scenario: PROD_TC4_PV Only - penfedrefi TC14IndirectSingle - Non-Spwr Term - 25 - APR 5.99
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
@@ -19,10 +19,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "PAMELA" and Last Name as "MARGETIC"
+Then User enters his/her Residential First Name as "manualtest" and Last Name as "penfedrefi TC14IndirectSingle"
 And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "8952 Gentle Wind Dr, Corona, CA 92883, USA"
+Then User enters Residential address as "203 North Franklin Boulevard Pleasantville, NJ 08232"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -39,7 +39,9 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
+Then User enters the module type as "350W X21-350-BLK-E-AC"
 Then User enters the Shading Measurement Date as date today
+Then User enters the Mounting type to Non-SunPower Ground Mount
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
@@ -51,10 +53,9 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-Then User checks the show Loan option
+#Then User checks the show Loan option
 And User enters "4.00" in the Price Per Watt tab for Loan option
-Then User enters "3000" as Custom Adders for Loan
-Then User unticks the show Cash option
+#Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
@@ -62,9 +63,8 @@ When the EDDiE portal Design page will calculate savings
 Then User will click on View Estimated Savings button
 Then User will click on the Calculator tab of the Loan Pricing pane
 When User will click on Edit Loan
-When User will add a CoPayment input as "5000"
-Then User will enter "10" as the Loan Term
-Then User will enter "3.99" as the APR
+Then User will enter "25" as the Loan Term
+Then User will enter "5.99" as the APR
 When User will click on the Save Pricing button
 Then User will click lock the quote  with the preferred payment option
 Then User ends the test scenario

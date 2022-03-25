@@ -1,4 +1,4 @@
-Feature: ID Loan_UAT_QuoteCreationE2E
+Feature: ID Loan_PROD_QuoteCreation
 
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 03/06/2022
@@ -7,7 +7,7 @@ Feature: ID Loan_UAT_QuoteCreationE2E
 
 @PROD_ID_PenFedRefi
 
-Scenario: PROD_TC9_PV Only - CA - wCustAdders - Term 10 - APR 3.99
+Scenario: PROD_TC7_PV Only - penfedrefi TC24IndirectSingle - NY - wCustAdders - Term 10 - APR 3.99
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
@@ -19,10 +19,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "PenfedRefi" and Last Name as "idtest13"
+Then User enters his/her Residential First Name as "manualtest" and Last Name as "penfedrefi TC24IndirectSingle"
 And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "3841 Marron St, San Diego, CA 92115 - SDG&E "
+Then User enters Residential address as "NY 1634 W 6th St, Brooklyn, NY 11223"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -39,6 +39,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
+Then User enters the module type as "327W E20-327-E-AC"
 Then User enters the Shading Measurement Date as date today
 And clicks on the New Roof button
 Then New Roof modal is displayed
@@ -51,10 +52,10 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-Then User checks the show Loan option
+#Then User checks the show Loan option
 And User enters "4.00" in the Price Per Watt tab for Loan option
 Then User enters "3000" as Custom Adders for Loan
-Then User unticks the show Cash option
+#Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
