@@ -9,44 +9,25 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features= {
 				
-				//"src/main/resources/features/spwr/TestCaseFeatures/TS_01_Partner_Portal_End_to_End_Account_to_Manual_Quoting_Cash.feature",
-				//"src/main/resources/features/spwr/TestCaseFeatures/TS_02_Partner_Portal_End_to_End_Account_to_Manual_Quoting_Loan.feature",
-				//"src/main/resources/features/spwr/TestCaseFeatures/TS_03_Partner_Portal_End_to_End_Account_to_Manual_Quoting_Lease.feature",
-				//"src/main/resources/features/spwr/TestCaseFeatures/TS_04_Partner_Portal_End_to_End_Account_to_Manual_Signing_Cash.feature",
-				//"src/main/resources/features/spwr/TestCaseFeatures/TS_05_Partner_Portal_End_to_End_Account_to_Manual_Signing_Loan.feature",
-				//"src/main/resources/features/spwr/TestCaseFeatures/TS_06_Partner_Portal_End_to_End_Account_to_Manual_Signing_Lease.feature"			
-				
-				//"src/main/resources/features/spwr/QuoteCreation/A_ID_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/A_ND_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/A_SPD_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/SPD_AZ_CashLeaseLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/SPD_CA_CashLeaseLoan_withStorage_NoAdders_ManualQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/ID_OR_CashLoan_NoStorage_NoAdders_ManualQuoteCreation.feature"
-				//"src/main/resources/features/spwr/QuoteCreation/SPD_IL_CashLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/SPD_IL_CashLoan_withStorage_NoAdders_ManualQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/SPD_CT_CashLoan_NoStorage_NoAdders_ManualQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/SPD_CT_CashLoan_withStorage_NoAdders_ManualQuoteCreation.feature"
-				
-				//"src/main/resources/features/spwr/QuoteCreation/SPD_QA_CashQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/SPD_QA_LeaseQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation (updated Feb 2022)/a_SPD_QA_LoanQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation (updated Feb 2022)/a_SPD_QA_LoanQuoteCreation2.feature",
-				//"src/main/resources/features/spwr/QuoteCreation (updated Feb 2022)/a_SPD_QA_LoanQuoteCreation3.feature",
-				//"src/main/resources/features/spwr/QuoteCreation (updated Feb 2022)/a_SPD_QA_LoanQuoteCreation4.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_CashQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_LeaseQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/TPS_QA_LoanQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_CashQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LeaseQuoteCreation.feature",
-				//"src/main/resources/features/spwr/QuoteCreation/ID_QA_LoanQuoteCreation.feature",		
-				//"src/main/resources/features/spwr/QuoteCreation (Feb 2022) UAT"
-				"src/main/resources/features/spwr/QuoteCreation (March 2022) PROD"
+				//"src/main/resources/features/spwr/QuoteCreation (Feb 2022) UAT/Dynamic (Account Creation only)"
+				//"src/main/resources/features/spwr/QuoteCreation (March 2022) PROD"
+				//"src/main/resources/features/spwr/QuoteCreation (March 2022) QA"
+				"src/main/resources/features/spwr/QuoteCreation (March 2022) QA/Dynamic (QA Account Creation only)"
 				
 		},
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
+		//tags = "@QA_ND_PenFedRefi",
+		//tags = "@QA_SPD_PenFedRefi",
+		//tags = "@QA_ID_PenFedRefi",
+		//tags = "@QA_ID_PenFedRefi_dynamic",
+		//tags = "@UAT_ND_PenFedRefi",
+		//tags = "@UAT_SPD_PenFedRefi",
+		//tags = "@UAT_ID_PenFedRefi_dynamic",
+		//tags = "@UAT_ND_PenFedRefi_dynamic or @UAT_SPD_PenFedRefi_dynamic",
+		//tags = "@UAT_ND_PenFedRefi_dynamic",
 		//tags = "@UAT_ND_PenFedRefi or @UAT_SPD_PenFedRefi" or @UAT_ID_PenFedRefi,
-		tags = "@PROD_ND_PenFedRefi or @PROD_SPD_PenFedRefi",
+		//tags = "@PROD_ND_PenFedRefi or @PROD_SPD_PenFedRefi",
 		dryRun = false,
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true

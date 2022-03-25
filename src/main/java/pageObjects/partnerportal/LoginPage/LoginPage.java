@@ -59,8 +59,10 @@ public class LoginPage extends BasePage {
 	
 	public void loginAsIndirectPartnerQA(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectPartnerEugeneBuenUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectPartnerEugeneBuenPass);
+		//enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectPartnerEugeneBuenUser);
+		//enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectPartnerEugeneBuenPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectPartnerEugeneCBuenUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectPartnerEugeneCBuenPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	
@@ -91,8 +93,8 @@ public class LoginPage extends BasePage {
 	
 	public void loginAsIndirectPartnerUAT(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATIndirectPartnerEugeneBuenUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATIndirectPartnerEugeneBuenPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATIndirectPartnerGabiLoyalty5DigitalTestUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATIndirectPartnerGabiLoyalty5DigitalTestPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	

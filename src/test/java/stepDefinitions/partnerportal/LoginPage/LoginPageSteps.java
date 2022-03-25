@@ -34,10 +34,11 @@ public class LoginPageSteps extends BasePage{
 		loginPage.loginAsTPSQA(Constant.QATPSUser, Constant.QATPSPass);
 	}
 	
-	@When("^User logs in at QA as ID$")
+	@When("^User logs in at QA as an ID$")
 	public void user_logs_in_at_qa_as_id() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerQA(Constant.QAIndirectPartnerEugeneBuenUser, Constant.QAIndirectPartnerEugeneBuenPass);
+		loginPage.loginAsIndirectPartnerQA(Constant.QAIndirectPartnerEugeneCBuenUser, 
+				Constant.QAIndirectPartnerEugeneCBuenPass);
 	}
 	
 	@When("^User logs in at QA as SPD$")
@@ -64,7 +65,7 @@ public class LoginPageSteps extends BasePage{
 	@When("User logs in at UAT as an ID")
 	public void user_logs_in_at_uat_as_indirect() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerEugeneBuenUser, Constant.UATIndirectPartnerEugeneBuenPass);
+		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerGabiLoyalty5DigitalTestUser, Constant.UATIndirectPartnerGabiLoyalty5DigitalTestPass);
 	}
 	
 	@When("User logs in at UAT as SPD")
