@@ -1,17 +1,17 @@
-Feature: SPD_UAT_LoanQuoteCreation
+Feature: TPS_PROD_LoanQuoteCreation
 
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 03/06/2022
 #Date Modified: 
 #Last Modified by:
 
-@PROD_SPD_PenFedRefi
+@PROD_ND_PenFedRefi
 
-Scenario: TC1_LAURIE DIAS - PV Only - CA - wCustAdders - LSD - Term 10 - APR 0.99
+Scenario: PROD_TC3_PV Only - penfedrefi TC15TPSCoApp - NJ - wCustAdders - Term 25 - APR 3.49
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
-When User logs in at PROD as SPD
+When User logs in at PROD as ND
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -19,10 +19,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "LAURIE" and Last Name as "DIAS"
+Then User enters his/her Residential First Name as "manualtest" and Last Name as "penfedrefi TC15TPSCoApp"
 And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "2506 Broderick Ave, Duarte, CA 91010, USA"
+Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -39,14 +39,14 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the module type as "327W E20-327-E-AC"
+Then User enters the module type as "370W X22-370-E-AC"
 Then User enters the Shading Measurement Date as date today
-Then User adds the Critter Guard Skirt Accessory
+Then User adds the Front Edge Skirt Accessory
 And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
 And User enters a value for Azimuth as "180"
-And User enters a value for Module Count as "50"
+And User enters a value for Module Count as "20"
 And User enter values for Roof Solar Access Percentages for Jan-Dec as "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "99"
 Then User saves the changes
 
@@ -55,7 +55,7 @@ When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
 Then User checks the show Loan option
 And User enters "4.00" in the Price Per Watt tab for Loan option
-Then User enters "2100" as Custom Adders for Loan
+Then User enters "1800" as Custom Adders for Loan
 Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
@@ -65,8 +65,8 @@ Then User will click on View Estimated Savings button
 Then User will click on the Calculator tab of the Loan Pricing pane
 When User will click on Edit Loan
 When User will add a CoPayment input as "5000"
-Then User will enter "10" as the Loan Term
-Then User will enter "0.99" as the APR
+Then User will enter "25" as the Loan Term
+Then User will enter "3.49" as the APR
 When User will click on the Save Pricing button
 Then User will click lock the quote  with the preferred payment option
 Then User ends the test scenario

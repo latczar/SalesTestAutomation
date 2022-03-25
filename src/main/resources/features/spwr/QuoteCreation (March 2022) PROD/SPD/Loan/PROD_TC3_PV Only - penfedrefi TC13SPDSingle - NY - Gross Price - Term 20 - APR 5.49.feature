@@ -1,17 +1,17 @@
-Feature: TPS_UAT_LoanQuoteCreation
+Feature: SPD_PROD_LoanQuoteCreation
 
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 03/06/2022
 #Date Modified: 
 #Last Modified by:
 
-@UAT_ND_TestDraft
+@PROD_SPD_PenFedRefi
 
-Scenario: ManualTest draft
+Scenario: PROD_TC3_PV Only - penfedrefi TC13SPDSingle - NY - Gross Price - Term 20 - APR 5.49
 
 #QA - Start New Residential Customer Account creation
-Given User navigates to UAT SunPower Partner Portal using "Chrome" browser
-When User logs in at UAT as ND
+Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
+When User logs in at PROD as SPD
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -19,10 +19,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "ManualTest" and Last Name as "draft06"
-And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
+Then User enters his/her Residential First Name as "manualtest" and Last Name as "penfedrefi TC13SPDSingle"
+And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "5240 Starling St, Fontana, CA 92336, USA"
+Then User enters Residential address as "NY 1634 W 6th St, Brooklyn, NY 11223"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -39,10 +39,8 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the module type as "350W X21-350-BLK-E-AC"
+Then User enters the module type as "400W A-400-BLK-G-AC"
 Then User enters the Shading Measurement Date as date today
-Then User clicks on the SunVault Storage button
-Then User adds the Front Edge Skirt Accessory
 Then User adds the Critter Guard Skirt Accessory
 And clicks on the New Roof button
 Then New Roof modal is displayed
@@ -55,9 +53,10 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-And User enters "4.00" in the Price Per Watt tab for Loan option
-Then User enters "500" in the Storage Dealer Commission tab for Loan option
+Then User checks the show Loan option
+Then User enters "45000" in the Gross Price tab for Loan option
 Then User enters "1500" as Custom Adders for Loan
+Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
@@ -66,8 +65,8 @@ Then User will click on View Estimated Savings button
 Then User will click on the Calculator tab of the Loan Pricing pane
 When User will click on Edit Loan
 When User will add a CoPayment input as "5000"
-Then User will enter "15" as the Loan Term
-Then User will enter "4.99" as the APR
+Then User will enter "20" as the Loan Term
+Then User will enter "5.49" as the APR
 When User will click on the Save Pricing button
 Then User will click lock the quote  with the preferred payment option
 Then User ends the test scenario

@@ -1,4 +1,4 @@
-Feature: TPS_UAT_LoanQuoteCreation
+Feature: TPS_PROD_LoanQuoteCreation
 
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 03/06/2022
@@ -7,7 +7,7 @@ Feature: TPS_UAT_LoanQuoteCreation
 
 @PROD_ND_PenFedRefi
 
-Scenario: PROD_TC3_PV Only - NJ - wCustAdders - Term 25 - APR 3.49
+Scenario: TC4_PV Only - penfedrefi TC20TPSCoApp - NY - Gross Price - wCustAdders - Term 15 - APR 4.99
 
 #QA - Start New Residential Customer Account creation
 Given User navigates to PROD SunPower Partner Portal using "Chrome" browser
@@ -19,10 +19,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "PenfedRefi" and Last Name as "ndtest03"
+Then User enters his/her Residential First Name as "manualtest" and Last Name as "penfedrefi TC20TPSCoApp"
 And User enters his/her Residential Email as "Testblueraven+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
+Then User enters Residential address as "NY 27 Hampton Green, Staten Island, NY, USA 10312 "
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -39,7 +39,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
-Then User enters the module type as "370W X22-370-E-AC"
+Then User enters the module type as "400W A-400-BLK-G-AC"
 Then User enters the Shading Measurement Date as date today
 Then User adds the Front Edge Skirt Accessory
 And clicks on the New Roof button
@@ -54,7 +54,7 @@ Then User saves the changes
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
 Then User checks the show Loan option
-And User enters "4.00" in the Price Per Watt tab for Loan option
+When User enters "60000" in the Gross Price tab for Loan option
 Then User enters "1800" as Custom Adders for Loan
 Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
@@ -65,8 +65,8 @@ Then User will click on View Estimated Savings button
 Then User will click on the Calculator tab of the Loan Pricing pane
 When User will click on Edit Loan
 When User will add a CoPayment input as "5000"
-Then User will enter "25" as the Loan Term
-Then User will enter "3.49" as the APR
+Then User will enter "15" as the Loan Term
+Then User will enter "4.99" as the APR
 When User will click on the Save Pricing button
 Then User will click lock the quote  with the preferred payment option
 Then User ends the test scenario
