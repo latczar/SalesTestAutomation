@@ -118,8 +118,8 @@ public class LoginPage extends BasePage {
 	
 	public void loginAsIndirectPartnerPROD(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODIndirectPartnerEugeneBuenUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODIndirectPartnerEugeneBuenPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODIndirectPartnerBadPrittUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODIndirectPartnerBadPrittPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	

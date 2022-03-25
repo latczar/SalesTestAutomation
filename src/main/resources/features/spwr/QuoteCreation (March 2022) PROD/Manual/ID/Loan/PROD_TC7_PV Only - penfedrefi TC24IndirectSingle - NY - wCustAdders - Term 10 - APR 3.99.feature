@@ -5,7 +5,7 @@ Feature: ID Loan_PROD_QuoteCreation
 #Date Modified: 
 #Last Modified by:
 
-@PROD_ID_PenFedRefi
+@PROD_ID_PenFedRefi_2
 
 Scenario: PROD_TC7_PV Only - penfedrefi TC24IndirectSingle - NY - wCustAdders - Term 10 - APR 3.99
 

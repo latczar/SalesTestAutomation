@@ -96,7 +96,7 @@ public class LoginPageSteps extends BasePage{
 	@When("User logs in at PROD as an ID")
 	public void user_logs_in_at_prod_as_indirect() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerPROD(Constant.PRODIndirectPartnerEugeneBuenUser, Constant.PRODIndirectPartnerEugeneBuenPass);
+		loginPage.loginAsIndirectPartnerPROD(Constant.PRODIndirectPartnerBadPrittUser, Constant.PRODIndirectPartnerBadPrittPass);
 	}
 	
 	@When("User logs in at PROD as SPD")
