@@ -12,13 +12,11 @@ public class LoginPage extends BasePage {
 	
 	String pageName = this.getClass().getSimpleName();
 	// Using FindBy for locating elements
-	
+		
 	@FindBy(how = How.XPATH, using = "//*[@id=\"LightningComponentid\"]/c-pl-signin/div/lightning-layout/slot/lightning-layout-item[1]/slot/div/lightning-layout[4]/slot/lightning-layout-item/slot/input")
-	WebElement USERNAMETXTBOX;
-	
+	WebElement USERNAMETXTBOX;	
 	@FindBy(how = How.XPATH, using = "//*[@id=\"LightningComponentid\"]/c-pl-signin/div/lightning-layout/slot/lightning-layout-item[1]/slot/div/lightning-layout[5]/slot/lightning-layout-item/slot/input")
-	WebElement PASSWORDTXTBOX;
-	
+	WebElement PASSWORDTXTBOX;	
 	@FindBy(how = How.XPATH, using = "//*[@id=\"LightningComponentid\"]/c-pl-signin/div/lightning-layout/slot/lightning-layout-item[1]/slot/div/lightning-layout[6]/slot/lightning-layout-item/slot/button") WebElement LOGINBTN;
 	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Forgot Your Password?')]") WebElement FORGOTPASSWORDBTN;
 	
@@ -55,78 +53,84 @@ public class LoginPage extends BasePage {
 	
 //----------------------------------------------------------------------------------------------------------------------------------------------------------	
 	
-	//For QA
-	
-	public void loginAsIndirectPartnerQA(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		//enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectPartnerEugeneBuenUser);
-		//enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectPartnerEugeneBuenPass);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectPartnerEugeneCBuenUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectPartnerEugeneCBuenPass);
-		click(LOGINBTN, "LOGINBTN");
-	}	
-	
-	public void loginAsTPSQA(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QATPSUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QATPSPass);
-		click(LOGINBTN, "LOGINBTN");
+	//Login to the sandboxes available below
+	public String loginAtEnv(String env) throws Exception {
+		switch (env.toUpperCase()) {
+			case "QA":
+				driver.get(Constant.qaPartnerPortal);
+				return env;
+			case "UAT":
+				driver.get(Constant.uatPartnerPortal);
+				return env;
+			case "PROD":
+				driver.get(Constant.prodPartnerPortal);
+				return env;
+		}		
+		return null;
 	}
 	
-	public void loginAsSPDQA(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QASPDEugeneBuenUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QASPDEugeneBuenPass);
-		click(LOGINBTN, "LOGINBTN");
-	}	
-	
-//----------------------------------------------------------------------------------------------------------------------------------------------------------
-	
-	//For UAT
-	
-	public void loginAsTPSUAT(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATNDGabiTPSUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATNDGabiTPSPass);
-		click(LOGINBTN, "LOGINBTN");
-	}
-	
-	public void loginAsIndirectPartnerUAT(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATIndirectPartnerGabiLoyalty5DigitalTestUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATIndirectPartnerGabiLoyalty5DigitalTestPass);
-		click(LOGINBTN, "LOGINBTN");
-	}	
-	
-	public void loginAsSPDUAT(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATSPDEugeneBuenUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATSPDEugeneBuenPass);
-		click(LOGINBTN, "LOGINBTN");
-	}
+	//Login as a user under any of the ff environments available below
+	public String loginAsPartner(String partner) throws Exception {
+		switch (partner.toUpperCase()) {
+		case "QA SPD":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QASPDEugeneBuenUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QASPDEugeneBuenPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;
+		case "QA ID":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QAIndirectEugeneCBuenUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QAIndirectEugeneCBuenPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;
+		case "QA ND":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QATPSUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QATPSPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;
 
-//----------------------------------------------------------------------------------------------------------------------------------------------------------	
-	
-	//For PROD
-	
-	public void loginAsTPSPROD(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODNDGabiTPSUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODNDGabiTPSPass);
-		click(LOGINBTN, "LOGINBTN");
-	}
-	
-	public void loginAsIndirectPartnerPROD(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODIndirectPartnerBadPrittUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODIndirectPartnerBadPrittPass);
-		click(LOGINBTN, "LOGINBTN");
-	}	
-	
-	public void loginAsSPDPROD(String username, String password) throws Exception {
-		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODSPDEugeneBuenUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODSPDEugeneBuenPass);
-		click(LOGINBTN, "LOGINBTN");
+		//For UAT
+		case "UAT SPD":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATSPDEugeneBuenUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATSPDEugeneBuenPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;
+		case "UAT ID":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATIndirectBadPrittUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATIndirectBadPrittPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;
+		case "UAT ND":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.UATNDGabiTPSUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.UATNDGabiTPSPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;			
+
+		//For PROD
+		case "PROD SPD":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODSPDEugeneBuenUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODSPDEugeneBuenPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;
+		case "PROD ID":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODIndirectBadPrittUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODIndirectBadPrittPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;
+		case "PROD ND":
+			waitForVisibleElement(driver, USERNAMETXTBOX);
+			enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.PRODNDGabiTPSUser);
+			enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.PRODNDGabiTPSPass);
+			click(LOGINBTN, "LOGINBTN");
+			return partner;
+		}
+		return null;
 	}
 }

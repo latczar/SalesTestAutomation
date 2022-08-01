@@ -45,7 +45,7 @@ public class BasePage {
 	public static WebDriver driver = null;
 	public static WebDriverWait wait;
 		
-	public static void initialize(String browserName, String URL) throws UnknownHostException {
+	public static void initialize(String browserName) throws UnknownHostException {
 		switch (browserName.toUpperCase()) {
 		case "FIREFOX":
 			System.setProperty("webdriver.gecko.driver", Constant.DriversPath + "geckodriver.exe");
@@ -89,7 +89,6 @@ public class BasePage {
 		driver.manage().getCookies();
 		driver.manage().deleteAllCookies();
 		wait = new WebDriverWait(driver, 60);
-		driver.get(URL);
 		
 		}
 	
@@ -306,9 +305,13 @@ public class BasePage {
 		element.sendKeys(Keys.RETURN);
 	}
 	
-    public static void  takeScreenShotAsImage() throws Exception {
+    public static void takeScreenShotAsImage() throws Exception {
         String scrShot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
     	File file = OutputType.FILE.convertFromBase64Png(scrShot);
     	FileUtils.copyFile(file, new File("./test-output/Screenshots/" + FunctionLibrary.generateRandomString(6, true, true) + ".png"), true);
+    }
+    
+    public void loadEnvironmentSpecificVariables() throws Exception {
+    	
     }
 }

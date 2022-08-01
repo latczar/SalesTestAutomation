@@ -1,77 +1,29 @@
 package stepDefinitions.partnerportal.LoginPage;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Scenario;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import pageObjects.partnerportal.LoginPage.LoginPage;
 import pageObjects.partnerportal.home.BasePage;
-import utils.Constant;
 
 public class LoginPageSteps extends BasePage{
-		
-	//For QA
-	
-	@Given("^User navigates to SunPower Partner Portal using \"([^\"]*)\" browser$")
-	public void user_navigates_to_SunPower_Partner_Portal_using_browser(String browser) throws Exception {
-		BasePage.initialize(browser, Constant.qaPartnerPortal);
-	}
-	
-	@Given("^User navigates to UAT SunPower Partner Portal using \"([^\"]*)\" browser$")
+			
+	@Given("User opens the {string} browser")
 	public void user_navigates_to_UAT_SunPower_Partner_Portal_using_browser(String browser) throws Exception {
-		BasePage.initialize(browser, Constant.UATPartnerPortal);
+		BasePage.initialize(browser);
 	}
 	
-	@When("^User logs in at QA as TPS$")
-	public void user_logs_in_at_qa_as_tps() throws Exception {
+	@When("User logs in at {string} environment of the SunPower Partner Portal")
+	public void user_logs_in_at_env_as_user(String env) throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsTPSQA(Constant.QATPSUser, Constant.QATPSPass);
+		loginPage.loginAtEnv(env);
 	}
 	
-	@When("^User logs in at QA as an ID$")
-	public void user_logs_in_at_qa_as_id() throws Exception {
+	@And("As this {string} user partner")
+	public void as_this_user_partner(String partner) throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerQA(Constant.QAIndirectPartnerEugeneCBuenUser, 
-				Constant.QAIndirectPartnerEugeneCBuenPass);
-	}
-	
-	@When("^User logs in at QA as SPD$")
-	public void user_logs_in_at_qa_as_spd() throws Exception {
-		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsSPDQA(Constant.QASPDEugeneBuenUser, Constant.QASPDEugeneBuenPass);
-	}
-	
-//----------------------------------------------------------------------------------------------------------------------------------------------------------
-	
-	//For UAT
-	
-	/*@Given("^User navigates to SunPower UAT Partner Portal using \"([^\"]*)\" browser$")
-	public void user_navigates_to_SunPower_Uat_Partner_Portal_using_browser(String browser) throws Exception {
-		BasePage.initialize(browser, Constant.UATPartnerPortal);
-	}*/
-	
-	@When("User logs in at UAT as ND")
-	public void user_logs_in_at_uat_as_nd() throws Exception {
-		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsTPSUAT(Constant.UATNDGabiTPSUser, Constant.UATNDGabiTPSPass);
-	}
-	
-	@When("User logs in at UAT as an ID")
-	public void user_logs_in_at_uat_as_indirect() throws Exception {
-		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerUAT(Constant.UATIndirectPartnerGabiLoyalty5DigitalTestUser, Constant.UATIndirectPartnerGabiLoyalty5DigitalTestPass);
-	}
-	
-	@When("User logs in at UAT as SPD")
-	public void user_logs_in_at_uat_as_spd() throws Exception {
-		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsSPDUAT(Constant.UATSPDEugeneBuenUser, Constant.UATSPDEugeneBuenPass);
+		loginPage.loginAsPartner(partner);
 	}
 	
 	/*always include RunListEndFlag for end of test scenarios*/
@@ -79,30 +31,4 @@ public class LoginPageSteps extends BasePage{
 	public void user_ends_the_test_scenario() throws Throwable {
 		BasePage.RunListEndFlag();
 	}
-	
-	//For PROD
-		
-	@Given("^User navigates to PROD SunPower Partner Portal using \"([^\"]*)\" browser$")
-	public void user_navigates_to_PROD_SunPower_Partner_Portal_using_browser(String browser) throws Exception {
-		BasePage.initialize(browser, Constant.PRODPartnerPortal);
-	}
-	
-	@When("User logs in at PROD as ND")
-	public void user_logs_in_at_prod_as_nd() throws Exception {
-		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsTPSPROD(Constant.PRODNDGabiTPSUser, Constant.PRODNDGabiTPSPass);  
-	}
-	
-	@When("User logs in at PROD as an ID")
-	public void user_logs_in_at_prod_as_indirect() throws Exception {
-		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsIndirectPartnerPROD(Constant.PRODIndirectPartnerBadPrittUser, Constant.PRODIndirectPartnerBadPrittPass);
-	}
-	
-	@When("User logs in at PROD as SPD")
-	public void user_logs_in_at_prod_as_spd() throws Exception {
-		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsSPDPROD(Constant.PRODSPDEugeneBuenUser, Constant.PRODSPDEugeneBuenPass);
-	}
-	
 }
