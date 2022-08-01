@@ -208,12 +208,11 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.addFrontEdgeSkirt();
 	}
 	
-	@Then("User adds the Critter Guard Skirt Accessory")
+	@Then("User adds the Critter Guard Accessory")
 	public void user_adds_the_critter_guard() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.addCritterGuard();
-	}
-	
+	}	
 	
 	@Then("^clicks on the New Roof button$")
 	public void clicks_on_the_New_Roof_button() throws Exception {

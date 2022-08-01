@@ -75,8 +75,8 @@ public class LoginPage extends BasePage {
 	
 	public void loginAsSPDQA(String username, String password) throws Exception {
 		waitForVisibleElement(driver, USERNAMETXTBOX);
-		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QASPDEmilySabetUser);
-		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QASPDEmilySabetPass);
+		enterText(USERNAMETXTBOX, "USERNAMETXTBOX", Constant.QASPDEugeneBuenUser);
+		enterText(PASSWORDTXTBOX, "PASSWORDTXTBOX", Constant.QASPDEugeneBuenPass);
 		click(LOGINBTN, "LOGINBTN");
 	}	
 	

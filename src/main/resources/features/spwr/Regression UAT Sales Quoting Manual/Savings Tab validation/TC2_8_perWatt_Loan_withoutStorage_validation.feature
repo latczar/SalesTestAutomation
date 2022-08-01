@@ -17,7 +17,7 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LLoan8pwValidation"
+Then User enters his/her Residential First Name as "Regautotest" and Last Name as "8ppwLoanCheck"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
 Then User enters Residential address as "16388 Midwood Dr, Granada Hills, CA 91344, USA"
@@ -61,3 +61,4 @@ Then User will click on View Estimated Savings button
 And User will click the arrow button to select preferred payment option as Loan
 Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario
+# And User will verify if he/she was able to lock the quote without storage using 8 as ppw input

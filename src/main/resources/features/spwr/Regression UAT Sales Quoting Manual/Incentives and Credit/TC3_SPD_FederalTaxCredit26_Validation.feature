@@ -17,7 +17,7 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "RegManualTestA" and Last Name as "LFederalTaxCredit26regspd"
+Then User enters his/her Residential First Name as "Regautotest" and Last Name as "FedTaxCred"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
 Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"

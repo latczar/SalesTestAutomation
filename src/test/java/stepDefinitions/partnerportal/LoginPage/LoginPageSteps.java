@@ -44,7 +44,7 @@ public class LoginPageSteps extends BasePage{
 	@When("^User logs in at QA as SPD$")
 	public void user_logs_in_at_qa_as_spd() throws Exception {
 		LoginPage loginPage = new LoginPage();
-		loginPage.loginAsSPDQA(Constant.QASPDEmilySabetUser, Constant.QASPDEmilySabetPass);
+		loginPage.loginAsSPDQA(Constant.QASPDEugeneBuenUser, Constant.QASPDEugeneBuenPass);
 	}
 	
 //----------------------------------------------------------------------------------------------------------------------------------------------------------

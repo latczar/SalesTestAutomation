@@ -70,7 +70,7 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome = true
 		)
 
-public class PROD_Regression_EDDiE_SalesQuoting {
+public class EDDiE_PROD_Regression_SalesQuoting {
 
 		@BeforeClass
 		public static void initDriver() {
