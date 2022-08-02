@@ -51,7 +51,7 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-And User enters "8.00" in the Price Per Watt tab for Loan option
+And User enters "5.80" in the Price Per Watt tab for Loan option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 When the EDDiE portal Design page will calculate savings
@@ -61,5 +61,5 @@ Then User will click on View Estimated Savings button
 And User will click the arrow button to select preferred payment option as Loan
 Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario
-#And User will verify if he/she was able to lock the quote without storage using any value lower than 8 as ppw input 
+#And User will verify if the quote will be locked; Total Loan Amount/System size per wattage = actual PPW value 
 #176252038
