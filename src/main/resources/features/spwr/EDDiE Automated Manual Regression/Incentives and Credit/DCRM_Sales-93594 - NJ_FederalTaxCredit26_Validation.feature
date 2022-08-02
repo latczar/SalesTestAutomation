@@ -1,16 +1,17 @@
-Feature: UAT_TC6_ID_SCrebate_Validation
-
+Feature: DCRM_Sales-93594 - NJ FederalTaxCredit26_Validation
 #Author: lcaesar@sunpowercorp.com
-#Date Created: 10/27/2021
+#Date Created: 07/05/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: UAT_ID_SCrebate_Validation
+@regression
+
+Scenario: SPD_NJFederalTaxCredit26_Validation
 
 #QA - Start New Residential Customer Account creation
 Given User opens the "Chrome" browser
-When User logs in at "QA" environment of the SunPower Partner Portal
-And As this "QA ID" user partner
+When User logs in at "UAT" environment of the SunPower Partner Portal
+And As this "UAT SPD" user partner
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -18,10 +19,10 @@ And User creates a Residential Customer account in UAT
 
 #QA - Start input details for Residential Customer Account 
 Then Residential - New Account page is displayed
-Then User enters his/her Residential First Name as "Regautotest" and Last Name as "SCrebate"
+Then User enters his/her Residential First Name as "Regautotest" and Last Name as "FedTaxCred"
 And User enters his/her Residential Email as "dumdum11990+" "random digits input here"
 And User enters his/her Residential Phone Number as "5555550800"
-Then User enters Residential address as "SC 1400 Main Street, Columbia, SC, United States, 29201"
+Then User enters Residential address as "2023 Florence Ave, Hazlet, NJ 07730, USA"
 When User saves the new entry
 
 #QA - Start Basic Info/Qualification/Quotes page of the Customer
@@ -52,7 +53,6 @@ When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
 Then User clicks the show Cash option
 And User enters "4.00" in the Price Per Watt tab for Cash option
-And User enters "1000" in the Override Rebate tab
 Then User clicks the show Loan option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button

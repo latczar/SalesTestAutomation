@@ -1,16 +1,17 @@
-Feature: TC1_ID_PricePerWatt_Validation
-
+Feature: DCRM_Sales-93492 - FO PPW_Validation
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 07/05/2021
 #Date Modified: 
 #Last Modified by:
 
+@regression
+
 Scenario: ID_PricePerWatt_Validation
 
 #QA - Start New Residential Customer Account creation
 Given User opens the "Chrome" browser
-When User logs in at "QA" environment of the SunPower Partner Portal
-And As this "QA ID" user partner
+When User logs in at "UAT" environment of the SunPower Partner Portal
+And As this "UAT ID" user partner
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
@@ -50,7 +51,9 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
+Then User clicks the show Cash option
 And User enters "4.00" in the Price Per Watt tab for Cash option
+Then User clicks the show Loan option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 
@@ -104,9 +107,7 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities - LOAN
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-Then User checks the show Loan option
 And User enters "4.00" in the Price Per Watt tab for Loan option
-Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 

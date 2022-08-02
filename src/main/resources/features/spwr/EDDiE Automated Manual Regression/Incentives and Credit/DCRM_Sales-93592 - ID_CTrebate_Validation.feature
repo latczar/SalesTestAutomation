@@ -1,16 +1,17 @@
-Feature: UAT_TC5_ID_CTrebate_Validation
-
+Feature: DCRM_Sales-93592 - ID_CTrebate_Validation
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 10/27/2021
 #Date Modified: 
 #Last Modified by:
 
-Scenario: UAT_ID_CTrebate_Validation
+@regression
+
+Scenario: ID_CTrebate_Validation
 
 #QA - Start New Residential Customer Account creation
 Given User opens the "Chrome" browser
-When User logs in at "QA" environment of the SunPower Partner Portal
-And As this "QA ID" user partner
+When User logs in at "UAT" environment of the SunPower Partner Portal
+And As this "UAT ID" user partner
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button

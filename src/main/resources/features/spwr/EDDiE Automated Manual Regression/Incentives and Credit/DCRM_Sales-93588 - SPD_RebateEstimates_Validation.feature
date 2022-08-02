@@ -1,16 +1,17 @@
-Feature: TC2_SPD_RebateEstimates_Validation
-
+Feature: DCRM_Sales-93588 - SPD_RebateEstimates_Validation
 #Author: lcaesar@sunpowercorp.com
 #Date Created: 07/05/2021
 #Date Modified: 
 #Last Modified by:
 
+@regression
+
 Scenario: SPD_RebateEstimates_Validation
 
 #QA - Start New Residential Customer Account creation
 Given User opens the "Chrome" browser
-When User logs in at "QA" environment of the SunPower Partner Portal
-And As this "QA SPD" user partner
+When User logs in at "UAT" environment of the SunPower Partner Portal
+And As this "UAT SPD" user partner
 Then Partner Portal Homepage is displayed
 When User navigates to the Accounts page
 And User clicks the New Account button
