@@ -45,7 +45,7 @@ And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
 And User enters a value for Azimuth as "180"
-And User enters a value for Module Count as "50"
+And User enters a value for Module Count as "10"
 And User enter values for Roof Solar Access Percentages for Jan-Dec as "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "99"
 Then User saves the changes
 
@@ -53,7 +53,7 @@ Then User saves the changes
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
 And User enters "10.00" in the Price Per Watt tab for Loan option
-And User enters "1" in the Storage Dealer Commission tab for Loan option
+And User enters "10" in the Storage Dealer Commission tab for Loan option
 Then clicks on save changes for the Quote Settings modal
 Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario

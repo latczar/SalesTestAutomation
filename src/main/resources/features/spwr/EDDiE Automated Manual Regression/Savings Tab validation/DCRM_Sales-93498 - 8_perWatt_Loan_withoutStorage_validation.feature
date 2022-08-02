@@ -44,7 +44,7 @@ And clicks on the New Roof button
 Then New Roof modal is displayed
 And User enters a value for Pitch as "5"
 And User enters a value for Azimuth as "180"
-And User enters a value for Module Count as "50"
+And User enters a value for Module Count as "10"
 And User enter values for Roof Solar Access Percentages for Jan-Dec as "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "98" , "99"
 Then User saves the changes
 
@@ -61,4 +61,5 @@ Then User will click on View Estimated Savings button
 And User will click the arrow button to select preferred payment option as Loan
 Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario
-# And User will verify if he/she was able to lock the quote without storage using 8 as ppw input
+#And User will verify if he/she was able to lock the quote without storage using any value lower than 8 as ppw input 
+#176252038

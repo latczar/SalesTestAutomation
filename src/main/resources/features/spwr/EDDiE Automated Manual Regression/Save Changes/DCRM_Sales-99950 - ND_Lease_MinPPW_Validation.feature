@@ -39,6 +39,7 @@ And clicks on the New Manual Quote button
 
 #QA - Start EDDiE portal Design page activities
 When the EDDiE portal Design page is displayed
+Then User enters the module type as '425W M-425-H-AC'
 Then User enters the Shading Measurement Date as date today
 And clicks on the New Roof button
 Then New Roof modal is displayed
@@ -52,9 +53,16 @@ Then User saves the changes
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
 And User clicks the show Lease option
-And User enters "4.00" in the Price Per Watt tab for Lease option
+And User enters "1.5" in the Price Per Watt tab for Lease option
 And User clicks the show Loan option
 Then clicks on save changes for the Quote Settings modal
+Then User clicks on the Save Design button
+
+When the EDDiE portal Design page will calculate savings
+Then User will click on View Estimated Savings button
+And User will click on the EDDiE Savings button
+And User will click the arrow button to select preferred payment option as Lease
+When User will switch back to the original window
 Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario
 #And User will be able to lock the quote using the minimum PPW value allowed for the selected FO
