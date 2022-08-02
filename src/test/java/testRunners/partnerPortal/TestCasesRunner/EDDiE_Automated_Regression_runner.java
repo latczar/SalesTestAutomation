@@ -43,7 +43,7 @@ import pageObjects.partnerportal.home.BasePage;
 		},		
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
-		dryRun = true,
+		dryRun = false,
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true,
 		tags = "@regression"
