@@ -51,7 +51,9 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
+Then User clicks the show Cash option
 Then User enters "50000" in the Gross Price tab for Cash option
+Then User clicks the show Loan option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 

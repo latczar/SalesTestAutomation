@@ -51,10 +51,8 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-Then User checks the show Loan option
 And User enters "10.00" in the Price Per Watt tab for Loan option
 And User enters "1" in the Storage Dealer Commission tab for Loan option
-Then User unticks the show Cash option
 Then clicks on save changes for the Quote Settings modal
 Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario

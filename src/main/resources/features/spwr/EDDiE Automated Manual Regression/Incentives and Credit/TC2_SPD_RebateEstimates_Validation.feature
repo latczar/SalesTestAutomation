@@ -76,9 +76,9 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities - LEASE
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-Then User checks the show Lease option
+Then User clicks the show Lease option
 And User enters "4.00" in the Price Per Watt tab for Lease option
-Then User unticks the show Cash option
+Then User clicks the show Loan option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 

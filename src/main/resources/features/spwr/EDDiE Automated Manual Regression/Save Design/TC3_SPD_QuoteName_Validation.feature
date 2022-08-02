@@ -51,7 +51,9 @@ Then User saves the changes
 When User clicks the Quote Settings button
 And User enters " - EditQuoteNameValidation" for the new Quote Name
 Then the Quote Settings modal is displayed
+And User clicks the show Cash option
 And User enters "4.00" in the Price Per Watt tab for Cash option
+And User clicks the show Loan option
 Then clicks on save changes for the Quote Settings modal
 Then User clicks on the Save Design button
 

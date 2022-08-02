@@ -284,7 +284,7 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.enterOverrideEstimateCashLeaseLoan(overrideRebateValue);
 	}
 	
-	@Then("User unticks the show Cash option")
+	@Then("User clicks the show Cash option")
 	public void user_unticks_the_show_cash_option() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickCashOptionTab();
@@ -309,7 +309,7 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.enterCashStorageDealerComm(cashStorageDealerCommission);
 	}	
 	
-	@Then("^User checks the show Lease option$")
+	@Then("^User clicks the show Lease option$")
 	public void user_checks_the_show_Lease_option() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickLeaseOptionTab();
@@ -346,7 +346,7 @@ public class AccountsPageSteps extends BasePage {
 		accountsPage.enterLeaseStorageDealerComm(leaseStorageDealerCommission);
 	}
 
-	@Then("^User checks the show Loan option$")
+	@Then("^User clicks the show Loan option$")
 	public void user_checks_the_show_Loan_option() throws Exception {
 		AccountsPage accountsPage = new AccountsPage();
 		accountsPage.clickLoanOptionTab();

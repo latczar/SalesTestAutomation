@@ -50,7 +50,7 @@ Then User saves the changes
 #QA - Continuation of EDDiE portal Design page activities
 When User clicks the Quote Settings button
 Then the Quote Settings modal is displayed
-And User enters "5000" in the Gross Price tab for Cash option
+And User enters "5000" in the Gross Price tab for Loan option
 Then clicks on save changes for the Quote Settings modal
 Then User takes a screenshot of the current state of the web application
 Then User ends the test scenario
