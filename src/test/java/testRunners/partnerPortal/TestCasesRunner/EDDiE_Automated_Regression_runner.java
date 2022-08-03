@@ -45,7 +45,7 @@ import pageObjects.partnerportal.home.BasePage;
 		stepNotifications = true,
 		dryRun = false,
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-		monochrome = true
+		monochrome = true,
 		tags = "@regression"
 		)
 

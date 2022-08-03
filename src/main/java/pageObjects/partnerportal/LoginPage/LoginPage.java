@@ -70,7 +70,7 @@ public class LoginPage extends BasePage {
 		}		
 		return null;
 	}
-		
+	
 	//Login as a user under any of the ff environments available below
 	public String loginAsPartner(String partner) throws Exception {
 		switch (partner.toUpperCase()) {
