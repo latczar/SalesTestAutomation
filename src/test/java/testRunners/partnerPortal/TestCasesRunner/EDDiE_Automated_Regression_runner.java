@@ -14,7 +14,7 @@ import pageObjects.partnerportal.home.BasePage;
 		features= {
 				
 				   //Incentives and Credit
-				   /*"src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93587 - SPD_OverrideRebate_Validation.feature",
+				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93587 - SPD_OverrideRebate_Validation.feature",
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93588 - SPD_RebateEstimates_Validation.feature",
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93589 - ID_SCrebate_Validation.feature",
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93592 - ID_CTrebate_Validation.feature",
@@ -40,13 +40,13 @@ import pageObjects.partnerportal.home.BasePage;
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Types of Pricing Input/DCRM_Sales-93492 - FO PPW_Validation.feature",
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Types of Pricing Input/DCRM_Sales-93494 - Cash GrossPrice_Validation.feature"
 				   
-		*/},		
+		},		
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
 		dryRun = false,
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 		monochrome = true
-		//tags = "@regression"
+		tags = "@regression"
 		)
 
 public class EDDiE_Automated_Regression_runner extends BasePage {
