@@ -7,15 +7,14 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import pageObjects.partnerportal.home.BasePage;
 
-
-
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		
 		//REGRESSION UAT TEST SUITE created: (06/29/2021), updated: (08/01/2022)
 		features= {
+				
 				   //Incentives and Credit
-				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93587 - SPD_OverrideRebate_Validation.feature",
+				   /*"src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93587 - SPD_OverrideRebate_Validation.feature",
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93588 - SPD_RebateEstimates_Validation.feature",
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93589 - ID_SCrebate_Validation.feature",
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Incentives and Credit/DCRM_Sales-93592 - ID_CTrebate_Validation.feature",
@@ -40,22 +39,23 @@ import pageObjects.partnerportal.home.BasePage;
 				   //Types of Pricing Input
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Types of Pricing Input/DCRM_Sales-93492 - FO PPW_Validation.feature",
 				   "src/main/resources/features/spwr/EDDiE Automated Manual Regression/Types of Pricing Input/DCRM_Sales-93494 - Cash GrossPrice_Validation.feature"
-		},		
+				   
+		*/},		
 		glue = {"stepDefinitions"},
 		stepNotifications = true,
 		dryRun = false,
 		plugin = {"pretty", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-		monochrome = true,
-		tags = "@regression"
+		monochrome = true
+		//tags = "@regression"
 		)
 
 public class EDDiE_Automated_Regression_runner extends BasePage {
-	
+		
 	@BeforeClass
 	public static void initDriver() {
 		System.out.println("Browser initializing...");
 	}
-		
+			
 	@AfterClass
 	public static void tearDown() {
 		System.out.println("Browser is closing...");

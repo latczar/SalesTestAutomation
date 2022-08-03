@@ -14,16 +14,32 @@ public class LoginPageSteps extends BasePage{
 		BasePage.initialize(browser);
 	}
 	
+	//Determine which environment to conduct test/s in the step below
 	@When("User logs in at {string} environment of the SunPower Partner Portal")
 	public void user_logs_in_at_env_as_user(String env) throws Exception {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginAtEnv(env);
 	}
 	
+	//Determine which user to login as in the step below
 	@And("As this {string} user partner")
 	public void as_this_user_partner(String partner) throws Exception {
 		LoginPage loginPage = new LoginPage();
 		loginPage.loginAsPartner(partner);
+	}
+	
+	//Navigate to the sandbox environment via Hooks class
+	@When("User logs in at the sandbox environment of the SunPower Partner Portal")
+	public void user_logs_in_at_env_as_user() throws Throwable {
+		LoginPage loginPage = new LoginPage();
+		loginPage.testLoginAtEnv();
+	}
+	
+	//Login as the user specified in the Hooks class
+	@And("As a user in this dealer portal")
+	public void as_this1_user_partner() throws Throwable {
+		LoginPage loginPage = new LoginPage();
+		loginPage.testLoginAsPartner();
 	}
 	
 	/*always include RunListEndFlag for end of test scenarios*/
