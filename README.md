@@ -1,6 +1,6 @@
-# TestAutomation - Sales Quoting EDDiE Automation Framework
+# TestAutomation - Sales Quoting Automation Framework
 
-Dedicated open-source quickstart project written in Selenium Java with the integration of Cucumber for the test automation of Sales Quoting. Framework is able to cover the end-to-end manual quoting process for QA, UAT, and PROD enviroment, creation of residential customer accounts, creation of manual quotes with storage, adders, selection of Financial Options from Cash, Lease, or Loan, input different types of pricing values in the Quote Settings.
+Dedicated open-source quickstart project written in Selenium Java with the integration of Cucumber for the test automation of Sales Quoting. Framework is able to cover the end-to-end manual quoting proces, creation of residential customer accounts, creation of dummy manual quotes with storage, adders, selection of Financial Options from Cash, Lease, or Loan, input different types of pricing values in the Quote Settings.
 
 ## Approach/Concepts Included in the Project
 * Page Object Model design pattern
@@ -8,7 +8,6 @@ Dedicated open-source quickstart project written in Selenium Java with the integ
 * Continuous test runs as needed
 * Functional testing interaction
 * Regression testing suites
-* Externalised test configuration (QA, UAT, PROD env)
 * Page Factory
 
 ## Tools used
